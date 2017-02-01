@@ -1,5 +1,5 @@
 {
-    "name": "robbeclerckx/mobile_fans_cms",
+    "name": "sclaeye/bundle-dev",
     "license": "proprietary",
     "type": "project",
     "autoload": {
@@ -35,13 +35,8 @@
         "endroid/twitter": "^1.2",
         "gomoob/php-pushwoosh": "^1.6",
         "nelmio/api-doc-bundle": "^2.13",
-        "bazookas/admin-bundle": "^1.1",
-        "bazookas/media-bundle": "^1.1",
-        "bazookas/api-framework-bundle": "^1.1",
-        "bazookas/cron-bundle": "^1.1",
         "bazookas/integrations-bundle": "^1.1",
         "bazookas/generator-bundle": "dev-development as 1.1",
-        "bazookas/common-bundle": "^1.1",
         "symfony/proxy-manager-bridge": "^3.2"
     },
     "require-dev": {

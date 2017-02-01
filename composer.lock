@@ -4,116 +4,20 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f1c6795a70e5f0562357f393e6dd16c8",
-    "content-hash": "13e9d3550883ece4833f1205f9493d41",
+    "content-hash": "61bf297d63a1edce7d926360fb0d9ac8",
     "packages": [
         {
-            "name": "bazookas/admin-bundle",
-            "version": "v1.1.10",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:Bazookastudios/BazookasAdminBundle.git",
-                "reference": "24f8d7b21078810321d328a6aa8d3ac011817ec8"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasAdminBundle/zipball/24f8d7b21078810321d328a6aa8d3ac011817ec8",
-                "reference": "24f8d7b21078810321d328a6aa8d3ac011817ec8",
-                "shasum": ""
-            },
-            "require": {
-                "bazookas/common-bundle": "^1.1",
-                "friendsofsymfony/user-bundle": "2.0.x-dev",
-                "php": "^5.5.9 || ^7.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Bazookas\\AdminBundle\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Bazookas webteam awesomeness",
-                    "homepage": "https://github.com/Bazookastudios"
-                }
-            ],
-            "description": "Bazookas Symfony admin bundle",
-            "homepage": "http://bazookas.be",
-            "keywords": [
-                "admin",
-                "cms"
-            ],
-            "support": {
-                "docs": "https://github.com/Bazookastudios/BazookasAdminBundle",
-                "source": "https://github.com/Bazookastudios/BazookasAdminBundle/tree/v1.1.10",
-                "issues": "https://github.com/Bazookastudios/BazookasAdminBundle/issues"
-            },
-            "time": "2017-01-11 08:57:11"
-        },
-        {
-            "name": "bazookas/api-framework-bundle",
-            "version": "v1.1.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:Bazookastudios/BazookasAPIFrameWorkBundle.git",
-                "reference": "f8cc5b494cf6738d7de24c7a58825bab4401d5b9"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasAPIFrameWorkBundle/zipball/f8cc5b494cf6738d7de24c7a58825bab4401d5b9",
-                "reference": "f8cc5b494cf6738d7de24c7a58825bab4401d5b9",
-                "shasum": ""
-            },
-            "require": {
-                "bazookas/common-bundle": "^1.1",
-                "friendsofsymfony/oauth-server-bundle": "^1.5",
-                "nelmio/api-doc-bundle": "^2.13",
-                "php": "^5.5.9 || ^7.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Bazookas\\APIFrameworkBundle\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Bazookas webteam awesomeness",
-                    "homepage": "https://github.com/Bazookastudios"
-                }
-            ],
-            "description": "Bazookas Symfony API framework bundle",
-            "homepage": "http://bazookas.be",
-            "keywords": [
-                "api",
-                "framework"
-            ],
-            "support": {
-                "docs": "https://github.com/Bazookastudios/BazookasAPIFrameworkBundle",
-                "source": "https://github.com/Bazookastudios/BazookasAPIFrameWorkBundle/tree/v1.1.2",
-                "issues": "https://github.com/Bazookastudios/BazookasAPIFrameWorkBundle/issues"
-            },
-            "time": "2017-01-10 14:10:00"
-        },
-        {
             "name": "bazookas/common-bundle",
-            "version": "v1.1.1",
+            "version": "v1.1.4",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Bazookastudios/BazookasCommonBundle.git",
-                "reference": "48e1559417e6f7c44a8cd9d6ec6916c287527535"
+                "reference": "293e5142b4ace26bbc2ed32e32628e124acebca1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasCommonBundle/zipball/48e1559417e6f7c44a8cd9d6ec6916c287527535",
-                "reference": "48e1559417e6f7c44a8cd9d6ec6916c287527535",
+                "url": "https://api.github.com/repos/Bazookastudios/BazookasCommonBundle/zipball/293e5142b4ace26bbc2ed32e32628e124acebca1",
+                "reference": "293e5142b4ace26bbc2ed32e32628e124acebca1",
                 "shasum": ""
             },
             "require": {
@@ -141,55 +45,10 @@
             ],
             "support": {
                 "docs": "https://github.com/Bazookastudios/BazookasCommonBundle",
-                "source": "https://github.com/Bazookastudios/BazookasCommonBundle/tree/v1.1.1",
+                "source": "https://github.com/Bazookastudios/BazookasCommonBundle/tree/v1.1.4",
                 "issues": "https://github.com/Bazookastudios/BazookasCommonBundle/issues"
             },
-            "time": "2016-12-15 08:34:40"
-        },
-        {
-            "name": "bazookas/cron-bundle",
-            "version": "v1.1.2",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:Bazookastudios/BazookasCronBundle.git",
-                "reference": "705bd83c8658b819ea4cfa825b810cc868c0c7a1"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasCronBundle/zipball/705bd83c8658b819ea4cfa825b810cc868c0c7a1",
-                "reference": "705bd83c8658b819ea4cfa825b810cc868c0c7a1",
-                "shasum": ""
-            },
-            "require": {
-                "bazookas/common-bundle": "^1.1",
-                "php": "^5.5.9 || ^7.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Bazookas\\CronBundle\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Bazookas webteam awesomeness",
-                    "homepage": "https://github.com/Bazookastudios"
-                }
-            ],
-            "description": "Bazookas Symfony cron bundle",
-            "homepage": "http://bazookas.be",
-            "keywords": [
-                "utility"
-            ],
-            "support": {
-                "docs": "https://github.com/Bazookastudios/BazookasCronBundle",
-                "source": "https://github.com/Bazookastudios/BazookasCronBundle/tree/v1.1.2",
-                "issues": "https://github.com/Bazookastudios/BazookasCronBundle/issues"
-            },
-            "time": "2017-01-12 15:12:22"
+            "time": "2017-02-01T10:54:05+00:00"
         },
         {
             "name": "bazookas/generator-bundle",
@@ -197,12 +56,12 @@
             "source": {
                 "type": "git",
                 "url": "git@github.com:Bazookastudios/BazookasGeneratorBundle.git",
-                "reference": "b6cbbab99bc4458c567b33b106a0e5a0026ca8c0"
+                "reference": "77cb28e67d06377db7e263b204afe89a1f7d5224"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasGeneratorBundle/zipball/b6cbbab99bc4458c567b33b106a0e5a0026ca8c0",
-                "reference": "b6cbbab99bc4458c567b33b106a0e5a0026ca8c0",
+                "url": "https://api.github.com/repos/Bazookastudios/BazookasGeneratorBundle/zipball/77cb28e67d06377db7e263b204afe89a1f7d5224",
+                "reference": "77cb28e67d06377db7e263b204afe89a1f7d5224",
                 "shasum": ""
             },
             "require": {
@@ -237,20 +96,20 @@
                 "source": "https://github.com/Bazookastudios/BazookasGeneratorBundle/tree/development",
                 "issues": "https://github.com/Bazookastudios/BazookasGeneratorBundle/issues"
             },
-            "time": "2017-01-16 13:27:05"
+            "time": "2017-01-24 07:46:13"
         },
         {
             "name": "bazookas/integrations-bundle",
-            "version": "v1.1.0",
+            "version": "v1.1.3",
             "source": {
                 "type": "git",
                 "url": "git@github.com:Bazookastudios/BazookasIntegrationsBundle.git",
-                "reference": "81d1b64473582cf19599c503078dd6a0cdec135d"
+                "reference": "7931c79a42cf52dea4c6704aa12726200ba146b1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasIntegrationsBundle/zipball/81d1b64473582cf19599c503078dd6a0cdec135d",
-                "reference": "81d1b64473582cf19599c503078dd6a0cdec135d",
+                "url": "https://api.github.com/repos/Bazookastudios/BazookasIntegrationsBundle/zipball/7931c79a42cf52dea4c6704aa12726200ba146b1",
+                "reference": "7931c79a42cf52dea4c6704aa12726200ba146b1",
                 "shasum": ""
             },
             "require": {
@@ -283,57 +142,10 @@
             ],
             "support": {
                 "docs": "https://github.com/Bazookastudios/BazookasIntegrationsBundle",
-                "source": "https://github.com/Bazookastudios/BazookasIntegrationsBundle/tree/master",
+                "source": "https://github.com/Bazookastudios/BazookasIntegrationsBundle/tree/v1.1.3",
                 "issues": "https://github.com/Bazookastudios/BazookasIntegrationsBundle/issues"
             },
-            "time": "2016-12-08 17:44:08"
-        },
-        {
-            "name": "bazookas/media-bundle",
-            "version": "v1.1.1",
-            "source": {
-                "type": "git",
-                "url": "git@github.com:Bazookastudios/BazookasMediaBundle.git",
-                "reference": "406e0a2608397d012af18bd63812940ccbf8f0bb"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/Bazookastudios/BazookasMediaBundle/zipball/406e0a2608397d012af18bd63812940ccbf8f0bb",
-                "reference": "406e0a2608397d012af18bd63812940ccbf8f0bb",
-                "shasum": ""
-            },
-            "require": {
-                "bazookas/common-bundle": "^1.1",
-                "liip/imagine-bundle": "^1.5",
-                "php": "^5.5.9 || ^7.0"
-            },
-            "type": "symfony-bundle",
-            "autoload": {
-                "psr-4": {
-                    "Bazookas\\MediaBundle\\": ""
-                }
-            },
-            "license": [
-                "proprietary"
-            ],
-            "authors": [
-                {
-                    "name": "Bazookas webteam awesomeness",
-                    "homepage": "https://github.com/Bazookastudios"
-                }
-            ],
-            "description": "Bazookas Symfony media bundle",
-            "homepage": "http://bazookas.be",
-            "keywords": [
-                "admin",
-                "cms"
-            ],
-            "support": {
-                "docs": "https://github.com/Bazookastudios/BazookasMediaBundle",
-                "source": "https://github.com/Bazookastudios/BazookasMediaBundle/tree/v1.1.1",
-                "issues": "https://github.com/Bazookastudios/BazookasMediaBundle/issues"
-            },
-            "time": "2017-01-02 12:43:42"
+            "time": "2017-02-01T15:40:16+00:00"
         },
         {
             "name": "doctrine/annotations",
@@ -401,7 +213,7 @@
                 "docblock",
                 "parser"
             ],
-            "time": "2016-12-30 15:59:45"
+            "time": "2016-12-30T15:59:45+00:00"
         },
         {
             "name": "doctrine/cache",
@@ -471,32 +283,33 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-10-29 11:16:17"
+            "time": "2016-10-29T11:16:17+00:00"
         },
         {
             "name": "doctrine/collections",
-            "version": "v1.3.0",
+            "version": "v1.4.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/collections.git",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a"
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/collections/zipball/6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
-                "reference": "6c1e4eef75f310ea1b3e30945e9f06e652128b8a",
+                "url": "https://api.github.com/repos/doctrine/collections/zipball/1a4fb7e902202c33cce8c55989b945612943c2ba",
+                "reference": "1a4fb7e902202c33cce8c55989b945612943c2ba",
                 "shasum": ""
             },
             "require": {
-                "php": ">=5.3.2"
+                "php": "^5.6 || ^7.0"
             },
             "require-dev": {
-                "phpunit/phpunit": "~4.0"
+                "doctrine/coding-standard": "~0.1@dev",
+                "phpunit/phpunit": "^5.7"
             },
             "type": "library",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.2.x-dev"
+                    "dev-master": "1.3.x-dev"
                 }
             },
             "autoload": {
@@ -537,7 +350,7 @@
                 "collections",
                 "iterator"
             ],
-            "time": "2015-04-14 22:21:58"
+            "time": "2017-01-03T10:49:41+00:00"
         },
         {
             "name": "doctrine/common",
@@ -610,20 +423,20 @@
                 "persistence",
                 "spl"
             ],
-            "time": "2017-01-13 14:02:13"
+            "time": "2017-01-13T14:02:13+00:00"
         },
         {
             "name": "doctrine/dbal",
-            "version": "v2.5.7",
+            "version": "v2.5.10",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/dbal.git",
-                "reference": "3a351369582dade60c750e2cef540eb7b568e6b3"
+                "reference": "fc376f7a61498e18520cd6fa083752a4ca08072b"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/dbal/zipball/3a351369582dade60c750e2cef540eb7b568e6b3",
-                "reference": "3a351369582dade60c750e2cef540eb7b568e6b3",
+                "url": "https://api.github.com/repos/doctrine/dbal/zipball/fc376f7a61498e18520cd6fa083752a4ca08072b",
+                "reference": "fc376f7a61498e18520cd6fa083752a4ca08072b",
                 "shasum": ""
             },
             "require": {
@@ -681,20 +494,20 @@
                 "persistence",
                 "queryobject"
             ],
-            "time": "2017-01-14 21:05:28"
+            "time": "2017-01-23T23:17:10+00:00"
         },
         {
             "name": "doctrine/doctrine-bundle",
-            "version": "1.6.6",
+            "version": "1.6.7",
             "source": {
                 "type": "git",
                 "url": "https://github.com/doctrine/DoctrineBundle.git",
-                "reference": "0f0c4df366bd1d36d38a27e2f5ff128e118ac969"
+                "reference": "a01d99bc6c9a6c8a8ace0012690099dd957ce9b9"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/0f0c4df366bd1d36d38a27e2f5ff128e118ac969",
-                "reference": "0f0c4df366bd1d36d38a27e2f5ff128e118ac969",
+                "url": "https://api.github.com/repos/doctrine/DoctrineBundle/zipball/a01d99bc6c9a6c8a8ace0012690099dd957ce9b9",
+                "reference": "a01d99bc6c9a6c8a8ace0012690099dd957ce9b9",
                 "shasum": ""
             },
             "require": {
@@ -762,7 +575,7 @@
                 "orm",
                 "persistence"
             ],
-            "time": "2017-01-07 21:47:22"
+            "time": "2017-01-16T12:01:26+00:00"
         },
         {
             "name": "doctrine/doctrine-cache-bundle",
@@ -850,7 +663,7 @@
                 "cache",
                 "caching"
             ],
-            "time": "2016-01-26 17:28:51"
+            "time": "2016-01-26T17:28:51+00:00"
         },
         {
             "name": "doctrine/inflector",
@@ -917,7 +730,7 @@
                 "singularize",
                 "string"
             ],
-            "time": "2015-11-06 14:35:42"
+            "time": "2015-11-06T14:35:42+00:00"
         },
         {
             "name": "doctrine/instantiator",
@@ -971,7 +784,7 @@
                 "constructor",
                 "instantiate"
             ],
-            "time": "2015-06-14 21:17:01"
+            "time": "2015-06-14T21:17:01+00:00"
         },
         {
             "name": "doctrine/lexer",
@@ -1025,7 +838,7 @@
                 "lexer",
                 "parser"
             ],
-            "time": "2014-09-09 13:34:57"
+            "time": "2014-09-09T13:34:57+00:00"
         },
         {
             "name": "doctrine/orm",
@@ -1101,7 +914,7 @@
                 "database",
                 "orm"
             ],
-            "time": "2016-12-18 15:42:34"
+            "time": "2016-12-18T15:42:34+00:00"
         },
         {
             "name": "endroid/twitter",
@@ -1155,20 +968,20 @@
                 "symfony",
                 "twitter"
             ],
-            "time": "2017-01-01 20:52:29"
+            "time": "2017-01-01T20:52:29+00:00"
         },
         {
             "name": "facebook/graph-sdk",
-            "version": "5.4.3",
+            "version": "5.4.4",
             "source": {
                 "type": "git",
                 "url": "https://github.com/facebook/php-graph-sdk.git",
-                "reference": "3e0f78787556375bb6ed52beaabfedbc16b5a4e8"
+                "reference": "5d0c4865e80e231d48a4571841bd018828fe58e1"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/3e0f78787556375bb6ed52beaabfedbc16b5a4e8",
-                "reference": "3e0f78787556375bb6ed52beaabfedbc16b5a4e8",
+                "url": "https://api.github.com/repos/facebook/php-graph-sdk/zipball/5d0c4865e80e231d48a4571841bd018828fe58e1",
+                "reference": "5d0c4865e80e231d48a4571841bd018828fe58e1",
                 "shasum": ""
             },
             "require": {
@@ -1213,7 +1026,7 @@
                 "facebook",
                 "sdk"
             ],
-            "time": "2016-12-30 17:54:16"
+            "time": "2017-01-19T15:42:20+00:00"
         },
         {
             "name": "friendsofsymfony/oauth-server-bundle",
@@ -1285,7 +1098,7 @@
                 "oauth2",
                 "server"
             ],
-            "time": "2016-02-22 13:57:55"
+            "time": "2016-02-22T13:57:55+00:00"
         },
         {
             "name": "friendsofsymfony/oauth2-php",
@@ -1339,7 +1152,7 @@
                 "oauth",
                 "oauth2"
             ],
-            "time": "2016-03-31 14:24:17"
+            "time": "2016-03-31T14:24:17+00:00"
         },
         {
             "name": "friendsofsymfony/user-bundle",
@@ -1362,7 +1175,8 @@
                 "symfony/framework-bundle": "^2.7 || ^3.0",
                 "symfony/security-bundle": "^2.7 || ^3.0",
                 "symfony/templating": "^2.7 || ^3.0",
-                "symfony/twig-bundle": "^2.7 || ^3.0"
+                "symfony/twig-bundle": "^2.7 || ^3.0",
+                "twig/twig": "^1.28 || ^2.0"
             },
             "conflict": {
                 "doctrine/doctrine-bundle": "<1.3",
@@ -1478,7 +1292,7 @@
                 "push",
                 "pushwoosh"
             ],
-            "time": "2016-10-20 15:43:31"
+            "time": "2016-10-20T15:43:31+00:00"
         },
         {
             "name": "imagine/imagine",
@@ -1535,7 +1349,7 @@
                 "image manipulation",
                 "image processing"
             ],
-            "time": "2015-09-19 16:54:05"
+            "time": "2015-09-19T16:54:05+00:00"
         },
         {
             "name": "incenteev/composer-parameter-handler",
@@ -1586,7 +1400,7 @@
             "keywords": [
                 "parameters management"
             ],
-            "time": "2015-11-10 17:04:01"
+            "time": "2015-11-10T17:04:01+00:00"
         },
         {
             "name": "jdorn/sql-formatter",
@@ -1636,7 +1450,7 @@
                 "highlight",
                 "sql"
             ],
-            "time": "2014-01-12 16:20:24"
+            "time": "2014-01-12T16:20:24+00:00"
         },
         {
             "name": "kriswallsmith/assetic",
@@ -1713,7 +1527,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2016-11-11 18:43:20"
+            "time": "2016-11-11T18:43:20+00:00"
         },
         {
             "name": "kriswallsmith/buzz",
@@ -1761,20 +1575,20 @@
                 "curl",
                 "http client"
             ],
-            "time": "2015-06-25 17:26:56"
+            "time": "2015-06-25T17:26:56+00:00"
         },
         {
             "name": "liip/imagine-bundle",
-            "version": "1.7.0",
+            "version": "1.7.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/liip/LiipImagineBundle.git",
-                "reference": "2b0e6c614be4a79026a3b64d32bc5e9735de35e0"
+                "reference": "d653f4d22b33c2c2870cb87df8a32508186a799a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/2b0e6c614be4a79026a3b64d32bc5e9735de35e0",
-                "reference": "2b0e6c614be4a79026a3b64d32bc5e9735de35e0",
+                "url": "https://api.github.com/repos/liip/LiipImagineBundle/zipball/d653f4d22b33c2c2870cb87df8a32508186a799a",
+                "reference": "d653f4d22b33c2c2870cb87df8a32508186a799a",
                 "shasum": ""
             },
             "require": {
@@ -1819,7 +1633,7 @@
             "type": "symfony-bundle",
             "extra": {
                 "branch-alias": {
-                    "dev-master": "1.6.x-dev"
+                    "dev-master": "1.7.x-dev"
                 }
             },
             "autoload": {
@@ -1843,7 +1657,7 @@
                 "image",
                 "imagine"
             ],
-            "time": "2017-01-08 18:53:27"
+            "time": "2017-01-20T01:55:04+00:00"
         },
         {
             "name": "michelf/php-markdown",
@@ -1894,7 +1708,7 @@
             "keywords": [
                 "markdown"
             ],
-            "time": "2016-10-29 18:58:20"
+            "time": "2016-10-29T18:58:20+00:00"
         },
         {
             "name": "monolog/monolog",
@@ -1972,7 +1786,7 @@
                 "logging",
                 "psr-3"
             ],
-            "time": "2016-11-26 00:15:39"
+            "time": "2016-11-26T00:15:39+00:00"
         },
         {
             "name": "nelmio/api-doc-bundle",
@@ -2057,7 +1871,7 @@
                 "documentation",
                 "rest"
             ],
-            "time": "2016-06-13 09:12:09"
+            "time": "2016-06-13T09:12:09+00:00"
         },
         {
             "name": "paragonie/random_compat",
@@ -2105,7 +1919,7 @@
                 "pseudorandom",
                 "random"
             ],
-            "time": "2016-11-07 23:38:38"
+            "time": "2016-11-07T23:38:38+00:00"
         },
         {
             "name": "psr/cache",
@@ -2151,7 +1965,7 @@
                 "psr",
                 "psr-6"
             ],
-            "time": "2016-08-06 20:24:11"
+            "time": "2016-08-06T20:24:11+00:00"
         },
         {
             "name": "psr/log",
@@ -2198,7 +2012,7 @@
                 "psr",
                 "psr-3"
             ],
-            "time": "2016-10-10 12:19:37"
+            "time": "2016-10-10T12:19:37+00:00"
         },
         {
             "name": "sensio/distribution-bundle",
@@ -2250,20 +2064,20 @@
                 "configuration",
                 "distribution"
             ],
-            "time": "2017-01-10 14:58:45"
+            "time": "2017-01-10T14:58:45+00:00"
         },
         {
             "name": "sensio/framework-extra-bundle",
-            "version": "v3.0.19",
+            "version": "v3.0.20",
             "source": {
                 "type": "git",
                 "url": "https://github.com/sensiolabs/SensioFrameworkExtraBundle.git",
-                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784"
+                "reference": "0d8fa024edb41f9228daf78f96552f9d9079854e"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/d57c2f297d17ee82baf8cae0b16dae34a9378784",
-                "reference": "d57c2f297d17ee82baf8cae0b16dae34a9378784",
+                "url": "https://api.github.com/repos/sensiolabs/SensioFrameworkExtraBundle/zipball/0d8fa024edb41f9228daf78f96552f9d9079854e",
+                "reference": "0d8fa024edb41f9228daf78f96552f9d9079854e",
                 "shasum": ""
             },
             "require": {
@@ -2318,7 +2132,7 @@
                 "annotations",
                 "controllers"
             ],
-            "time": "2017-01-10 19:42:56"
+            "time": "2017-02-01T15:59:54+00:00"
         },
         {
             "name": "sensiolabs/security-checker",
@@ -2362,7 +2176,7 @@
                 }
             ],
             "description": "A security checker for your composer.lock",
-            "time": "2016-09-23 18:09:57"
+            "time": "2016-09-23T18:09:57+00:00"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -2416,7 +2230,7 @@
                 "mail",
                 "mailer"
             ],
-            "time": "2016-12-29 10:02:40"
+            "time": "2016-12-29T10:02:40+00:00"
         },
         {
             "name": "symfony/assetic-bundle",
@@ -2486,7 +2300,7 @@
                 "compression",
                 "minification"
             ],
-            "time": "2016-11-22 11:42:57"
+            "time": "2016-11-22T11:42:57+00:00"
         },
         {
             "name": "symfony/monolog-bundle",
@@ -2546,7 +2360,7 @@
                 "log",
                 "logging"
             ],
-            "time": "2017-01-02 19:04:26"
+            "time": "2017-01-02T19:04:26+00:00"
         },
         {
             "name": "symfony/polyfill-apcu",
@@ -2599,7 +2413,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-intl-icu",
@@ -2657,7 +2471,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-mbstring",
@@ -2716,7 +2530,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-php56",
@@ -2772,7 +2586,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-php70",
@@ -2831,7 +2645,7 @@
                 "portable",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/polyfill-util",
@@ -2883,7 +2697,7 @@
                 "polyfill",
                 "shim"
             ],
-            "time": "2016-11-14 01:06:16"
+            "time": "2016-11-14T01:06:16+00:00"
         },
         {
             "name": "symfony/swiftmailer-bundle",
@@ -2942,7 +2756,7 @@
             ],
             "description": "Symfony SwiftmailerBundle",
             "homepage": "http://symfony.com",
-            "time": "2016-12-20 04:44:33"
+            "time": "2016-12-20T04:44:33+00:00"
         },
         {
             "name": "symfony/symfony",
@@ -3084,7 +2898,7 @@
             "keywords": [
                 "framework"
             ],
-            "time": "2017-01-12 21:36:55"
+            "time": "2017-01-12T21:36:55+00:00"
         },
         {
             "name": "twig/twig",
@@ -3146,7 +2960,7 @@
             "keywords": [
                 "templating"
             ],
-            "time": "2017-01-11 19:39:01"
+            "time": "2017-01-11T19:39:01+00:00"
         }
     ],
     "packages-dev": [
@@ -3207,7 +3021,7 @@
             "keywords": [
                 "database"
             ],
-            "time": "2016-09-20 10:07:57"
+            "time": "2016-09-20T10:07:57+00:00"
         },
         {
             "name": "doctrine/doctrine-fixtures-bundle",
@@ -3264,7 +3078,7 @@
                 "Fixture",
                 "persistence"
             ],
-            "time": "2015-11-04 21:23:23"
+            "time": "2015-11-04T21:23:23+00:00"
         },
         {
             "name": "sensio/generator-bundle",
@@ -3316,7 +3130,7 @@
                 }
             ],
             "description": "This bundle generates code for you",
-            "time": "2016-12-05 16:01:19"
+            "time": "2016-12-05T16:01:19+00:00"
         },
         {
             "name": "symfony/phpunit-bridge",
@@ -3374,10 +3188,17 @@
             ],
             "description": "Symfony PHPUnit Bridge",
             "homepage": "https://symfony.com",
-            "time": "2017-01-06 17:19:17"
+            "time": "2017-01-06T17:19:17+00:00"
         }
     ],
-    "aliases": [],
+    "aliases": [
+        {
+            "alias": "1.1",
+            "alias_normalized": "1.1.0.0",
+            "version": "dev-development",
+            "package": "bazookas/generator-bundle"
+        }
+    ],
     "minimum-stability": "stable",
     "stability-flags": {
         "friendsofsymfony/user-bundle": 20,
