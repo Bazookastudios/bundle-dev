@@ -63,10 +63,11 @@ doctrine:
         user:     "%database_user%"
         password: "%database_password%"
         charset: utf8mb4
-#        charset:  UTF8
-        default_table_options:
-            charset: utf8mb4
-            collate: utf8mb4_unicode_ci
+        charset:  UTF8
+        #this causes issues with fos user bundle
+#        default_table_options:
+#            charset: utf8mb4
+#            collate: utf8mb4_unicode_ci
         types:
           datetime: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
         # types:
