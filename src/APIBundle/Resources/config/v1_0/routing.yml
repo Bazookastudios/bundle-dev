@@ -1,0 +1,14 @@
+api_v1_token:
+    path: /token
+    methods: [POST]
+    defaults:
+      _controller: APIBundle:v1_0\Auth:token
+
+api_v1_upload:
+  path: files/upload/{_hash}/{_index}
+  defaults:
+    _controller: BazookasAPIFrameworkBundle:FileUpload:upload
+    _locale: %locale%
+  requirements:
+    _locale: %requiredlocales%
+  methods: [POST]

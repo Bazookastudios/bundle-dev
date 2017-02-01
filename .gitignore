@@ -4,10 +4,7 @@
 !app/cache/.gitkeep
 !app/logs/.gitkeep
 
-# Email spool folder
-/app/spool/*
-
-# Cache, session files and logs (Symfony3)
+# Cache and logs (Symfony3)
 /var/cache/*
 /var/logs/*
 /var/sessions/*
@@ -26,13 +23,12 @@
 !bin/console
 !bin/symfony_requirements
 /vendor/
+/node_modules/
+/app/Resources/vendor_bower
+npm-debug.log
 
-# Assets and user uploads
-/web/bundles/
-/web/uploads/
-
-# Assets managed by Bower
-/web/assets/vendor/
+# every subfolder in /web
+/web/*/
 
 # PHPUnit
 /app/phpunit.xml
@@ -44,5 +40,16 @@
 # Composer PHAR
 /composer.phar
 
-# Backup entities generated with doctrine:generate:entities command
-*/Entity/*~
+# caches and random files
+.idea
+.buildpath
+.project
+.settings/
+*.sublime-project
+*.sublime-workspace
+.sass-cache/
+*.orig
+/coverage/
+
+# OS specifics
+.DS_Store

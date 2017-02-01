@@ -1,0 +1,94 @@
+# To get started with security, check out the documentation:
+# http://symfony.com/doc/current/book/security.html
+security:
+    encoders:
+        FOS\UserBundle\Model\UserInterface:
+          algorithm: bcrypt
+          cost: 13
+        Bazookas\EntityBundle\Entity\Base\BaseUser:
+          algorithm: bcrypt
+          cost: 13
+
+    role_hierarchy:
+        ROLE_SUPER_ADMIN:
+          #inherit roles
+          - ROLE_ADMIN
+          #extra roles specific to this role
+          - ROLE_ADD_GROUP
+          - ROLE_ADD_USER
+          - ROLE_MEDIA_ADMIN
+          - ROLE_CRON_ADMIN
+        ROLE_ADMIN:
+          #inherit roles
+          #
+          #extra roles specific to this role
+          - ROLE_CMS_USER
+          - ROLE_ADD_USER
+
+    # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
+    providers:
+        fos_userbundle:
+            #to authenticate the user using his username use this provider
+            id: fos_user.user_provider.username
+            #to authenticate the user using his email use this provider
+            #id: fos_user.user_provider.username_email
+        base_user_provider:
+            id: APIFrameworkBundle.user_provider.BaseUserProvider
+
+    firewalls:
+        api_token:
+            pattern:    ^/api/v1.0/token
+            security:   false
+        oauth_token:
+            pattern:    ^/api/oauth/v2/token
+            security:   false
+        insecure:
+            pattern:  ^/(media|cron|(api/doc))
+            security: false
+        api:
+            pattern:    ^/api
+            fos_oauth:  true
+            stateless:  true
+            provider: base_user_provider
+        dev:
+            pattern:  ^/(_(profiler|wdt)|css|images|js)/
+            security: false
+        admin:
+            # NOTE put (/[^/]*)? before matching pattern to allow locales in admin paths
+            pattern: (/[^/]*)?/admin
+            form_login:
+                login_path: fos_user_security_login
+                check_path: fos_user_security_check
+                provider: fos_userbundle
+                default_target_path: bazookas_admin_homepage
+            logout:
+              path:   fos_user_security_logout
+              target: bazookas_admin_homepage
+            anonymous:    true
+            remember_me:
+                secret: "%secret%"
+                lifetime: 604800
+                path:     /
+                domain:   ~
+            provider: fos_userbundle
+
+        main:
+            anonymous: ~
+
+    # any login or register paths can be visited anonymously
+    # all other admin paths should be secured
+    access_control:
+      #for a cms only project, use the settings below:
+        # - { path: ^\/(%requiredlocales%)+\/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^\/(%requiredlocales%)+\/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^\/(%requiredlocales%)+\/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^\/(%requiredlocales%)+\?/$, role: [ROLE_CMS_USER, IS_AUTHENTICATED_ANONYMOUSLY] }
+        # - { path: ^\/(%requiredlocales%)+\/, role: ROLE_CMS_USER }
+        # - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
+
+      # #for a cms + website project, use the settings below:
+        - { path: ^\/(%requiredlocales%)+\/admin\/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(%requiredlocales%)+\/admin\/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(%requiredlocales%)+\/admin\/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(%requiredlocales%)+\/admin((\/)*.)*$, role: ROLE_CMS_USER }
+        - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }

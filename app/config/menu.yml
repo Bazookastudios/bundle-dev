@@ -1,0 +1,11 @@
+# bazookas admin config
+bazookas_admin:
+  menu:
+    main:
+      example:
+        type: link
+        label: example
+        route: demo_example_admin
+        icon: ti-info
+        roles: [ROLE_SUPER_ADMIN]
+        description: something

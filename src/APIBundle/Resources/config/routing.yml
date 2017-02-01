@@ -1,0 +1,9 @@
+#multi-language api:
+#api_v1:
+#    resource: "@APIBundle/Resources/config/v1_0/routing.yml"
+#    prefix:   /v1.0/{_locale}
+
+#single language api:
+api_v1:
+  resource: "@APIBundle/Resources/config/v1_0/routing.yml"
+  prefix:   /v1.0

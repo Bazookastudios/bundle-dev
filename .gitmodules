@@ -1,0 +1,20 @@
+[submodule "CronBundle"]
+	path = src/Bazookas/CronBundle
+	url = https://github.com/Bazookastudios/BazookasCronBundle.git
+	branch = master
+[submodule "AdminBundle"]
+	path = src/Bazookas/AdminBundle
+	url = https://github.com/Bazookastudios/BazookasAdminBundle.git
+	branch = master
+[submodule "APIFrameworkBundle"]
+	path = src/Bazookas/APIFrameworkBundle
+	url = https://github.com/Bazookastudios/BazookasAPIFrameworkBundle.git
+	branch = master
+[submodule "CommonBundle"]
+	path = src/Bazookas/CommonBundle
+	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
+	branch = master
+[submodule "MediaBundle"]
+	path = src/Bazookas/MediaBundle
+	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
+	branch = master

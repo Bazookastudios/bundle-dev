@@ -1,0 +1,25 @@
+{
+  "name": "bazookas_symfony_starter",
+  "version": "1.0.0",
+  "description": "## Project info",
+  "directories": {
+    "test": "tests"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "gulpinator": "^2.0.4"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Bazookastudios/bazookas_symfony_starter.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Bazookastudios/bazookas_symfony_starter/issues"
+  },
+  "homepage": "https://github.com/Bazookastudios/bazookas_symfony_starter#readme"
+}
