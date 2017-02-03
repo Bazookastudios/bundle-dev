@@ -22,6 +22,15 @@ class ExampleAdminController extends ListBaseController
     $this->config->addField('title', 'admin.entities.example.fields.title');
 
     $this->config->setForm('DemoBundle\Form\ExampleAdminType');
+
+    //Add filters
+    $this->config->showFilter = true;
+    $this->config->setMaintainFilterState(true);
+    $this->config
+      ->addBasicBooleanFilter('published')
+      ->addBasicTextFilter('title')
+    ;
+
   }
 
   protected function checkAccess($_action, $_id) {
