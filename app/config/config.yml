@@ -38,7 +38,9 @@ framework:
         save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
     fragments:       ~
     http_method_override: true
-    assets: ~
+    assets:
+      version: 1.3.7
+      version_format: '%%s?v=%%s'
 
 # Twig Configuration
 twig:
