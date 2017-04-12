@@ -35,14 +35,14 @@
         "endroid/twitter": "^1.2",
         "gomoob/php-pushwoosh": "^1.6",
         "nelmio/api-doc-bundle": "^2.13",
-        "bazookas/integrations-bundle": "^1.1",
         "bazookas/generator-bundle": "dev-development as 1.1",
         "symfony/proxy-manager-bridge": "^3.2"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
         "symfony/phpunit-bridge": "^3.0",
-        "doctrine/doctrine-fixtures-bundle": "^2.3"
+        "doctrine/doctrine-fixtures-bundle": "^2.3",
+        "liip/functional-test-bundle": "^1.7"
     },
     "repositories": [
       {

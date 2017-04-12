@@ -51,9 +51,14 @@ class AppKernel extends Kernel
       $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
       $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
 
-      $bundles[] = new Bazookas\GeneratorBundle\BazookasGeneratorBundle();
+//      $bundles[] = new Bazookas\GeneratorBundle\BazookasGeneratorBundle();
 
       $bundles[] = new DemoBundle\DemoBundle();
+    }
+
+    //Enable testing bundles
+    if ('test' === $this->getEnvironment()) {
+      $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
     }
 
     return $bundles;
