@@ -17,8 +17,7 @@ class Example extends BaseEntity {
 
   public function __construct() {
     parent::__construct();
-
-    $this->multipleImage = new ArrayCollection();
+    $this->multipleImages = new ArrayCollection();
   }
 
   /**
@@ -44,7 +43,6 @@ class Example extends BaseEntity {
    * @ORM\ManyToMany(targetEntity="Bazookas\MediaBundle\Entity\Image")
    */
   private $multipleImages;
-
 
   /**
    * Set title
