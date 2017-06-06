@@ -25,6 +25,7 @@ security:
           - ROLE_CMS_USER
           - ROLE_ADD_USER
           - ROLE_COPY_MANAGER
+          - ROLE_MEDIA_ADMIN
 
     # http://symfony.com/doc/current/book/security.html#where-do-users-come-from-user-providers
     providers:
