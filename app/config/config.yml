@@ -111,7 +111,7 @@ fos_user:
         group_class: Bazookas\AdminBundle\Entity\CMSUserGroup
     from_email:
         address: noreply@bazookas.be
-        sender_name: Mobile Fans
+        sender_name: noreply@bazookas.be
     resetting:
         token_ttl: 86400
         email:
