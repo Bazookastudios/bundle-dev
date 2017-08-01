@@ -1,0 +1,15 @@
+admin:
+  entities:
+    example:
+      namePlural: Voorbeelden
+      menuLabel: Voorbeeld
+      addLabel: Voorbeeld toevoegen
+      editLabel: Voorbeeld aanpassen
+      fields:
+        published: Gepubliceerd
+        title: Titel
+        singleImage: Alleenstaande afbeelding
+        multipleImages: Reeks afbeeldingen
+  notifications:
+    newDemoItem: Geweldig! Een nieuw demo item is toegevoegd. Veel plezier ermee.
+    updatedDemoItem: Een voorbeeld werd aangepast.

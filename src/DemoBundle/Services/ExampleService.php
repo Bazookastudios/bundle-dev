@@ -7,6 +7,7 @@ use Bazookas\APIFrameworkBundle\Services\Data\Base\BaseDataService;
 use Bazookas\APIFrameworkBundle\Services\Upload\APIFileUploadService;
 use Bazookas\APIFrameworkBundle\Services\Upload\FileUploadService;
 use Bazookas\APIFrameworkBundle\Util\APIFileUploadCallback;
+use DemoBundle\Entity\Example;
 use DemoBundle\Repository\ExampleRepository;
 use Doctrine\ORM\EntityManager;
 use Symfony\Component\HttpFoundation\ParameterBag;
@@ -28,8 +29,8 @@ class ExampleService extends BaseDataService {
    */
   private $entityManager;
 
-  public function __construct(ExampleRepository $repository, APIFileUploadService $uploadService, EntityManager $entityManager) {
-    $this->setRepository($repository);
+  public function __construct(APIFileUploadService $uploadService, EntityManager $entityManager) {
+    $this->setRepository($entityManager->getRepository(Example::class));
     $this->uploadService = $uploadService;
     $this->entityManager = $entityManager;
   }

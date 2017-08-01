@@ -12,6 +12,13 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 
   protected function createMenu(Request $request)
   {
+    $this->elements[] = (new MenuActionElement([], [
+      'label' => 'admin.entities.example.menuLabel',
+      'route' => 'demo_example_admin',
+      'iconClass' => 'ti-info',
+      'roles' => [Roles::ROLE_SUPER_ADMIN],
+    ]));
+
     parent::createMenu($request);
 
     $this->addApiFrameworkBundleMenuItems();
@@ -26,6 +33,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 //      'roles' => [Roles::ROLE_SUPER_ADMIN],
 //      'iconClass' => 'ti ti-mobile'
 //    ]);
+
 
     // add the copy item
     $this->elements[] = (new MenuActionElement([], [
