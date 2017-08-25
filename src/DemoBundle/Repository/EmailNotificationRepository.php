@@ -1,12 +1,8 @@
 <?php
 namespace DemoBundle\Repository;
-use Bazookas\AdminBundle\Repository\Interfaces\Notification\EmailNotificationRepositoryInterface;
-use Bazookas\AdminBundle\Repository\Traits\Notification\EmailNotificationRepositoryTrait;
-use DemoBundle\Repository\Base\BaseNotificationRepository;
+use Bazookas\AdminBundle\Repository\Base\BaseEmailNotificationRepository;
 
-class EmailNotificationRepository extends BaseNotificationRepository implements EmailNotificationRepositoryInterface
+class EmailNotificationRepository extends BaseEmailNotificationRepository
 {
-
-  use EmailNotificationRepositoryTrait;
 
 }

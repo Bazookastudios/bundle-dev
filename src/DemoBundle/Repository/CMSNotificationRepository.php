@@ -1,12 +1,9 @@
 <?php
 namespace DemoBundle\Repository;
 
-use Bazookas\AdminBundle\Repository\Interfaces\Notification\CMSNotificationRepositoryInterface;
-use Bazookas\AdminBundle\Repository\Traits\Notification\CMSNotificationRepositoryTrait;
-use DemoBundle\Repository\Base\BaseNotificationRepository;
+use Bazookas\AdminBundle\Repository\Base\BaseCMSNotificationRepository;
 
-class CMSNotificationRepository extends BaseNotificationRepository implements CMSNotificationRepositoryInterface {
+class CMSNotificationRepository extends BaseCMSNotificationRepository {
 
-  use CMSNotificationRepositoryTrait;
 
 }
