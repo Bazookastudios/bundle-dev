@@ -36,7 +36,10 @@
         "gomoob/php-pushwoosh": "^1.6",
         "nelmio/api-doc-bundle": "^2.13",
         "bazookas/generator-bundle": "dev-development as 1.1",
-        "symfony/proxy-manager-bridge": "^3.2"
+        "symfony/proxy-manager-bridge": "^3.2",
+        "symfony/web-server-bundle": "^3.3",
+        "ocramius/proxy-manager": "~2.0.0",
+        "zendframework/zend-code": "~3.1.0"
     },
     "require-dev": {
         "sensio/generator-bundle": "^3.0",
