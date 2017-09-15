@@ -36,6 +36,7 @@ class AppKernel extends Kernel
       new FOS\UserBundle\FOSUserBundle(),
       new Liip\ImagineBundle\LiipImagineBundle(),
       new Bazookas\CronBundle\BazookasCronBundle(),
+      new Bazookas\ExportBundle\BazookasExportBundle(),
 
       // -------------------------------
       // Project bundles
