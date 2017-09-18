@@ -7,6 +7,7 @@ use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
 use Bazookas\ExportBundle\Entity\GenericFileEntity;
+use Bazookas\ExportBundle\Exception\ImportException;
 use Bazookas\ExportBundle\Form\ImportFileForm;
 use DemoBundle\Entity\Example;
 use DemoBundle\Form\ExampleAdminType;
@@ -47,14 +48,14 @@ class ExampleAdminController extends BaseAdminListController
     $builder->setForm($form);
 
     if ($form->isValid() && $form->isSubmitted()) {
-      $service = $this->get('WebsiteBundle.services.ImportService');
+      $service = $this->get('demo.example.import_service');
       $entity = $service->handleUpload($entity);
       try {
         $service->process($entity, true, true);
 
         $translator = $this->get('translator');
 
-        $this->addFlash('success', $translator->trans('admin.entities.foodMatrix.onImported', [
+        $this->addFlash('success', $translator->trans('admin.entities.example.onImported', [
           '%filename%' => $entity->getOriginalFileName()
         ], 'admin'));
       } catch(ImportException $e) {
@@ -64,7 +65,7 @@ class ExampleAdminController extends BaseAdminListController
 
     //Add the import button
     $importPageAction = new ImportPageActionElement([], [
-      'label' => 'admin.entities.foodItem.import',
+      'label' => 'admin.entities.example.import',
       'action' => self::ACTION_LIST,
       'route' => $request->get('_route'),
       'attr' => [

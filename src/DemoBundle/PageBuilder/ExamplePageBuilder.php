@@ -54,7 +54,7 @@ class ExamplePageBuilder extends ListPageBuilder
   {
     $formElement = new FormPanelElement([], [
       'form' => $this->getForm()->createView(),
-      'label' => 'admin.entities.foodMatrix.addLabel',
+      'label' => 'admin.entities.example.addLabel',
     ]);
 
     $form = $this->getForm();
