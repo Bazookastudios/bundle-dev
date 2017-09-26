@@ -10,6 +10,12 @@ services:
     tags:
       - { name: APIFrameworkBundle.Data.DataService }
 
+  demo.example.import_service:
+    class: DemoBundle\Services\ExampleImportService
+    arguments:
+      - "@doctrine.orm.entity_manager"
+      - '%kernel.root_dir%/../'
+
   admin.notifications.exampleNotificationSubscriber:
     class: DemoBundle\EventListener\ExampleNotificationSubscriber
     arguments:
