@@ -6,10 +6,6 @@
 	path = src/Bazookas/AdminBundle
 	url = https://github.com/Bazookastudios/BazookasAdminBundle.git
 	branch = master
-[submodule "APIFrameworkBundle"]
-	path = src/Bazookas/APIFrameworkBundle
-	url = https://github.com/Bazookastudios/BazookasAPIFrameworkBundle.git
-	branch = master
 [submodule "CommonBundle"]
 	path = src/Bazookas/CommonBundle
 	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
