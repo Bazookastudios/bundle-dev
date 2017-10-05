@@ -16,7 +16,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
  */
 class ExampleRepository extends BaseRepository implements ListRepositoryInterface
 {
-  public function getEntityClass()
+  public function getEntityClass(): string
   {
     return Example::class;
   }

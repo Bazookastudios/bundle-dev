@@ -10,7 +10,10 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminMenuExtension extends BaseAdminMenuExtension
 {
 
-  protected function createMenu(Request $request)
+  /**
+   * @param Request $request
+   */
+  protected function createMenu(Request $request): void
   {
     $this->elements[] = (new MenuActionElement([], [
       'label' => 'admin.entities.example.menuLabel',

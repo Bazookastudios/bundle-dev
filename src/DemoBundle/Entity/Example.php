@@ -32,17 +32,17 @@ class Example extends BaseEntity {
    */
   private $published = false;
 
-  /**
-   * @var Image
-   * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Image")
-   */
-  private $singleImage;
-
-  /**
-   * @var Image
-   * @ORM\ManyToMany(targetEntity="Bazookas\MediaBundle\Entity\Image")
-   */
-  private $multipleImages;
+//  /**
+//   * @var Image
+//   * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Image")
+//   */
+//  private $singleImage;
+//
+//  /**
+//   * @var Image
+//   * @ORM\ManyToMany(targetEntity="Bazookas\MediaBundle\Entity\Image")
+//   */
+//  private $multipleImages;
 
   /**
    * Set title

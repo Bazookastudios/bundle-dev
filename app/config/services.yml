@@ -19,6 +19,5 @@ services:
     class: DemoBundle\Twig\AdminMenuExtension
     arguments:
       - "%kernel.bundles%"
-      - "%bazookas_admin.menu%"
     tags:
       - { name: twig.extension }

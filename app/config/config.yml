@@ -2,9 +2,8 @@ imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@BazookasAdminBundle/Resources/config/config.yml" }
-    - { resource: "@BazookasMediaBundle/Resources/config/menu.yml" }
-    - { resource: "@BazookasCronBundle/Resources/config/menu.yml" }
+#    - { resource: "@BazookasMediaBundle/Resources/config/menu.yml" }
+#    - { resource: "@BazookasCronBundle/Resources/config/menu.yml" }
     - { resource: "@DemoBundle/Resources/config/config.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
@@ -150,29 +149,29 @@ fos_oauth_server:
             refresh_token_lifetime: 1209600  # 14 days
 
 # Bazookas media bundle configuration
-bazookas_media:
-    settings:
-        root_directory: "%root_directory%"
-        uploads_root_directory: "%uploads_root_directory%"
-        baseUrl: "%baseUrl%"
-    video_providers:
-    default_folders:
-        appUsers: APP_USER
+#bazookas_media:
+#    settings:
+#        root_directory: "%root_directory%"
+#        uploads_root_directory: "%uploads_root_directory%"
+#        baseUrl: "%baseUrl%"
+#    video_providers:
+#    default_folders:
+#        appUsers: APP_USER
 
 # bazookas api framework configuration
-bazookas_api_framework:
-  file_upload:
-    settings:
-      # probably always equal to media uploads root dir, but you never know, it's a strange world
-      root_directory: "%root_directory%"
-      uploads_root_directory: "%uploads_root_directory%"
-      baseUrl: "%baseUrl%"
-      uploadRoute: api_v1_upload
-  app_copy:
-    entity: DemoBundle\Entity\AppCopy
-    # required when working with the admin bundle
-    details_entity: DemoBundle\Entity\AppCopyDetail
-    # optionally provide API specific language constraint (defaults to %requiredlocales%).
-    # allowed_locales: nl|fr
+#bazookas_api_framework:
+#  file_upload:
+#    settings:
+#      # probably always equal to media uploads root dir, but you never know, it's a strange world
+#      root_directory: "%root_directory%"
+#      uploads_root_directory: "%uploads_root_directory%"
+#      baseUrl: "%baseUrl%"
+#      uploadRoute: api_v1_upload
+#  app_copy:
+#    entity: DemoBundle\Entity\AppCopy
+#    # required when working with the admin bundle
+#    details_entity: DemoBundle\Entity\AppCopyDetail
+#    # optionally provide API specific language constraint (defaults to %requiredlocales%).
+#    # allowed_locales: nl|fr
 
 nelmio_api_doc: ~

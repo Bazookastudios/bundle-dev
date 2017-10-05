@@ -39,25 +39,25 @@ bazookas_admin:
     requirements:
         _locale: "%requiredlocales%"
 
-bazookas_cron:
-    resource: "@BazookasCronBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/admin
-    defaults:
-        _locale: "%locale%"
-    requirements:
-        _locale: "%requiredlocales%"
+#bazookas_cron:
+#    resource: "@BazookasCronBundle/Resources/config/routing.yml"
+#    prefix:   /{_locale}/admin
+#    defaults:
+#        _locale: "%locale%"
+#    requirements:
+#        _locale: "%requiredlocales%"
+#
+#bazookas_media:
+#    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
+#    prefix:   /{_locale}/admin
+#    defaults:
+#        _locale: "%locale%"
+#    requirements:
+#        _locale: "%requiredlocales%"
 
-bazookas_media:
-    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/admin
-    defaults:
-        _locale: "%locale%"
-    requirements:
-        _locale: "%requiredlocales%"
-
-api_framework:
-    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
-    prefix:   /
+#api_framework:
+#    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
+#    prefix:   /
 
 # ---------------------------
 # Custom bundles last
@@ -65,6 +65,6 @@ website:
     resource: "@WebsiteBundle/Resources/config/routing.yml"
     prefix:   /
 
-api:
-    resource: "@APIBundle/Resources/config/routing.yml"
-    prefix:   /api
+#api:
+#    resource: "@APIBundle/Resources/config/routing.yml"
+#    prefix:   /api

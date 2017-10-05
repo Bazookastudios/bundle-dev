@@ -21,27 +21,27 @@ class ExampleAdminType extends AbstractType
         'label' => 'admin.entities.example.fields.published')
       )
       ->add('title', null, array('label' => 'admin.entities.example.fields.title'))
-      ->add('singleImage', EntityPickerType::class, array(
-        'label' => 'admin.entities.example.fields.singleImage',
-        'class' => Image::class,
-        'display_field' => 'url',
-        'display_type' => 'image',
-        'picker_route' => array(
-          'route' => 'bazookas_media_image_admin',
-        ),
-      ))
-      ->add('multipleImages', NestedFormType::class, array(
-        'label' => 'admin.entities.example.fields.multipleImages',
-        'entry_type' => EntityPickerType::class,
-        'entry_options' => array(
-          'class' => Image::class,
-          'display_field' => 'url',
-          'display_type' => 'image',
-          'picker_route' => array(
-            'route' => 'bazookas_media_image_admin',
-          ),
-        )
-      ))
+//      ->add('singleImage', EntityPickerType::class, array(
+//        'label' => 'admin.entities.example.fields.singleImage',
+//        'class' => Image::class,
+//        'display_field' => 'url',
+//        'display_type' => 'image',
+//        'picker_route' => array(
+//          'route' => 'bazookas_media_image_admin',
+//        ),
+//      ))
+//      ->add('multipleImages', NestedFormType::class, array(
+//        'label' => 'admin.entities.example.fields.multipleImages',
+//        'entry_type' => EntityPickerType::class,
+//        'entry_options' => array(
+//          'class' => Image::class,
+//          'display_field' => 'url',
+//          'display_type' => 'image',
+//          'picker_route' => array(
+//            'route' => 'bazookas_media_image_admin',
+//          ),
+//        )
+//      ))
     ;
   }
 

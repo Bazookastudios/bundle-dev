@@ -37,11 +37,11 @@ class ExamplePageBuilder extends ListPageBuilder
   /**
    * @inheritDoc
    */
-  public function buildPage(Request $request) {
+  public function buildPage(Request $request): void {
     //Add a header element
     $this->elements[] = $this->generateHeaderElement();
 
-    $this->elements[] = $this->buildImportForm();
+//    $this->elements[] = $this->buildImportForm();
 
     //Add the list table
     $this->elements[] = $this->buildListTable($request);
