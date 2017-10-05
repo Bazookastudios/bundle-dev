@@ -6,7 +6,3 @@
 	path = src/Bazookas/CommonBundle
 	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
 	branch = master
-[submodule "MediaBundle"]
-	path = src/Bazookas/MediaBundle
-	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
-	branch = master
