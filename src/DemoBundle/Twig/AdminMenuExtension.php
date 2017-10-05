@@ -4,7 +4,7 @@ namespace DemoBundle\Twig;
 use Bazookas\AdminBundle\AdminElements\Containers\MenuContainer;
 use Bazookas\AdminBundle\AdminElements\Elements\Actions\MenuActions\MenuActionElement;
 use Bazookas\AdminBundle\Twig\Base\BaseAdminMenuExtension;
-use Bazookas\CommonBundle\Security\Roles;
+use DemoBundle\Security\Roles;
 use Symfony\Component\HttpFoundation\Request;
 
 class AdminMenuExtension extends BaseAdminMenuExtension
@@ -16,7 +16,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
       'label' => 'admin.entities.example.menuLabel',
       'route' => 'demo_example_admin',
       'iconClass' => 'ti-info',
-      'roles' => [Roles::ROLE_SUPER_ADMIN],
+      'roles' => [Roles::ROLE_EXAMPLE_ADMIN],
     ]));
 
     parent::createMenu($request);

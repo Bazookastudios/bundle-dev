@@ -5,6 +5,11 @@ admin:
       menuLabel: Voorbeeld
       addLabel: Voorbeeld toevoegen
       editLabel: Voorbeeld aanpassen
+      tooltip:
+        publishedTitle: Gepuliceerd
+        publishedContent: Of iets al dan niet gepubliceerd is
+        titleTitle: Titel
+        titleContent: Een mooie duidelijke titel, alsjeblieft
       fields:
         published: Gepubliceerd
         title: Titel

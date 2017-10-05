@@ -6,6 +6,7 @@ use Bazookas\AdminBundle\AdminElements\Elements\Actions\PageActions\ImportPageAc
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
+use DemoBundle\Security\Roles;
 use Bazookas\ExportBundle\Entity\GenericFileEntity;
 use Bazookas\ExportBundle\Exception\ImportException;
 use Bazookas\ExportBundle\Form\ImportFileForm;
@@ -83,7 +84,7 @@ class ExampleAdminController extends BaseAdminListController
   }
 
   protected function hasAccess($action) {
-    return parent::hasAccess($action) && $this->isGranted('ROLE_SUPER_ADMIN');
+    return parent::hasAccess($action) && $this->isGranted(Roles::ROLE_EXAMPLE_ADMIN);
   }
 
   /**

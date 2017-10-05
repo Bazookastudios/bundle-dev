@@ -4,6 +4,7 @@ namespace DemoBundle\Entity;
 
 use Bazookas\CommonBundle\Entity\Base\BaseEntity;
 use Bazookas\MediaBundle\Entity\Image;
+use DemoBundle\Security\Roles;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -134,6 +135,10 @@ class Example extends BaseEntity {
     return $this;
   }
 
+  public function getRoleRequiredForView()
+  {
+    return Roles::ROLE_EXAMPLE_ADMIN;
+  }
 
 }
 
