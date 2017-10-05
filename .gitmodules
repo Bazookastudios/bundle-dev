@@ -1,7 +1,3 @@
-[submodule "CronBundle"]
-	path = src/Bazookas/CronBundle
-	url = https://github.com/Bazookastudios/BazookasCronBundle.git
-	branch = master
 [submodule "AdminBundle"]
 	path = src/Bazookas/AdminBundle
 	url = https://github.com/Bazookastudios/BazookasAdminBundle.git
