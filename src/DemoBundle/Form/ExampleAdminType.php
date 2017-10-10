@@ -2,6 +2,7 @@
 
 namespace DemoBundle\Form;
 
+use Bazookas\AdminBundle\Form\Extension\ToolTipExtension;
 use Bazookas\AdminBundle\Form\Type\EntityPickerType;
 use Bazookas\AdminBundle\Form\Type\NestedFormType;
 use Bazookas\MediaBundle\Entity\Image;
@@ -23,18 +24,16 @@ class ExampleAdminType extends AbstractType
 
         'tooltip_title' => 'admin.entities.example.tooltip.publishedTitle',
         'tooltip_content' => 'admin.entities.example.tooltip.publishedContent',
-        'tooltip_type' => 'popover',
-        'tooltip_placement' => 'right',
-        'tooltip_trigger' => 'hover',
+        'tooltip_type' => ToolTipExtension::TYPE_POP_OVER,
+        'tooltip_placement' => ToolTipExtension::PLACEMENT_TOP,
       ])
       ->add('title', null, [
         'label' => 'admin.entities.example.fields.title',
 
         'tooltip_title' => 'admin.entities.example.tooltip.titleTitle',
         'tooltip_content' => 'admin.entities.example.tooltip.titleContent',
-        'tooltip_type' => 'popover',
-        'tooltip_placement' => 'right',
-        'tooltip_trigger' => 'hover',
+        'tooltip_type' => ToolTipExtension::TYPE_POP_OVER,
+        'tooltip_trigger' => ToolTipExtension::TRIGGER_CLICK,
       ])
       ->add('singleImage', EntityPickerType::class, [
         'label' => 'admin.entities.example.fields.singleImage',
