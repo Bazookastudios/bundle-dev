@@ -6,3 +6,7 @@
 	path = src/Bazookas/CommonBundle
 	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
 	branch = master
+[submodule "CronBundle"]
+	path = src/Bazookas/CronBundle
+	url = https://github.com/Bazookastudios/BazookasCronBundle.git
+	branch = master
