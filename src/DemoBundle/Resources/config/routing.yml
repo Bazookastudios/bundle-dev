@@ -12,6 +12,17 @@ bazookas_api_framework_app_copy_admin:
       _action: ~
       _id: ~
 
+bazookas_admin_homepage:
+  path:     /{_locale}/admin/
+  defaults:
+    _controller: DemoBundle:Dashboard:index
+    _action: ~
+    _id: ~
+    _locale: %locale%
+  requirements:
+    _locale: %requiredlocales%
+
+
 # API ROUTES
 demo_example_post:
   path: /api/{_locale}/examples
