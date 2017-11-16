@@ -9,6 +9,7 @@ use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
 //use Bazookas\ExportBundle\Entity\GenericFileEntity;
 //use Bazookas\ExportBundle\Exception\ImportException;
 //use Bazookas\ExportBundle\Form\ImportFileForm;
+use Bazookas\AdminBundle\Security\Roles;
 use DemoBundle\Entity\Example;
 use DemoBundle\Form\ExampleAdminType;
 use DemoBundle\PageBuilder\ExamplePageBuilder;
@@ -88,7 +89,15 @@ class ExampleAdminController extends BaseAdminListController
    * @throws \LogicException
    */
   protected function hasAccess(string $action): bool {
-    return parent::hasAccess($action) && $this->isGranted('ROLE_SUPER_ADMIN');
+    switch($action) {
+      case self::ACTION_LIST:
+      case self::ACTION_EDIT:
+      case self::ACTION_ADD:
+      case self::ACTION_REMOVE:
+        return Roles::ROLE_SUPER_ADMIN;
+      default:
+        return false;
+    }
   }
 
   /**
