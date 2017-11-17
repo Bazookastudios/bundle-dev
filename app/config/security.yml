@@ -73,7 +73,10 @@ security:
                 path:     /
                 domain:   ~
             provider: fos_userbundle
-
+            switch_user:
+                provider: ~
+                parameter: _switch_user
+                role: ROLE_ALLOWED_TO_SWITCH
         main:
             anonymous: ~
 
