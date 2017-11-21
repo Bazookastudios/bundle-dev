@@ -1,0 +1,6 @@
+{% set styles = [
+'/build/global.css',
+]|merge(styles|default([])) %}
+{% for style in styles %}
+  <link href="{{ absolute_url(asset(style)) }}" rel="stylesheet">
+{% endfor %}
