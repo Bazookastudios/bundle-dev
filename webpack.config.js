@@ -2,14 +2,16 @@
  * Created by axelverdruye on 21/11/2017.
  */
 // webpack.config.js
-var Encore = require('@symfony/webpack-encore');
-var FS = require("fs");
+let Encore = require('@symfony/webpack-encore');
+let FS = require("fs");
+
 //Project stuff
+let addedConfigs = {};
 const BOWER_ROOT = './vendor/bower/';
 const WEBSITE_ROOT = './src/WebsiteBundle/Resources/public/';
 
 Encore
-// directory where all compiled assets will be stored
+  // directory where all compiled assets will be stored
   .setOutputPath('web/build/')
 
   // what's the public path to this directory (relative to your project's document root dir)
@@ -25,58 +27,60 @@ Encore
   .addStyleEntry('global', WEBSITE_ROOT + 'css/main.scss')
 
   // allow sass/scss files to be processed
-  .enableSassLoader(function(sassOptions) {},{
+  .enableSassLoader(function(sassOptions) {
+    sassOptions.includePaths = [BOWER_ROOT];
+  },{
     resolveUrlLoader: false
   })
 
-  // allow legacy applications to use $/jQuery as a global variable
-  .autoProvidejQuery()
-
   .enableSourceMaps(!Encore.isProduction())
+
+  .autoProvidejQuery()
 
 // create hashed filenames (e.g. app.abc123.css)
 // .enableVersioning()
 ;
 
-let addConfigs = function () {
-  let filePath;
-  let composerJson = require('./composer.json');
-  composerJson = composerJson.require;
+function addBundleConfigs() {
+  // vendor folder takes precedence, as is custom with composer dependencies
+  findConfigs('./vendor/bazookas/');
+  findConfigs('./src/Bazookas/');
+}
 
-  let bazookasFolder = FS.readdirSync('./src/Bazookas/');
-  for (let folder in bazookasFolder) {
-    let fileName = null;
-    let filePath = null;
-    let gitModules = null;
+function findConfigs(bazookasFolder) {
+  let folders = FS.readdirSync(bazookasFolder);
 
-    if (FS.existsSync('./.gitmodules')) {
-      gitModules = FS.readFileSync('./.gitmodules', 'utf8');
+  for (let folder of folders) {
+    folder = bazookasFolder + folder;
+
+    addConfig(folder + '/composer.json', folder + '/encore.config.js');
+  }
+}
+
+function addConfig(composer, config) {
+  if (
+    FS.existsSync(composer)
+    &&
+    FS.existsSync(config)
+  ) {
+
+    // only add the config if it was not added before
+    // use the composer package name to check for duplicates
+    let composerJson = require(composer);
+    if (addedConfigs.hasOwnProperty(composerJson.name) === false) {
+      console.info(composerJson.name+':', 'adding ' + config);
+      require(config).mount(Encore);
+      addedConfigs[composerJson.name] = config;
     }
-
-    if (composerJson[bazookasFolder[folder]]) {
-      filePath = './vendor/' + bazookasFolder[folder] + '/webpack.config.js';
-    }
-
-    if (FS.existsSync('./src/Bazookas/' + bazookasFolder[folder] + '/encore.config.js')) {
-      fileName = bazookasFolder[folder];
-      filePath = './src/Bazookas/' + bazookasFolder[folder] + '/encore.config.js';
-
-    } else if (FS.existsSync('./vendor/' + bazookasFolder[folder] + '/encore.config.js')) {
-      fileName = bazookasFolder[folder];
-      filePath = './vendor/' + bazookasFolder[folder] + '/encore.config.js';
-    }
-
-    if (filePath) {
-      let moduleConfig = require(filePath);
-      moduleConfig.mount(Encore);
-      console.log('------------ ' + fileName + ' loaded ------------');
+    else {
+      console.warn(composerJson.name+':', 'already added ' + config + ' from ' + addedConfigs[composerJson.name]);
     }
   }
-};
+}
 
 // export the final configuration
 module.exports = function () {
-  addConfigs();
+  addBundleConfigs();
 
   let config = Encore.getWebpackConfig();
 

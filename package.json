@@ -9,10 +9,9 @@
   "devDependencies": {
     "@symfony/webpack-encore": "^0.16.0",
     "fs": "0.0.1-security",
-    "gulpinator": "^2.0.4",
+    "globby": "^7.1.1",
     "jquery": "^3.2.1",
     "node-sass": "^4.5.3",
-    "require-glob": "^3.2.0",
     "sass-loader": "^6.0.6"
   },
   "scripts": {
