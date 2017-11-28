@@ -1,13 +1,9 @@
-/**
- * Created by axelverdruye on 21/11/2017.
- */
 // webpack.config.js
 let Encore = require('@symfony/webpack-encore');
 let FS = require("fs");
 
 //Project stuff
 let addedConfigs = {};
-const BOWER_ROOT = './vendor/bower/';
 const WEBSITE_ROOT = './src/WebsiteBundle/Resources/public/';
 
 Encore
@@ -27,9 +23,7 @@ Encore
   .addStyleEntry('global', WEBSITE_ROOT + 'css/main.scss')
 
   // allow sass/scss files to be processed
-  .enableSassLoader(function(sassOptions) {
-    sassOptions.includePaths = [BOWER_ROOT];
-  },{
+  .enableSassLoader(function(sassOptions) {},{
     resolveUrlLoader: false
   })
 
