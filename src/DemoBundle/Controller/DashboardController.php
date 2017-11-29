@@ -13,6 +13,7 @@ use Bazookas\AdminBundle\AdminElements\Elements\ErrorElement;
 use Bazookas\AdminBundle\AdminElements\Elements\GraphElement;
 use Bazookas\AdminBundle\AdminElements\Elements\ImageElement;
 use Bazookas\AdminBundle\AdminElements\Elements\ListGroupElement;
+use Bazookas\AdminBundle\AdminElements\Elements\MenuOverviewElement;
 use Bazookas\AdminBundle\AdminElements\Elements\ProfileElement;
 use Bazookas\AdminBundle\AdminElements\Elements\TextElement;
 use Bazookas\AdminBundle\Controller\Base\BaseAdminActionController;
@@ -93,6 +94,8 @@ class DashboardController extends BaseAdminActionController
     ]));
 
     $builder->addElement($this->getExampleProfileElement());
+
+    $builder->addElement(new MenuOverviewElement());
 
     return $builder;
   }
