@@ -12,15 +12,23 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 
   /**
    * @param Request $request
+   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
    */
   protected function createMenu(Request $request): void
   {
-    $this->elements[] = (new MenuActionElement([], [
+    $this->elements[] = new MenuActionElement([], [
       'label' => 'admin.entities.example.menuLabel',
       'route' => 'demo_example_admin',
       'iconClass' => 'ti-info',
       'roles' => [Roles::ROLE_SUPER_ADMIN],
-    ]));
+    ]);
+
+    $this->elements[] = new MenuActionElement([], [
+      'label' => 'admin.entities.product.menuLabel',
+      'route' => 'demo_product_admin',
+      'iconClass' => 'ti-info',
+      'roles' => [Roles::ROLE_SUPER_ADMIN],
+    ]);
 
     parent::createMenu($request);
 
@@ -29,22 +37,16 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 
   /**
    * Add the api framework bundle menu items
+   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
    */
   protected function addApiFrameworkBundleMenuItems() {
-//    $container = new MenuContainer([], [
-//      'label' => 'admin.menu.app.label',
-//      'roles' => [Roles::ROLE_SUPER_ADMIN],
-//      'iconClass' => 'ti ti-mobile'
-//    ]);
-
-
     // add the copy item
-    $this->elements[] = (new MenuActionElement([], [
+    $this->elements[] = new MenuActionElement([], [
       'label' => 'admin.entities.appCopy.namePlural',
       'route' => 'bazookas_api_framework_app_copy_admin',
       'iconClass' => 'fa fa-language',
       'roles' => [Roles::ROLE_SUPER_ADMIN],
-    ]));
+    ]);
 
     // add the app settings item
 //    $container->addChild(new MenuActionElement([], [

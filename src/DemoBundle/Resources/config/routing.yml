@@ -46,3 +46,10 @@ demo_temp_admin:
       _controller: DemoBundle:TempAdmin:index
       _action: ~
       _id: ~
+
+demo_product_admin:
+    path: /{_locale}/admin/product/{_action}/{_id}
+    defaults:
+      _controller: DemoBundle:ProductAdmin:index
+      _action: ~
+      _id: ~
