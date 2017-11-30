@@ -1,0 +1,30 @@
+admin:
+  menu:
+    product:
+      label: Products
+    example:
+      label: Examples
+  entities:
+    example:
+      namePlural: Examples
+      addLabel: Add example
+      editLabel: Edit example
+      listLabel: Overview of all examples
+      fields:
+        published: Published
+        title: Title
+        singleImage: Single image
+        multipleImages: multiple images
+    product:
+      namePlural: Products
+      addLabel: Add product
+      editLabel: Edit product
+      listLabel: Overview of all products
+      fields:
+        title: Title
+    productDetail:
+      fields:
+        title: Title
+  notifications:
+    newDemoItem: Great! a new demo item has been added. Have fun!
+    updatedDemoItem: An example has been modified.

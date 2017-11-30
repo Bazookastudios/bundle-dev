@@ -1,15 +1,30 @@
 admin:
+  menu:
+    product:
+      label: Producten
+    example:
+      label: Voorbeelden
   entities:
     example:
       namePlural: Voorbeelden
-      menuLabel: Voorbeeld
       addLabel: Voorbeeld toevoegen
       editLabel: Voorbeeld aanpassen
+      listLabel: Overzicht van alle voorbeelden
       fields:
         published: Gepubliceerd
         title: Titel
         singleImage: Alleenstaande afbeelding
         multipleImages: Reeks afbeeldingen
+    product:
+      namePlural: Producten
+      addLabel: Product toevoegen
+      editLabel: Product aanpassen
+      listLabel: Overzicht van alle producten
+      fields:
+        title: Titel
+    productDetail:
+      fields:
+        title: Titel
   notifications:
     newDemoItem: Geweldig! Een nieuw demo item is toegevoegd. Veel plezier ermee.
     updatedDemoItem: Een voorbeeld werd aangepast.

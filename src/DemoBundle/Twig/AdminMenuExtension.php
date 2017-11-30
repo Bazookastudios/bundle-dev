@@ -17,14 +17,14 @@ class AdminMenuExtension extends BaseAdminMenuExtension
   protected function createMenu(Request $request): void
   {
     $this->elements[] = new MenuActionElement([], [
-      'label' => 'admin.entities.example.menuLabel',
+      'label' => 'admin.menu.example.label',
       'route' => 'demo_example_admin',
       'iconClass' => 'ti-info',
       'roles' => [Roles::ROLE_SUPER_ADMIN],
     ]);
 
     $this->elements[] = new MenuActionElement([], [
-      'label' => 'admin.entities.product.menuLabel',
+      'label' => 'admin.menu.product.label',
       'route' => 'demo_product_admin',
       'iconClass' => 'ti-info',
       'roles' => [Roles::ROLE_SUPER_ADMIN],
