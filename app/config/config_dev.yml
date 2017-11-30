@@ -32,3 +32,6 @@ monolog:
 
 #swiftmailer:
 #    delivery_address: me@example.com
+
+#twig:
+#    exception_controller:  AdminBundle.controller.ExceptionController:showAction
