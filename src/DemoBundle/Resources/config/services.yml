@@ -16,14 +16,6 @@ services:
       - "@doctrine.orm.entity_manager"
       - '%kernel.root_dir%/../'
 
-  admin.notifications.exampleNotificationSubscriber:
-    class: DemoBundle\EventListener\ExampleNotificationSubscriber
-    arguments:
-      - "@service_container"
-      - "@router"
-    tags:
-      - { name: doctrine.event_subscriber, connection: default }
-
 
 # -----------------------------------------------------------------------------
 #                             DATA

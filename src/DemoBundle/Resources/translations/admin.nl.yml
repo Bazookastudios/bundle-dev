@@ -25,6 +25,3 @@ admin:
     productDetail:
       fields:
         title: Titel
-  notifications:
-    newDemoItem: Geweldig! Een nieuw demo item is toegevoegd. Veel plezier ermee.
-    updatedDemoItem: Een voorbeeld werd aangepast.
