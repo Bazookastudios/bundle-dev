@@ -3,6 +3,8 @@
 namespace DemoBundle\Entity;
 
 use Bazookas\CommonBundle\Entity\Base\BaseEntity;
+use Bazookas\CommonBundle\Entity\Interfaces\CloneableEntityInterface;
+use Bazookas\CommonBundle\Entity\Traits\CloneableEntityTrait;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Bazookas\CommonBundle\Entity\Interfaces\EntityDetailInterface;
@@ -13,9 +15,10 @@ use Bazookas\CommonBundle\Entity\Traits\DetailTrait;
  * @ORM\Entity
  * @ORM\HasLifecycleCallbacks
  */
-class ProductDetail extends BaseEntity implements EntityDetailInterface {
+class ProductDetail extends BaseEntity implements EntityDetailInterface, CloneableEntityInterface {
 
   use DetailTrait;
+  use CloneableEntityTrait;
   
   /**
    * @ORM\ManyToOne(targetEntity="Product", inversedBy="details")

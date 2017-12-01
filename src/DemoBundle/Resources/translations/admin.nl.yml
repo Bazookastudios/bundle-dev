@@ -20,6 +20,7 @@ admin:
       addLabel: Product toevoegen
       editLabel: Product aanpassen
       listLabel: Overzicht van alle producten
+      cloneLabel: Dupliceer product
       fields:
         title: Titel
     productDetail:

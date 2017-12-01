@@ -21,10 +21,14 @@ class ProductAdminController extends BaseAdminListController
   }
 
   /**
-  * @param Request $request
-  * @param ListPageBuilderInterface $builder
-  * @return ListPageBuilderInterface
-  */
+   * @param Request $request
+   * @param ListPageBuilderInterface $builder
+   * @return ListPageBuilderInterface
+   * @throws \LogicException
+   * @throws \Exception
+   * @throws \ReflectionException
+   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
+   */
   protected function modifyListBuilder(Request $request, ListPageBuilderInterface $builder) : ListPageBuilderInterface
   {
     /** @var ListPageBuilder $builder */
@@ -44,6 +48,7 @@ class ProductAdminController extends BaseAdminListController
     switch($action) {
       case self::ACTION_ADD:
       case self::ACTION_EDIT:
+      case self::ACTION_CLONE:
         return ProductAdminType::class;
       default:
         return null;
@@ -60,6 +65,8 @@ class ProductAdminController extends BaseAdminListController
       case self::ACTION_EDIT:
       case self::ACTION_ADD:
       case self::ACTION_REMOVE:
+      case self::ACTION_CLONE:
+      case self::ACTION_BULK_REMOVE:
         return true;
       default:
         return false;
