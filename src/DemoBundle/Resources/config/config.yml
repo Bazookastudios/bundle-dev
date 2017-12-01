@@ -1,9 +1,0 @@
-bazookas_admin:
-  notifications:
-    notificationEntities:
-      CMSNotification: DemoBundle\Entity\CMSNotification
-      EmailNotification: DemoBundle\Entity\EmailNotification
-
-twig:
-    globals:
-      enableCMSNotifications: true
