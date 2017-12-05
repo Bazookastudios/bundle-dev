@@ -26,13 +26,14 @@ class ProductAdminType extends AbstractType
         'entry_options' => array(
           'data_class' => ProductDetail::class
         ),
-        'prototype_name' => '__product_detail__',
+        'prototype_name' => '__product_detail__'
       ))
     ;
   }
 
   /**
    * @param OptionsResolver $resolver
+   * @throws \Symfony\Component\OptionsResolver\Exception\AccessException
    */
   public function configureOptions(OptionsResolver $resolver)
   {

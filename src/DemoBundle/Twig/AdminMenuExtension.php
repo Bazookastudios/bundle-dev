@@ -41,12 +41,12 @@ class AdminMenuExtension extends BaseAdminMenuExtension
    */
   protected function addApiFrameworkBundleMenuItems() {
     // add the copy item
-    $this->elements[] = new MenuActionElement([], [
-      'label' => 'admin.entities.appCopy.namePlural',
-      'route' => 'bazookas_api_framework_app_copy_admin',
-      'iconClass' => 'fa fa-language',
-      'roles' => [Roles::ROLE_SUPER_ADMIN],
-    ]);
+//    $this->elements[] = new MenuActionElement([], [
+//      'label' => 'admin.entities.appCopy.namePlural',
+//      'route' => 'bazookas_api_framework_app_copy_admin',
+//      'iconClass' => 'fa fa-language',
+//      'roles' => [Roles::ROLE_SUPER_ADMIN],
+//    ]);
 
     // add the app settings item
 //    $container->addChild(new MenuActionElement([], [
