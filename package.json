@@ -7,10 +7,16 @@
   },
   "dependencies": {},
   "devDependencies": {
-    "gulpinator": "^2.0.4"
+    "@symfony/webpack-encore": "^0.16.0",
+    "fs": "0.0.1-security",
+    "globby": "^7.1.1",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/encore dev --watch"
   },
   "repository": {
     "type": "git",
