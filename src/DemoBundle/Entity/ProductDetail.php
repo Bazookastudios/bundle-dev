@@ -33,6 +33,18 @@ class ProductDetail extends BaseEntity implements EntityDetailInterface, Cloneab
   private $title;
 
   /**
+   * @ORM\Column(type="string")
+   * @var string
+   */
+  private $choiceField;
+
+  /**
+   * @ORM\Column(type="datetime")
+   * @var \DateTime
+   */
+  private $sendDateTime;
+
+  /**
    * @return string|null
    */
   public function getTitle(): ?string
@@ -47,6 +59,44 @@ class ProductDetail extends BaseEntity implements EntityDetailInterface, Cloneab
   public function setTitle(string $title): ProductDetail
   {
     $this->title = $title;
+
+    return $this;
+  }
+
+  /**
+   * @return string
+   */
+  public function getChoiceField(): string
+  {
+    return $this->choiceField;
+  }
+
+  /**
+   * @param string $choiceField
+   * @return ProductDetail
+   */
+  public function setChoiceField(string $choiceField): ProductDetail
+  {
+    $this->choiceField = $choiceField;
+
+    return $this;
+  }
+
+  /**
+   * @return \DateTime|null
+   */
+  public function getSendDateTime(): ?\DateTime
+  {
+    return $this->sendDateTime;
+  }
+
+  /**
+   * @param \DateTime $sendDateTime
+   * @return ProductDetail
+   */
+  public function setSendDateTime(\DateTime $sendDateTime): ProductDetail
+  {
+    $this->sendDateTime = $sendDateTime;
 
     return $this;
   }
