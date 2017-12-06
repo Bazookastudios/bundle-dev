@@ -29,10 +29,16 @@ Encore
 
   .enableSourceMaps(!Encore.isProduction())
 
-  .autoProvidejQuery()
-
-// create hashed filenames (e.g. app.abc123.css)
-// .enableVersioning()
+  // you can use this method to provide other common global variables,
+  // such as '_' for the 'underscore' library. IMPORTANT: these variables are only available
+  // to javascript files processed by webpack. Files which require some of these as global variables should use
+  // the globals.js file instead (for admin bundle files).
+  .autoProvideVariables({
+    $: 'jquery',
+    jQuery: 'jquery',
+    'window.jQuery': 'jquery',
+    'moment': 'moment'
+  })
 ;
 
 function addBundleConfigs() {

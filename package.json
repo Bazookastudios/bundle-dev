@@ -14,6 +14,8 @@
     "bootstrap-timepicker": "^0.5.2",
     "chart.js": "^2.7.1",
     "components-font-awesome": "^4.6.3",
+    "metismenu": "git+https://github.com/onokumus/metismenu.git",
+    "nanoscroller": "git+https://github.com/jamesflorentino/nanoScrollerJS.git",
     "pace": "0.0.4",
     "pace-js": "^1.0.2",
     "pace-progress": "^1.0.2",
@@ -33,7 +35,8 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "./node_modules/.bin/encore dev --watch"
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "build": "./node_modules/.bin/encore production"
   },
   "repository": {
     "type": "git",
