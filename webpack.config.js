@@ -74,7 +74,8 @@ Encore
     $: 'jquery',
     jQuery: 'jquery',
     'window.jQuery': 'jquery',
-    'moment': 'moment'
+    'moment': 'moment',
+    'bootbox': 'bootbox'
   })
 ;
 
