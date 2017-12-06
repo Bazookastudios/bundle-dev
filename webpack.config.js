@@ -8,10 +8,10 @@ const WEBSITE_ROOT = './src/WebsiteBundle/Resources/public/';
 
 Encore
   // directory where all compiled assets will be stored
-  .setOutputPath('web/build/')
+  .setOutputPath('web/static/')
 
   // what's the public path to this directory (relative to your project's document root dir)
-  .setPublicPath('/build')
+  .setPublicPath('/static')
 
   // empty the outputPath dir before each build
   .cleanupOutputBeforeBuild()
@@ -27,12 +27,49 @@ Encore
     resolveUrlLoader: false
   })
 
+  //Enable source maps in dev environment
   .enableSourceMaps(!Encore.isProduction())
+
+  //Add an image pre-processor to optimize images (optimization will only occur in production)
+  .disableImagesLoader()
+  .configureFilenames({
+    images: 'images/[name].[ext]'
+  })
+  .addLoader({
+    test: /\.(gif|png|jpe?g|svg)$/i,
+    use: [
+      'file-loader?name=./images/[name].[ext]',
+      {
+        loader: 'image-webpack-loader',
+        options: {
+          mozjpeg: {
+            progressive: true,
+            quality: 85
+          },
+          // optipng.enabled: false will disable optipng
+          optipng: {
+            enabled: true,
+          },
+          pngquant: {
+            quality: '65-90',
+            speed: 4
+          },
+          gifsicle: {
+            interlaced: false,
+          },
+          // the webp option will enable WEBP
+          webp: {
+            quality: 85
+          }
+        }
+      },
+    ],
+  })
 
   // you can use this method to provide other common global variables,
   // such as '_' for the 'underscore' library. IMPORTANT: these variables are only available
   // to javascript files processed by webpack. Files which require some of these as global variables should use
-  // the globals.js file instead (for admin bundle files).
+  // the BazookasAdminBundle/Resources/public/js/globals.js file instead (for admin bundle files).
   .autoProvideVariables({
     $: 'jquery',
     jQuery: 'jquery',
