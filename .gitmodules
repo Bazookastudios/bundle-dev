@@ -10,3 +10,7 @@
 	path = src/Bazookas/CronBundle
 	url = https://github.com/Bazookastudios/BazookasCronBundle.git
 	branch = master
+[submodule "MediaBundle"]
+	path = src/Bazookas/MediaBundle
+	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
+	branch = master
