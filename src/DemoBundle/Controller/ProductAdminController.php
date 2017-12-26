@@ -4,6 +4,7 @@ namespace DemoBundle\Controller;
 
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
+use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
 use DemoBundle\Entity\Product;
 use DemoBundle\Form\ProductAdminType;
 use Symfony\Component\HttpFoundation\Request;
@@ -46,9 +47,9 @@ class ProductAdminController extends BaseAdminListController
   */
   protected function getFormClass(string $action): string {
     switch($action) {
-      case self::ACTION_ADD:
-      case self::ACTION_EDIT:
-      case self::ACTION_CLONE:
+      case AccessControlInterface::ACTION_ADD:
+      case AccessControlInterface::ACTION_EDIT:
+      case AccessControlInterface::ACTION_CLONE:
         return ProductAdminType::class;
       default:
         return null;
@@ -61,12 +62,12 @@ class ProductAdminController extends BaseAdminListController
   */
   protected function hasAccess(string $action): bool {
     switch($action) {
-      case self::ACTION_LIST:
-      case self::ACTION_EDIT:
-      case self::ACTION_ADD:
-      case self::ACTION_REMOVE:
-      case self::ACTION_CLONE:
-      case self::ACTION_BULK_REMOVE:
+      case AccessControlInterface::ACTION_LIST:
+      case AccessControlInterface::ACTION_EDIT:
+      case AccessControlInterface::ACTION_ADD:
+      case AccessControlInterface::ACTION_REMOVE:
+      case AccessControlInterface::ACTION_CLONE:
+      case AccessControlInterface::ACTION_BULK_REMOVE:
         return true;
       default:
         return false;
