@@ -47,13 +47,13 @@ bazookas_cron:
     requirements:
         _locale: "%requiredlocales%"
 
-#bazookas_media:
-#    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
-#    prefix:   /{_locale}/admin
-#    defaults:
-#        _locale: "%locale%"
-#    requirements:
-#        _locale: "%requiredlocales%"
+bazookas_media:
+    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/admin
+    defaults:
+        _locale: "%locale%"
+    requirements:
+        _locale: "%requiredlocales%"
 
 #api_framework:
 #    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"

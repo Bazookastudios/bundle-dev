@@ -53,3 +53,12 @@ demo_product_admin:
       _controller: DemoBundle:ProductAdmin:index
       _action: ~
       _id: ~
+
+# AUDITS
+
+demo_audit:
+    path: /{_locale}/admin/audit/{_action}/{_id}
+    defaults:
+      _controller: DemoBundle:AuditLogAdmin:index
+      _action: ~
+      _id: ~

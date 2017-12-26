@@ -20,7 +20,7 @@ class AppKernel extends Kernel
       // CMS Third party bundles
       // -------------------------------
       new Bazookas\AdminBundle\BazookasAdminBundle(),
-//      new Bazookas\MediaBundle\BazookasMediaBundle(),
+      new Bazookas\MediaBundle\BazookasMediaBundle(),
       new Bazookas\CommonBundle\BazookasCommonBundle(),
       new Bazookas\CronBundle\BazookasCronBundle(),
 //      new Bazookas\ExportBundle\BazookasExportBundle(),

@@ -1,1 +1,5 @@
-
+bazookas_admin:
+  audit:
+    enableVersioning: true
+    logging:
+      logClass: DemoBundle\Entity\AuditLog

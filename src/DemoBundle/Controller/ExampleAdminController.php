@@ -2,14 +2,12 @@
 
 namespace DemoBundle\Controller;
 
-use Bazookas\AdminBundle\AdminElements\Elements\Actions\PageActions\ImportPageActionElement;
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
+use Bazookas\AdminBundle\PageBuilder\Interfaces\BulkPageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
-//use Bazookas\ExportBundle\Entity\GenericFileEntity;
-//use Bazookas\ExportBundle\Exception\ImportException;
-//use Bazookas\ExportBundle\Form\ImportFileForm;
 use Bazookas\AdminBundle\Security\Roles;
+use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
 use DemoBundle\Entity\Example;
 use DemoBundle\Form\ExampleAdminType;
 use DemoBundle\PageBuilder\ExamplePageBuilder;
@@ -23,8 +21,8 @@ class ExampleAdminController extends BaseAdminListController
     // make sure parent construct is called!
     parent::__construct();
 
-    $this->builders[self::ACTION_BULK_EDIT] = null;
-    $this->builders[self::ACTION_LIST] = ExamplePageBuilder::class;
+//    $this->builders[AccessControlInterface::ACTION_BULK_EDIT] = null;
+    $this->builders[AccessControlInterface::ACTION_LIST] = ExamplePageBuilder::class;
   }
 
   protected function modifyListBuilder(Request $request, ListPageBuilderInterface $builder): ListPageBuilderInterface
@@ -83,6 +81,16 @@ class ExampleAdminController extends BaseAdminListController
     return $builder;
   }
 
+  protected function modifyBulkEditBuilder(Request $request, BulkPageBuilderInterface $builder) : BulkPageBuilderInterface
+  {
+//    dump(parent::modifyBulkEditBuilder($request, $builder));
+//    exit();
+//    $formOptions = $this->getFormOptions();
+//    $builder->setFormOptions($formOptions);
+    return parent::modifyBulkEditBuilder($request, $builder);
+  }
+
+
   /**
    * @param string $action
    * @return bool
@@ -90,10 +98,12 @@ class ExampleAdminController extends BaseAdminListController
    */
   protected function hasAccess(string $action): bool {
     switch($action) {
-      case self::ACTION_LIST:
-      case self::ACTION_EDIT:
-      case self::ACTION_ADD:
-      case self::ACTION_REMOVE:
+      case AccessControlInterface::ACTION_LIST:
+      case AccessControlInterface::ACTION_EDIT:
+      case AccessControlInterface::ACTION_ADD:
+      case AccessControlInterface::ACTION_REMOVE:
+      case AccessControlInterface::ACTION_CLONE:
+      case AccessControlInterface::ACTION_BULK_EDIT:
         return Roles::ROLE_SUPER_ADMIN;
       default:
         return false;

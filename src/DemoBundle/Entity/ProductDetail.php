@@ -64,9 +64,9 @@ class ProductDetail extends BaseEntity implements EntityDetailInterface, Cloneab
   }
 
   /**
-   * @return string
+   * @return string|null
    */
-  public function getChoiceField(): string
+  public function getChoiceField(): ?string
   {
     return $this->choiceField;
   }
