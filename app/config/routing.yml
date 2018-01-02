@@ -55,6 +55,14 @@ bazookas_media:
     requirements:
         _locale: "%requiredlocales%"
 
+bazookas_notification:
+    resource: "@BazookasNotificationBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/admin
+    defaults:
+        _locale: "%locale%"
+    requirements:
+        _locale: "%requiredlocales%"
+
 api_framework:
     resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
     prefix:   /

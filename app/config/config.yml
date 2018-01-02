@@ -50,7 +50,7 @@ twig:
       locales: [nl, en]
       showAdminMenu: true
       googleClientID: "%google_api.client_id%"
-
+      enableCMSNotifications: true
 
 # Doctrine Configuration
 doctrine:
@@ -148,6 +148,12 @@ fos_oauth_server:
             # Changing tokens and authcode lifetime
             access_token_lifetime: 86400     # 1 day
             refresh_token_lifetime: 1209600  # 14 days
+
+# Bazookas notification bundle configuration
+bazookas_notification:
+    entities:
+      CMSNotification: DemoBundle\Entity\CMSNotification
+      EmailNotification: DemoBundle\Entity\EmailNotification
 
 # Bazookas media bundle configuration
 bazookas_media:
