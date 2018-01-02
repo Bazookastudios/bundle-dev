@@ -81,16 +81,15 @@ Encore
 
 function addBundleConfigs() {
   // vendor folder takes precedence, as is custom with composer dependencies
-  if (FS.existsSync('./vendor/bazookas/')) {
-    findConfigs('./vendor/bazookas/');
-  }
-
-  if (FS.existsSync('./vendor/bazookas/')) {
-    findConfigs('./src/Bazookas/');
-  }
+  findConfigs('./vendor/bazookas/');
+  findConfigs('./src/Bazookas/');
 }
 
 function findConfigs(bazookasFolder) {
+  if (!FS.existsSync(bazookasFolder)) {
+    return;
+  }
+
   let folders = FS.readdirSync(bazookasFolder);
 
   for (let folder of folders) {
