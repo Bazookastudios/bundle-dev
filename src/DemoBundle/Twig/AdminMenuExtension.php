@@ -12,7 +12,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 {
 
 //  use CronMenuTrait;
-  use MediaMenuTrait;
+//  use MediaMenuTrait;
 
   /**
    * @param Request $request
