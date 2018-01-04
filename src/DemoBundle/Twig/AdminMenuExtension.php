@@ -11,7 +11,7 @@ use Symfony\Component\HttpFoundation\Request;
 class AdminMenuExtension extends BaseAdminMenuExtension
 {
 
-  use CronMenuTrait;
+//  use CronMenuTrait;
   use MediaMenuTrait;
 
   /**
