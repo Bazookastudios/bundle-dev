@@ -32,7 +32,7 @@ class ExampleAdminController extends BaseAdminListController
 
     $builder
       ->addBooleanField('published')
-      ->addField('title')
+      ->addSortableField('title')
 
       ->addBooleanFilterField('published')
       ->addTextFilterField('title')

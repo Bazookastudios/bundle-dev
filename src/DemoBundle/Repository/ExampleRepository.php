@@ -1,7 +1,6 @@
 <?php
 
 namespace DemoBundle\Repository;
-use Bazookas\AdminBundle\Repository\Interfaces\ListRepositoryInterface;
 use Bazookas\AdminBundle\Repository\Base\BaseRepository;
 use DemoBundle\Entity\Example;
 use Doctrine\ORM\Tools\Pagination\Paginator;
