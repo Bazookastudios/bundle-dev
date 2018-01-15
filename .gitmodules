@@ -14,3 +14,11 @@
 	path = src/Bazookas/MediaBundle
 	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
 	branch = master
+[submodule "APIFrameworkBundle"]
+	path = src/Bazookas/APIFrameworkBundle
+	url = https://github.com/Bazookastudios/BazookasAPIFrameWorkBundle
+	branch = master
+[submodule "SecurityBundle"]
+	path = src/Bazookas/SecurityBundle
+	url = https://github.com/Bazookastudios/BazookasSecurityBundle
+	branch = master

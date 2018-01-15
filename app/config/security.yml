@@ -34,8 +34,8 @@ security:
             id: fos_user.user_provider.username
             #to authenticate the user using his email use this provider
             #id: fos_user.user_provider.username_email
-#        base_user_provider:
-#            id: APIFrameworkBundle.user_provider.BaseUserProvider
+        base_user_provider:
+            id: bazookas.api_framework.user_provider.base_user_provider
 
     firewalls:
         api_token:
@@ -47,11 +47,11 @@ security:
         insecure:
             pattern:  ^/(media|cron|(api/doc))
             security: false
-#        api:
-#            pattern:    ^/api
-#            fos_oauth:  true
-#            stateless:  true
-#            provider: base_user_provider
+        api:
+            pattern:    ^/api
+            fos_oauth:  true
+            stateless:  true
+            provider: base_user_provider
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
             security: false

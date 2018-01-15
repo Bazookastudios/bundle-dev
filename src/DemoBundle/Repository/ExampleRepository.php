@@ -36,8 +36,8 @@ class ExampleRepository extends BaseRepository
     $query = $qb
       ->select('
         partial example.{id, title, created, modified},
-        partial image.{id, title, description, url},
-        partial multipleImages.{id, title, description, url}
+        partial image.{id, title, url},
+        partial multipleImages.{id, title, url}
       ')
 
       ->leftJoin('example.singleImage', 'image')

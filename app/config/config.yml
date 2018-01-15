@@ -140,7 +140,7 @@ fos_oauth_server:
     refresh_token_class: APIBundle\Entity\OAuth2RefreshToken
     auth_code_class:     APIBundle\Entity\OAuth2AuthCode
     service:
-        user_provider: APIFrameworkBundle.user_provider.BaseUserProvider
+        user_provider: bazookas.api_framework.user_provider.base_user_provider
         options:
             # Changing tokens and authcode lifetime
             access_token_lifetime: 86400     # 1 day

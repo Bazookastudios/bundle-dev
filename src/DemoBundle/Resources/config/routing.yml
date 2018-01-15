@@ -20,6 +20,27 @@ bazookas_api_framework_app_copy_admin:
       _action: ~
       _id: ~
 
+bazookas_api_framework_app_settings_admin:
+    path:     /{_locale}/admin/app-settings/{_action}/{_id}
+    defaults:
+      _controller: BazookasAPIFrameworkBundle:Admin\AppSettingsAdmin:index
+      _action: ~
+      _id: ~
+
+demo_temp_admin:
+    path:     /{_locale}/admin/temp/{_action}/{_id}
+    defaults:
+      _controller: DemoBundle:TempAdmin:index
+      _action: ~
+      _id: ~
+
+demo_product_admin:
+    path: /{_locale}/admin/product/{_action}/{_id}
+    defaults:
+      _controller: DemoBundle:ProductAdmin:index
+      _action: ~
+      _id: ~
+
 # API ROUTES
 demo_example_post:
   path: /api/{_locale}/examples
@@ -48,19 +69,16 @@ demo_example_publish:
     _locale: %requiredlocales%
   methods: [PUT]
 
-demo_temp_admin:
-    path:     /{_locale}/admin/temp/{_action}/{_id}
-    defaults:
-      _controller: DemoBundle:TempAdmin:index
-      _action: ~
-      _id: ~
-
-demo_product_admin:
-    path: /{_locale}/admin/product/{_action}/{_id}
-    defaults:
-      _controller: DemoBundle:ProductAdmin:index
-      _action: ~
-      _id: ~
+demo_file_upload:
+  path: /api/{_locale}/upload/{_hash}/{_index}
+  defaults:
+    _controller: BazookasAPIFrameworkBundle:FileUpload:upload
+    _locale: %locale%
+  requirements:
+    _locale: %requiredlocales%
+  methods:
+    - POST
+    - PUT
 
 # AUDITS
 

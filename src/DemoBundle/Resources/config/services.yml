@@ -2,13 +2,13 @@ services:
 #    demo.example:
 #        class: DemoBundle\Example
 #        arguments: ["@service_id", "plain_value", %parameter%]
-#  demo.example.service:
-#    class: DemoBundle\Services\ExampleService
-#    arguments:
-#      - "@BazookasAPIFrameworkBundle.upload.fileUploadService"
-#      - "@doctrine.orm.entity_manager"
-#    tags:
-#      - { name: APIFrameworkBundle.Data.DataService }
+  demo.data.example:
+    class: DemoBundle\Services\ExampleService
+    arguments:
+      - "@bazookas.api_framework.upload.fileUploadService"
+      - "@doctrine.orm.entity_manager"
+    tags:
+      - { name: APIFrameworkBundle.Data.DataService }
 
   demo.example.import_service:
     class: DemoBundle\Services\ExampleImportService

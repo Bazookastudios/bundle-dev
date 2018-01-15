@@ -24,7 +24,7 @@ class AppKernel extends Kernel
       new Bazookas\CommonBundle\BazookasCommonBundle(),
       new Bazookas\CronBundle\BazookasCronBundle(),
 //      new Bazookas\ExportBundle\BazookasExportBundle(),
-//      new Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle(),
+      new Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle(),
 
       // -------------------------------
       // API Third party bundles
@@ -43,7 +43,7 @@ class AppKernel extends Kernel
       // Project bundles
       // -------------------------------
       new WebsiteBundle\WebsiteBundle(),
-//      new APIBundle\APIBundle(),
+      new APIBundle\APIBundle(),
     ];
 
     if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
