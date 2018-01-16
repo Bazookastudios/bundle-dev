@@ -2,10 +2,13 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     encoders:
+        #Default CMS configuration
         FOS\UserBundle\Model\UserInterface:
           algorithm: bcrypt
           cost: 13
-        Bazookas\EntityBundle\Entity\Base\BaseUser:
+
+        #Default Project configuration
+        Bazookas\CommonBundle\Entity\Base\BaseUser:
           algorithm: bcrypt
           cost: 13
 

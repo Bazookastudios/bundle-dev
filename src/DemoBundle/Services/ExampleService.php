@@ -8,6 +8,7 @@ use Bazookas\APIFrameworkBundle\Util\ApiFileUploadCallback;
 use DemoBundle\Entity\Example;
 use DemoBundle\Repository\ExampleRepository;
 use Doctrine\ORM\EntityManager;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
 class ExampleService implements DataServiceInterface
@@ -24,11 +25,11 @@ class ExampleService implements DataServiceInterface
   private $uploadService;
 
   /**
-   * @var EntityManager
+   * @var EntityManagerInterface
    */
   private $entityManager;
 
-  public function __construct(ApiFileUploadService $uploadService, EntityManager $entityManager)
+  public function __construct(ApiFileUploadService $uploadService, EntityManagerInterface $entityManager)
   {
     $this->repository = $entityManager->getRepository(Example::class);
     $this->uploadService = $uploadService;

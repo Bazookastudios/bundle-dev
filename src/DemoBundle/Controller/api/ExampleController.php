@@ -8,10 +8,6 @@ use Symfony\Component\HttpFoundation\Request;
 
 class ExampleController extends BaseController
 {
-  protected function getDataService(string $dataServiceFunction): DataServiceInterface
-  {
-    return $this->get('demo.data.example');
-  }
 
   /**
    * Post an example instance
