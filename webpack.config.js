@@ -17,10 +17,10 @@ Encore
   .cleanupOutputBeforeBuild()
 
   // will output as web/build/app.js
-  .addEntry('app', WEBSITE_ROOT + 'js/main.js')
+  .addEntry('js/app', WEBSITE_ROOT + 'js/main.js')
 
   // will output as web/build/global.css
-  .addStyleEntry('global', WEBSITE_ROOT + 'css/main.scss')
+  .addStyleEntry('css/app', WEBSITE_ROOT + 'css/main.scss')
 
   // allow sass/scss files to be processed
   .enableSassLoader(function(sassOptions) {},{
@@ -32,13 +32,26 @@ Encore
 
   //Add an image pre-processor to optimize images (optimization will only occur in production)
   .disableImagesLoader()
-  .configureFilenames({
-    images: 'images/[name].[ext]'
-  })
   .addLoader({
     test: /\.(gif|png|jpe?g|svg)$/i,
     use: [
-      'file-loader?name=./images/[name].[ext]',
+      {
+        loader: 'file-loader',
+        options: {
+          name(file) {
+            // put images in a different folder to prevent name collisions
+            let path = 'images/';
+            if (/(\/vendor\/bazookas\/)|(\/src\/Bazookas\/)/.test(file)) {
+              path += 'bundles/';
+            }
+            else if (/node_modules/.test(file)) {
+              path += 'node_modules/';
+            }
+
+            return path + '[name].[ext]';
+          }
+        }
+      },
       {
         loader: 'image-webpack-loader',
         options: {
@@ -64,6 +77,22 @@ Encore
         }
       },
     ],
+  })
+
+  // add loaders for the Vue javascript framework
+  .addLoader({
+    test: /\.vue$/,
+    loader: 'vue-loader',
+    options: {
+      loaders: {
+        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
+        // the "scss" and "sass" values for the lang attribute to the right configs here.
+        // other preprocessors should work out of the box, no loader config like this nessessary.
+        'scss': 'vue-style-loader!css-loader!sass-loader',
+        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+      }
+      // other vue-loader options go here
+    }
   })
 
   // you can use this method to provide other common global variables,
