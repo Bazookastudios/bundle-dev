@@ -5,6 +5,23 @@ demo_example_admin:
       _action: ~
       _id: ~
 
+bazookas_api_framework_app_copy_admin:
+    path:     /{_locale}/admin/app-copy/{_action}/{_id}
+    defaults:
+      _controller: BazookasAPIFrameworkBundle:Admin\AppCopyAdmin:index
+      _action: ~
+      _id: ~
+
+bazookas_admin_homepage:
+  path:     /{_locale}/admin/
+  defaults:
+    _controller: DemoBundle:Dashboard:index
+    _action: ~
+    _id: ~
+    _locale: %locale%
+  requirements:
+    _locale: %requiredlocales%
+
 
 # API ROUTES
 demo_example_post:

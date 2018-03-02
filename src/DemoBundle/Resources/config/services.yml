@@ -5,17 +5,17 @@ services:
   demo.example.service:
     class: DemoBundle\Services\ExampleService
     arguments:
-      - "@demo.example.repository"
       - "@BazookasAPIFrameworkBundle.upload.fileUploadService"
       - "@doctrine.orm.entity_manager"
     tags:
       - { name: APIFrameworkBundle.Data.DataService }
 
-  demo.example.repository:
-    class: Doctrine\ORM\EntityRepository
-    factory: ['@doctrine.orm.default_entity_manager', getRepository]
+  demo.example.import_service:
+    class: DemoBundle\Services\ExampleImportService
     arguments:
-        - DemoBundle\Entity\Example
+      - "@doctrine.orm.entity_manager"
+      - '%kernel.root_dir%/../'
+
 
 # -----------------------------------------------------------------------------
 #                             DATA

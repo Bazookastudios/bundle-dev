@@ -20,8 +20,9 @@ class AppKernel extends Kernel
       // CMS Third party bundles
       // -------------------------------
       new Bazookas\AdminBundle\BazookasAdminBundle(),
-      new Bazookas\MediaBundle\BazookasMediaBundle(),
       new Bazookas\CommonBundle\BazookasCommonBundle(),
+      new Bazookas\MediaBundle\BazookasMediaBundle(),
+      new Bazookas\NotificationBundle\BazookasNotificationBundle(),
       // -------------------------------
       // API Third party bundles
       // -------------------------------
@@ -36,6 +37,7 @@ class AppKernel extends Kernel
       new FOS\UserBundle\FOSUserBundle(),
       new Liip\ImagineBundle\LiipImagineBundle(),
       new Bazookas\CronBundle\BazookasCronBundle(),
+      new Bazookas\ExportBundle\BazookasExportBundle(),
 
       // -------------------------------
       // Project bundles
@@ -50,10 +52,16 @@ class AppKernel extends Kernel
       $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
       $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
       $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
+      $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
 
-      $bundles[] = new Bazookas\GeneratorBundle\BazookasGeneratorBundle();
+//      $bundles[] = new Bazookas\GeneratorBundle\BazookasGeneratorBundle();
 
       $bundles[] = new DemoBundle\DemoBundle();
+    }
+
+    //Enable testing bundles
+    if ('test' === $this->getEnvironment()) {
+      $bundles[] = new Liip\FunctionalTestBundle\LiipFunctionalTestBundle();
     }
 
     return $bundles;

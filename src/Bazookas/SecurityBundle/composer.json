@@ -1,0 +1,27 @@
+{
+    "name": "bazookas/security-bundle",
+    "type": "symfony-bundle",
+    "description": "Bazookas Symfony security bundle",
+    "keywords": ["admin", "cms"],
+    "homepage": "http://bazookas.be",
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Bazookas webteam awesomeness",
+            "homepage": "https://github.com/Bazookastudios"
+        }
+    ],
+    "require": {
+        "php": "^5.5.9 || ^7.0"
+    },
+    "require-dev": {
+    },
+    "autoload": {
+        "psr-4": {
+            "Bazookas\\SecurityBundle\\": ""
+        }
+    },
+    "support": {
+        "docs": "https://github.com/Bazookastudios/BazookasSecurityBundle"
+    }
+}

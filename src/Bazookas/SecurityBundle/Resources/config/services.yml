@@ -1,0 +1,14 @@
+services:
+# EXAMPLE
+#WebsiteBundle.UserProviders.BaseUserProvider:
+#  class: Bazookas\SecurityBundle\UserProviders\BaseUserProvider
+#  arguments:
+#    - "@doctrine.orm.entity_manager"
+#    - {entity: WebsiteBundle\Entity\User }
+
+# -----------------------------------------------------------------------------
+#                             Repository
+# -----------------------------------------------------------------------------
+  Bazookas.SecurityBundle.repository.OpenIdClientRepository:
+    class: Bazookas\SecurityBundle\Repository\OpenIdClientRepository
+    parent: BazookasCommonBundle.parent.repository

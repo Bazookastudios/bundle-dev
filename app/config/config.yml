@@ -5,7 +5,7 @@ imports:
     - { resource: "@BazookasAdminBundle/Resources/config/config.yml" }
     - { resource: "@BazookasMediaBundle/Resources/config/menu.yml" }
     - { resource: "@BazookasCronBundle/Resources/config/menu.yml" }
-    - { resource: menu.yml }
+    - { resource: "@DemoBundle/Resources/config/config.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -31,7 +31,6 @@ framework:
         engines: ['twig']
     default_locale:  "%locale%"
     trusted_hosts:   ~
-    trusted_proxies: ~
     session:
         # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
         handler_id:  session.handler.native_file
@@ -53,7 +52,7 @@ twig:
       locales: [nl, en]
       showAdminMenu: true
       googleClientID: "%google_api.client_id%"
-
+      enableCMSNotifications: true
 
 # Doctrine Configuration
 doctrine:
@@ -64,11 +63,12 @@ doctrine:
         dbname:   "%database_name%"
         user:     "%database_user%"
         password: "%database_password%"
-        charset: utf8mb4
-#        charset:  UTF8
-        default_table_options:
-            charset: utf8mb4
-            collate: utf8mb4_unicode_ci
+#        charset: utf8mb4
+        charset:  UTF8
+        #this causes issues with fos user bundle
+#        default_table_options:
+#            charset: utf8mb4
+#            collate: utf8mb4_unicode_ci
         types:
           datetime: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
         # types:
@@ -112,7 +112,7 @@ fos_user:
         group_class: Bazookas\AdminBundle\Entity\CMSUserGroup
     from_email:
         address: noreply@bazookas.be
-        sender_name: Mobile Fans
+        sender_name: noreply@bazookas.be
     resetting:
         token_ttl: 86400
         email:
@@ -151,6 +151,12 @@ fos_oauth_server:
             access_token_lifetime: 86400     # 1 day
             refresh_token_lifetime: 1209600  # 14 days
 
+# Bazookas notification bundle configuration
+bazookas_notification:
+    entities:
+      CMSNotification: DemoBundle\Entity\CMSNotification
+      EmailNotification: DemoBundle\Entity\EmailNotification
+
 # Bazookas media bundle configuration
 bazookas_media:
     settings:
@@ -170,5 +176,11 @@ bazookas_api_framework:
       uploads_root_directory: "%uploads_root_directory%"
       baseUrl: "%baseUrl%"
       uploadRoute: api_v1_upload
+  app_copy:
+    entity: DemoBundle\Entity\AppCopy
+    # required when working with the admin bundle
+    details_entity: DemoBundle\Entity\AppCopyDetail
+    # optionally provide API specific language constraint (defaults to %requiredlocales%).
+    # allowed_locales: nl|fr
 
 nelmio_api_doc: ~

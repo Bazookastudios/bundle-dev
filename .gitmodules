@@ -18,3 +18,11 @@
 	path = src/Bazookas/MediaBundle
 	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
 	branch = master
+[submodule "BazookasExportBundle"]
+	path = src/Bazookas/ExportBundle
+	url = https://github.com/Bazookastudios/BazookasExportBundle.git
+	branch = master
+[submodule "NotificationBundle"]
+	path = src/Bazookas/NotificationBundle
+	url = https://github.com/Bazookastudios/BazookasNotificationBundle.git
+	branch = master

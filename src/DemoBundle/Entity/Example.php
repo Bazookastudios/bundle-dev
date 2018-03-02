@@ -4,6 +4,7 @@ namespace DemoBundle\Entity;
 
 use Bazookas\CommonBundle\Entity\Base\BaseEntity;
 use Bazookas\MediaBundle\Entity\Image;
+use DemoBundle\Security\Roles;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
@@ -17,8 +18,7 @@ class Example extends BaseEntity {
 
   public function __construct() {
     parent::__construct();
-
-    $this->multipleImage = new ArrayCollection();
+    $this->multipleImages = new ArrayCollection();
   }
 
   /**
@@ -44,7 +44,6 @@ class Example extends BaseEntity {
    * @ORM\ManyToMany(targetEntity="Bazookas\MediaBundle\Entity\Image")
    */
   private $multipleImages;
-
 
   /**
    * Set title
@@ -136,6 +135,10 @@ class Example extends BaseEntity {
     return $this;
   }
 
+  public function getRoleRequiredForView()
+  {
+    return Roles::ROLE_EXAMPLE_ADMIN;
+  }
 
 }
 
