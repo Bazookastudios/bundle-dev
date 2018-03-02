@@ -29,6 +29,11 @@ class ExampleService implements DataServiceInterface
    */
   private $entityManager;
 
+  /**
+   * ExampleService constructor.
+   * @param ApiFileUploadService $uploadService
+   * @param EntityManagerInterface $entityManager
+   */
   public function __construct(ApiFileUploadService $uploadService, EntityManagerInterface $entityManager)
   {
     $this->repository = $entityManager->getRepository(Example::class);
@@ -36,10 +41,19 @@ class ExampleService implements DataServiceInterface
     $this->entityManager = $entityManager;
   }
 
+  /**
+   * @param ParameterBag $paramBag
+   * @return array
+   * @throws \Symfony\Component\Routing\Exception\RouteNotFoundException
+   * @throws \Symfony\Component\Routing\Exception\MissingMandatoryParametersException
+   * @throws \Symfony\Component\Routing\Exception\InvalidParameterException
+   * @throws \Doctrine\ORM\ORMInvalidArgumentException
+   * @throws \Bazookas\APIFrameworkBundle\Exception\ApiException
+   * @throws \Doctrine\ORM\ORMException
+   * @throws \Doctrine\ORM\OptimisticLockException
+   */
   public function postExample(ParameterBag $paramBag)
   {
-    // TODO parse parameterbag and create a new example instance
-
     // NOTE: "parameters" of callback are converted to a parameterbag upon calling the callback
     // dummy image upload targets
     $uploadTargets = $this->uploadService->createFileUploads(array(
@@ -73,14 +87,12 @@ class ExampleService implements DataServiceInterface
           new ParameterBag(['id' => 5])
         ),
       ],
-    ), new ApiFileUploadCallback('demo.data.example', 'publishExample', new ParameterBag(['id' => 1])));
+    ), new ApiFileUploadCallback('demo_bundle.services.example_service', 'publishExample', new ParameterBag(['id' => 1])));
 
     return array(
       'status' => 'success',
       'uploadTargets' => $uploadTargets,
     );
-
-    $entity = $this->repository->create($paramBag);
   }
 
   public function publishExample(ParameterBag $paramBag)
@@ -100,11 +112,11 @@ class ExampleService implements DataServiceInterface
       return array(
         'status' => 'success',
       );
-    } else {
-      return array(
-        'status' => 'not-found',
-      );
     }
+
+    return array(
+      'status' => 'not-found',
+    );
   }
 
   public function getExamples(ParameterBag $paramBag)

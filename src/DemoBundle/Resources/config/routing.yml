@@ -2,9 +2,9 @@ bazookas_admin_homepage:
   path: /{_locale}/admin
   defaults:
     _controller: DemoBundle:Dashboard:index
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
 
 demo_example_admin:
     path:     /{_locale}/admin/example/{_action}/{_id}
@@ -46,18 +46,18 @@ demo_example_post:
   path: /api/{_locale}/examples
   defaults:
     _controller: DemoBundle:api\Example:post
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods: [POST]
 
 demo_example_get:
   path: /api/{_locale}/examples
   defaults:
     _controller: DemoBundle:api\Example:get
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods: [GET]
 
 demo_example_publish:
@@ -73,9 +73,9 @@ demo_file_upload:
   path: /api/{_locale}/upload/{_hash}/{_index}
   defaults:
     _controller: BazookasAPIFrameworkBundle:FileUpload:upload
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods:
     - POST
     - PUT

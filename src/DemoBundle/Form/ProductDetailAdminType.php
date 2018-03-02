@@ -49,7 +49,7 @@ class ProductDetailAdminType extends AbstractType
         'date_format' => 'dd/MM/yyyy',
         'constraints' => [
           new NotBlank(),
-        ],
+        ]
       ])
     ;
   }

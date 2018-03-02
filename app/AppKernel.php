@@ -44,6 +44,7 @@ class AppKernel extends Kernel
       // -------------------------------
       new WebsiteBundle\WebsiteBundle(),
       new APIBundle\APIBundle(),
+      new DemoBundle\DemoBundle(),
     ];
 
     if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -53,10 +54,6 @@ class AppKernel extends Kernel
       $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
       $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
       $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
-
-//      $bundles[] = new Bazookas\GeneratorBundle\BazookasGeneratorBundle();
-
-      $bundles[] = new DemoBundle\DemoBundle();
     }
 
     //Enable testing bundles

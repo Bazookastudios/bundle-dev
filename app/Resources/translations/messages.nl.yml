@@ -1,0 +1,29 @@
+admin:
+    menu:
+        app: 'Applicatie test'
+        app_description: 'Instellingen voor applicaties die via API doorgestuurd worden'
+    entities:
+        appSettings:
+            name: 'App instelling'
+            namePlural: 'App instellingen'
+            fields:
+                type: Type
+                key: Key
+                setting: Instelling
+            enums:
+                type:
+                    string: Tekst
+                    php_serialized: Object
+        appCopy:
+            name: 'App vertaling'
+            namePlural: 'App vertalingen'
+            fields:
+                key: Key
+                value: Tekst
+                locale: Taal
+                details: Vertalingen
+site:
+    general:
+        title: 'New project'
+dateFormat:
+    full: 'd/m/Y H:i:s'

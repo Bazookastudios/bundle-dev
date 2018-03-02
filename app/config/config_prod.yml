@@ -21,4 +21,4 @@ monolog:
             type:  console
 
 twig:
-    exception_controller:  AdminBundle.controller.ExceptionController:showAction
+    exception_controller:  bazookas.admin.controller.exception_controller:showAction

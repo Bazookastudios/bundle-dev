@@ -36,7 +36,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
       'roles' => [Roles::ROLE_SUPER_ADMIN],
     ]);
 
-    $this->addMediaBundleMenuItems();
+//    $this->addMediaBundleMenuItems();
     $this->addAdminSettingsMenu();
   }
 

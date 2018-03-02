@@ -52,7 +52,7 @@ class ExampleController extends BaseController
         'required' => true,
       ),
       'multipleImages' => array(
-        'required' => true,
+        'required' => false,
       )
     );
 

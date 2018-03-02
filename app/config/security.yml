@@ -38,7 +38,7 @@ security:
             #to authenticate the user using his email use this provider
             #id: fos_user.user_provider.username_email
         base_user_provider:
-            id: bazookas.api_framework.user_provider.base_user_provider
+            id: api.user_provider.base_user_provider
 
     firewalls:
         api_token:

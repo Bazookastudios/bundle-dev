@@ -34,7 +34,8 @@ framework:
         save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
     fragments:       ~
     http_method_override: true
-    assets: ~
+    assets:
+        version: v1.0.0
 
 # Twig Configuration
 twig:
@@ -140,7 +141,7 @@ fos_oauth_server:
     refresh_token_class: APIBundle\Entity\OAuth2RefreshToken
     auth_code_class:     APIBundle\Entity\OAuth2AuthCode
     service:
-        user_provider: bazookas.api_framework.user_provider.base_user_provider
+        user_provider: api.user_provider.base_user_provider
         options:
             # Changing tokens and authcode lifetime
             access_token_lifetime: 86400     # 1 day
