@@ -3,10 +3,9 @@ services:
 #                             Security
 # -----------------------------------------------------------------------------
   #NOTE: an example of how to define a user provider service
-  APIFrameworkBundle.user_provider.BaseUserProvider:
-    class: Bazookas\APIFrameworkBundle\Security\UserProviders\BaseUserProvider
+  api.user_provider.base_user_provider:
+    class: Bazookas\SecurityBundle\UserProviders\BaseUserProvider
     arguments:
       - "@doctrine.orm.entity_manager"
       - { entity: 'APIBundle\Entity\AppUser' }
-    tags:
-      - {name: APIFrameworkBundle.UserProviders }
+

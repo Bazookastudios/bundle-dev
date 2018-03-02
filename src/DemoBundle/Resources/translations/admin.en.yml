@@ -1,21 +1,28 @@
 admin:
+  menu:
+    product:
+      label: Products
+    example:
+      label: Examples
   entities:
     example:
-      menuLabel: Overzicht antwoorden
       namePlural: Examples
-      menuLabel: Example
       addLabel: Add example
       editLabel: Edit example
-      tooltip:
-        publishedTitle: Published
-        publishedContent: Whether something is published
-        titleTitle: Title
-        titleContent: A nice and simple title!
+      listLabel: Overview of all examples
       fields:
         published: Published
         title: Title
         singleImage: Single image
         multipleImages: multiple images
-  notifications:
-    newDemoItem: Great! A new demo item has been added!
-    updatedDemoItem: An example has beend updated.
+    product:
+      namePlural: Products
+      addLabel: Add product
+      editLabel: Edit product
+      listLabel: Overview of all products
+      cloneLabel: Duplicate product
+      fields:
+        title: Title
+    productDetail:
+      fields:
+        title: Title

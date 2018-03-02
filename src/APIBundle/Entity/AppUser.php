@@ -2,6 +2,7 @@
 
 namespace APIBundle\Entity;
 
+use Bazookas\AdminBundle\Security\Roles;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -25,6 +26,8 @@ use Bazookas\CommonBundle\Entity\Interfaces\LocalisedEntityInterface;
 class AppUser extends BaseUser implements LocalisedEntityInterface {
 
   use Traits\LocalisedTrait;
+
+  public const DEFAULT_REQUIRED_ROLE = Roles::ROLE_ADMIN;
 
   /**
   * @ORM\Column(type="string")
@@ -169,12 +172,11 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
     return $this;
   }
 
-  //TODO make this multilanguage!
-  public function toHumanReadable($locale = 'nl') {
-    return "Gebruiker {username: ".$this->getUsername()."}";
-  }
-
-  public function getRoleRequiredForView() {
-    return 'ROLE_ADMIN';
+  /**
+   * @param string $locale
+   * @return string
+   */
+  public function toHumanReadable(string $locale = 'nl'): string {
+    return 'Gebruiker {username: ' .$this->getUsername(). '}';
   }
 }

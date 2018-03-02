@@ -1,57 +1,43 @@
 <?php
 namespace DemoBundle\Twig;
 
-use Bazookas\AdminBundle\AdminElements\Containers\MenuContainer;
 use Bazookas\AdminBundle\AdminElements\Elements\Actions\MenuActions\MenuActionElement;
 use Bazookas\AdminBundle\Twig\Base\BaseAdminMenuExtension;
-use DemoBundle\Security\Roles;
+use Bazookas\CommonBundle\Security\Roles;
+use Bazookas\CronBundle\Menu\CronMenuTrait;
+use Bazookas\MediaBundle\Menu\MediaMenuTrait;
 use Symfony\Component\HttpFoundation\Request;
 
 class AdminMenuExtension extends BaseAdminMenuExtension
 {
 
-  protected function createMenu(Request $request)
-  {
-    $this->elements[] = (new MenuActionElement([], [
-      'label' => 'admin.entities.example.menuLabel',
-      'route' => 'demo_example_admin',
-      'iconClass' => 'ti-info',
-      'roles' => [Roles::ROLE_EXAMPLE_ADMIN],
-    ]));
-
-    parent::createMenu($request);
-
-    $this->addApiFrameworkBundleMenuItems();
-  }
+//  use CronMenuTrait;
+//  use MediaMenuTrait;
 
   /**
-   * Add the api framework bundle menu items
+   * @param Request $request
+   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
    */
-  protected function addApiFrameworkBundleMenuItems() {
-//    $container = new MenuContainer([], [
-//      'label' => 'admin.menu.app.label',
-//      'roles' => [Roles::ROLE_SUPER_ADMIN],
-//      'iconClass' => 'ti ti-mobile'
-//    ]);
+  protected function createMenu(Request $request): void
+  {
+    $this->addMenuHeader();
 
-
-    // add the copy item
-    $this->elements[] = (new MenuActionElement([], [
-      'label' => 'admin.entities.appCopy.namePlural',
-      'route' => 'bazookas_api_framework_app_copy_admin',
-      'iconClass' => 'fa fa-language',
+    $this->elements[] = new MenuActionElement([
+      'label' => 'admin.menu.example.label',
+      'route' => 'demo_example_admin',
+      'iconClass' => 'ti-info',
       'roles' => [Roles::ROLE_SUPER_ADMIN],
-    ]));
+    ]);
 
-    // add the app settings item
-//    $container->addChild(new MenuActionElement([], [
-//      'label' => 'admin.entities.appSettings.namePlural',
-//      'route' => 'bazookas_api_framework_app_settings_admin',
-//      'iconClass' => 'fa fa-gears',
-//      'roles' => [Roles::ROLE_SUPER_ADMIN],
-//    ]));
+    $this->elements[] = new MenuActionElement([
+      'label' => 'admin.menu.product.label',
+      'route' => 'demo_product_admin',
+      'iconClass' => 'ti-info',
+      'roles' => [Roles::ROLE_SUPER_ADMIN],
+    ]);
 
-    // add it to the elements array
-//    $this->elements[] = $container;
+//    $this->addMediaBundleMenuItems();
+    $this->addAdminSettingsMenu();
   }
+
 }

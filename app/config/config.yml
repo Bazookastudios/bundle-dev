@@ -1,11 +1,8 @@
 imports:
     - { resource: parameters.yml }
+    - { resource: '@DemoBundle/Resources/config/config.yml' }
     - { resource: security.yml }
     - { resource: services.yml }
-    - { resource: "@BazookasAdminBundle/Resources/config/config.yml" }
-    - { resource: "@BazookasMediaBundle/Resources/config/menu.yml" }
-    - { resource: "@BazookasCronBundle/Resources/config/menu.yml" }
-    - { resource: "@DemoBundle/Resources/config/config.yml" }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
@@ -38,8 +35,7 @@ framework:
     fragments:       ~
     http_method_override: true
     assets:
-      version: 1.3.7
-      version_format: '%%s?v=%%s'
+        version: v1.0.0
 
 # Twig Configuration
 twig:
@@ -52,7 +48,7 @@ twig:
       locales: [nl, en]
       showAdminMenu: true
       googleClientID: "%google_api.client_id%"
-      enableCMSNotifications: true
+
 
 # Doctrine Configuration
 doctrine:
@@ -145,17 +141,11 @@ fos_oauth_server:
     refresh_token_class: APIBundle\Entity\OAuth2RefreshToken
     auth_code_class:     APIBundle\Entity\OAuth2AuthCode
     service:
-        user_provider: APIFrameworkBundle.user_provider.BaseUserProvider
+        user_provider: api.user_provider.base_user_provider
         options:
             # Changing tokens and authcode lifetime
             access_token_lifetime: 86400     # 1 day
             refresh_token_lifetime: 1209600  # 14 days
-
-# Bazookas notification bundle configuration
-bazookas_notification:
-    entities:
-      CMSNotification: DemoBundle\Entity\CMSNotification
-      EmailNotification: DemoBundle\Entity\EmailNotification
 
 # Bazookas media bundle configuration
 bazookas_media:
@@ -168,19 +158,19 @@ bazookas_media:
         appUsers: APP_USER
 
 # bazookas api framework configuration
-bazookas_api_framework:
-  file_upload:
-    settings:
-      # probably always equal to media uploads root dir, but you never know, it's a strange world
-      root_directory: "%root_directory%"
-      uploads_root_directory: "%uploads_root_directory%"
-      baseUrl: "%baseUrl%"
-      uploadRoute: api_v1_upload
-  app_copy:
-    entity: DemoBundle\Entity\AppCopy
-    # required when working with the admin bundle
-    details_entity: DemoBundle\Entity\AppCopyDetail
-    # optionally provide API specific language constraint (defaults to %requiredlocales%).
-    # allowed_locales: nl|fr
+#bazookas_api_framework:
+#  file_upload:
+#    settings:
+#      # probably always equal to media uploads root dir, but you never know, it's a strange world
+#      root_directory: "%root_directory%"
+#      uploads_root_directory: "%uploads_root_directory%"
+#      baseUrl: "%baseUrl%"
+#      uploadRoute: api_v1_upload
+#  app_copy:
+#    entity: DemoBundle\Entity\AppCopy
+#    # required when working with the admin bundle
+#    details_entity: DemoBundle\Entity\AppCopyDetail
+#    # optionally provide API specific language constraint (defaults to %requiredlocales%).
+#    # allowed_locales: nl|fr
 
 nelmio_api_doc: ~

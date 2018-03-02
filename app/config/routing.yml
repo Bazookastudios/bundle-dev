@@ -76,3 +76,7 @@ website:
 api:
     resource: "@APIBundle/Resources/config/routing.yml"
     prefix:   /api
+
+bazookas_demo_bundle:
+    resource: "@DemoBundle/Resources/config/routing.yml"
+    prefix:   /

@@ -1,3 +1,11 @@
+bazookas_admin_homepage:
+  path: /{_locale}/admin
+  defaults:
+    _controller: DemoBundle:Dashboard:index
+    _locale: "%locale%"
+  requirements:
+    _locale: "%requiredlocales%"
+
 demo_example_admin:
     path:     /{_locale}/admin/example/{_action}/{_id}
     defaults:
@@ -12,34 +20,44 @@ bazookas_api_framework_app_copy_admin:
       _action: ~
       _id: ~
 
-bazookas_admin_homepage:
-  path:     /{_locale}/admin/
-  defaults:
-    _controller: DemoBundle:Dashboard:index
-    _action: ~
-    _id: ~
-    _locale: %locale%
-  requirements:
-    _locale: %requiredlocales%
+bazookas_api_framework_app_settings_admin:
+    path:     /{_locale}/admin/app-settings/{_action}/{_id}
+    defaults:
+      _controller: BazookasAPIFrameworkBundle:Admin\AppSettingsAdmin:index
+      _action: ~
+      _id: ~
 
+demo_temp_admin:
+    path:     /{_locale}/admin/temp/{_action}/{_id}
+    defaults:
+      _controller: DemoBundle:TempAdmin:index
+      _action: ~
+      _id: ~
+
+demo_product_admin:
+    path: /{_locale}/admin/product/{_action}/{_id}
+    defaults:
+      _controller: DemoBundle:ProductAdmin:index
+      _action: ~
+      _id: ~
 
 # API ROUTES
 demo_example_post:
   path: /api/{_locale}/examples
   defaults:
     _controller: DemoBundle:api\Example:post
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods: [POST]
 
 demo_example_get:
   path: /api/{_locale}/examples
   defaults:
     _controller: DemoBundle:api\Example:get
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods: [GET]
 
 demo_example_publish:
@@ -51,9 +69,22 @@ demo_example_publish:
     _locale: %requiredlocales%
   methods: [PUT]
 
-demo_temp_admin:
-    path:     /{_locale}/admin/temp/{_action}/{_id}
+demo_file_upload:
+  path: /api/{_locale}/upload/{_hash}/{_index}
+  defaults:
+    _controller: BazookasAPIFrameworkBundle:FileUpload:upload
+    _locale: "%locale%"
+  requirements:
+    _locale: "%requiredlocales%"
+  methods:
+    - POST
+    - PUT
+
+# AUDITS
+
+demo_audit:
+    path: /{_locale}/admin/audit/{_action}/{_id}
     defaults:
-      _controller: DemoBundle:TempAdmin:index
+      _controller: DemoBundle:AuditLogAdmin:index
       _action: ~
       _id: ~

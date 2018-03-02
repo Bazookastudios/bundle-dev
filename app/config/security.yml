@@ -2,10 +2,13 @@
 # http://symfony.com/doc/current/book/security.html
 security:
     encoders:
+        #Default CMS configuration
         FOS\UserBundle\Model\UserInterface:
           algorithm: bcrypt
           cost: 13
-        Bazookas\EntityBundle\Entity\Base\BaseUser:
+
+        #Default Project configuration
+        Bazookas\CommonBundle\Entity\Base\BaseUser:
           algorithm: bcrypt
           cost: 13
 
@@ -21,7 +24,7 @@ security:
             #to authenticate the user using his email use this provider
             #id: fos_user.user_provider.username_email
         base_user_provider:
-            id: APIFrameworkBundle.user_provider.BaseUserProvider
+            id: api.user_provider.base_user_provider
 
     firewalls:
         api_token:
@@ -59,7 +62,10 @@ security:
                 path:     /
                 domain:   ~
             provider: fos_userbundle
-
+            switch_user:
+                provider: ~
+                parameter: _switch_user
+                role: ROLE_ALLOWED_TO_SWITCH
         main:
             anonymous: ~
 

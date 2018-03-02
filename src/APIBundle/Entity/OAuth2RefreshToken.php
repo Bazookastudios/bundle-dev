@@ -1,15 +1,30 @@
 <?php
 namespace APIBundle\Entity;
 
-use Bazookas\APIFrameworkBundle\Entity\OAuth2RefreshToken as BaseRefreshToken;
 use Doctrine\ORM\Mapping as ORM;
+use FOS\OAuthServerBundle\Entity\RefreshToken;
 use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * @ORM\Entity
  */
-class OAuth2RefreshToken extends BaseRefreshToken
+class OAuth2RefreshToken extends RefreshToken
 {
+  /**
+   * @ORM\Id
+   * @ORM\Column(type="integer")
+   * @ORM\GeneratedValue(strategy="AUTO")
+   * @var integer
+   */
+  protected $id;
+
+  /**
+   * @ORM\ManyToOne(targetEntity="OAuth2Client")
+   * @ORM\JoinColumn(nullable=false)
+   * @var OAuth2Client
+   */
+  protected $client;
+
   /**
    * @ORM\ManyToOne(targetEntity="AppUser", inversedBy="refreshTokens")
    */

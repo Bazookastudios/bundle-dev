@@ -1,6 +1,5 @@
 site:
   general:
-    name: New project
     title: New project
 
 dateFormat:

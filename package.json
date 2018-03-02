@@ -5,12 +5,43 @@
   "directories": {
     "test": "tests"
   },
-  "dependencies": {},
+  "dependencies": {
+    "bootbox": "^4.4.0",
+    "bootstrap": "^3.3.7",
+    "bootstrap-datepicker": "^1.7.1",
+    "bootstrap-daterangepicker": "^2.1.25",
+    "bootstrap-select": "^1.12.4",
+    "bootstrap-timepicker": "^0.5.2",
+    "chart.js": "^2.7.1",
+    "components-font-awesome": "^4.6.3",
+    "metismenu": "git+https://github.com/onokumus/metismenu.git",
+    "nanoscroller": "git+https://github.com/jamesflorentino/nanoScrollerJS.git",
+    "pace": "0.0.4",
+    "pace-js": "^1.0.2",
+    "pace-progress": "^1.0.2",
+    "select2": "^4.0.6-rc.1",
+    "sortable": "^2.0.0",
+    "sortablejs": "^1.7.0",
+    "urijs": "^1.19.0",
+    "vue": "^2.5.13"
+  },
   "devDependencies": {
-    "gulpinator": "^2.0.4"
+    "@symfony/webpack-encore": "^0.16.0",
+    "fs": "0.0.1-security",
+    "globby": "^7.1.1",
+    "image-webpack-loader": "^3.3.1",
+    "jquery": "^3.2.1",
+    "node-sass": "^4.5.3",
+    "sass-loader": "^6.0.6",
+    "vue-loader": "^13.7.0",
+    "vue-style-loader": "^3.0.3",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch": "./node_modules/.bin/encore dev --watch",
+    "build": "./node_modules/.bin/encore production"
   },
   "repository": {
     "type": "git",

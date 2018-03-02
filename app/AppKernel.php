@@ -20,14 +20,16 @@ class AppKernel extends Kernel
       // CMS Third party bundles
       // -------------------------------
       new Bazookas\AdminBundle\BazookasAdminBundle(),
-      new Bazookas\CommonBundle\BazookasCommonBundle(),
       new Bazookas\MediaBundle\BazookasMediaBundle(),
-      new Bazookas\NotificationBundle\BazookasNotificationBundle(),
+      new Bazookas\CommonBundle\BazookasCommonBundle(),
+      new Bazookas\CronBundle\BazookasCronBundle(),
+//      new Bazookas\ExportBundle\BazookasExportBundle(),
+      new Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle(),
+
       // -------------------------------
       // API Third party bundles
       // -------------------------------
       new FOS\OAuthServerBundle\FOSOAuthServerBundle(),
-      new Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle(),
       new Nelmio\ApiDocBundle\NelmioApiDocBundle(),
       // new Snc\RedisBundle\SncRedisBundle(),
 
@@ -36,14 +38,13 @@ class AppKernel extends Kernel
       // -------------------------------
       new FOS\UserBundle\FOSUserBundle(),
       new Liip\ImagineBundle\LiipImagineBundle(),
-      new Bazookas\CronBundle\BazookasCronBundle(),
-      new Bazookas\ExportBundle\BazookasExportBundle(),
 
       // -------------------------------
       // Project bundles
       // -------------------------------
       new WebsiteBundle\WebsiteBundle(),
       new APIBundle\APIBundle(),
+      new DemoBundle\DemoBundle(),
     ];
 
     if (in_array($this->getEnvironment(), ['dev', 'test'], true)) {
@@ -53,10 +54,6 @@ class AppKernel extends Kernel
       $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();
       $bundles[] = new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle();
       $bundles[] = new Symfony\Bundle\WebServerBundle\WebServerBundle();
-
-//      $bundles[] = new Bazookas\GeneratorBundle\BazookasGeneratorBundle();
-
-      $bundles[] = new DemoBundle\DemoBundle();
     }
 
     //Enable testing bundles

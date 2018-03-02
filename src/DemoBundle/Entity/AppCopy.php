@@ -6,18 +6,18 @@ use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
+ * Class AppCopy
+ * @package DemoBundle\Entity
  * @ORM\Entity(
- *   repositoryClass="Bazookas\APIFrameworkBundle\Repository\AppCopyAdminRepository"
+ *   repositoryClass="Bazookas\APIFrameworkBundle\Repository\AppCopyAdminRepository",
  * )
  * @ORM\HasLifecycleCallbacks
  */
 class AppCopy extends BaseAppCopy
 {
-
   /**
    * @var ArrayCollection<AppCopyDetail>
-   * @ORM\OneToMany(targetEntity="AppCopyDetail", mappedBy="detailParent", cascade={"all"})
+   * @ORM\OneToMany(targetEntity="DemoBundle\Entity\AppCopyDetail", mappedBy="detailParent")
    */
   protected $details;
-
 }

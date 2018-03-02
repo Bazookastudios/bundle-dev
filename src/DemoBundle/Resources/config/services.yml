@@ -1,17 +1,8 @@
 services:
-#    demo.example:
-#        class: DemoBundle\Example
-#        arguments: ["@service_id", "plain_value", %parameter%]
-  demo.example.service:
-    class: DemoBundle\Services\ExampleService
-    arguments:
-      - "@BazookasAPIFrameworkBundle.upload.fileUploadService"
-      - "@doctrine.orm.entity_manager"
-    tags:
-      - { name: APIFrameworkBundle.Data.DataService }
+  DemoBundle\Services\ExampleService:
+    alias: demo_bundle.services.example_service
 
-  demo.example.import_service:
-    class: DemoBundle\Services\ExampleImportService
+  DemoBundle\Services\ExampleImportService:
     arguments:
       - "@doctrine.orm.entity_manager"
       - '%kernel.root_dir%/../'
@@ -25,3 +16,11 @@ services:
     arguments:
       - "@doctrine.orm.entity_manager"
     lazy:  true
+
+  demo_bundle.services.example_service:
+    class: DemoBundle\Services\ExampleService
+    arguments:
+      - "@bazookas.api_framework.upload.file_upload_service"
+      - "@doctrine.orm.entity_manager"
+    tags:
+          - { name: APIFrameworkBundle.Data.DataService }

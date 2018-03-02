@@ -1,13 +1,10 @@
 <?php
-
 namespace DemoBundle\Controller\api;
 
 use Bazookas\APIFrameworkBundle\Controller\Base\BaseController;
+use Bazookas\APIFrameworkBundle\Services\Data\Interfaces\DataServiceInterface;
 use Symfony\Component\HttpFoundation\ParameterBag;
 use Symfony\Component\HttpFoundation\Request;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\Validator\Constraints\Type;
-use Nelmio\ApiDocBundle\Annotation\ApiDoc;
 
 class ExampleController extends BaseController
 {
@@ -45,20 +42,6 @@ class ExampleController extends BaseController
    *         "2": "http://localhost:8000/api/files/upload/791b276f1d0f99b58fb4a78caa4377ae/2"
    *       }
    *     }
-   *
-   * @ApiDoc(
-   *  resource=true,
-   *  description="POST new example",
-   *  requirements={},
-   *  headers={
-   *  },
-   *  statusCodes={
-   *    200="Returned when successful"
-   *  },
-   *  tags={
-   *    "in-progress"
-   *  }
-   * )
    **/
   public function postAction(Request $request) {
     $retrieveParams = array(
@@ -69,7 +52,7 @@ class ExampleController extends BaseController
         'required' => true,
       ),
       'multipleImages' => array(
-        'required' => true,
+        'required' => false,
       )
     );
 
@@ -88,19 +71,6 @@ class ExampleController extends BaseController
    *       ],
    *       "pages": 1
    *     }
-   *
-   * @ApiDoc(
-   *  resource=true,
-   *  description="GET paged list of examples",
-   *  requirements={},
-   *  headers={
-   *  },
-   *  statusCodes={
-   *    200="Returned when successful"
-   *  },
-   *  tags={
-   *  }
-   * )
    **/
   public function getAction(Request $request) {
     // TODO pass locale to handleRequest
@@ -115,19 +85,6 @@ class ExampleController extends BaseController
 
   /**
    * Publish a single example
-   *
-   * @ApiDoc(
-   *  resource=true,
-   *  description="PUT published true on a single example",
-   *  requirements={},
-   *  headers={
-   *  },
-   *  statusCodes={
-   *    200="Returned when successful"
-   *  },
-   *  tags={
-   *  }
-   * )
    **/
   public function publishAction(Request $request, $_id) {
     $retrieveParams = array();

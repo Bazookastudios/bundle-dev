@@ -19,3 +19,6 @@ monolog:
             level: debug
         console:
             type:  console
+
+twig:
+    exception_controller:  bazookas.admin.controller.exception_controller:showAction

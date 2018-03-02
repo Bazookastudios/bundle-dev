@@ -8,7 +8,7 @@ api_v1_upload:
   path: files/upload/{_hash}/{_index}
   defaults:
     _controller: BazookasAPIFrameworkBundle:FileUpload:upload
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods: [POST]

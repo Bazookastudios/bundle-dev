@@ -12,7 +12,3 @@ _errors:
 
 _main:
     resource: routing.yml
-
-bazookas_demo_bundle:
-    resource: "@DemoBundle/Resources/config/routing.yml"
-    prefix:   /

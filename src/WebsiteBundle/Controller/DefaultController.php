@@ -9,6 +9,6 @@ class DefaultController extends Controller
     public function indexAction()
     {
       //redirect to the admin page
-      return $this->redirectToRoute('bazookas_admin_homepage');
+      return $this->render('WebsiteBundle:Pages:index.html.twig');
     }
 }
