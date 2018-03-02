@@ -22,7 +22,3 @@
 	path = src/Bazookas/ExportBundle
 	url = https://github.com/Bazookastudios/BazookasExportBundle.git
 	branch = master
-[submodule "NotificationBundle"]
-	path = src/Bazookas/NotificationBundle
-	url = https://github.com/Bazookastudios/BazookasNotificationBundle.git
-	branch = master
