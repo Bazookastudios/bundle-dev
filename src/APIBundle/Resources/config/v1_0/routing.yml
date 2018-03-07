@@ -17,4 +17,5 @@ api_v1_example:
   path: /example/{_id}
   methods: [GET, DELETE, POST, PUT, PATCH]
   defaults:
-    _controller:
+    _controller: APIBundle:v1_0\Example:handleRequest
+    _id: ~
