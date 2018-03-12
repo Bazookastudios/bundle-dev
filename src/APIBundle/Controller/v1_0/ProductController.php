@@ -3,17 +3,17 @@
 namespace APIBundle\Controller\v1_0;
 
 use Bazookas\APIFrameworkBundle\Controller\Base\BaseRestController;
-use DemoBundle\Entity\Example;
+use DemoBundle\Entity\Product;
 use Symfony\Component\HttpFoundation\Request;
 
-class ExampleController extends BaseRestController
+class ProductController extends BaseRestController
 {
 
   /**
    * @inheritdoc
    */
   protected function getEntityClass(): string {
-    return Example::class;
+    return Product::class;
   }
 
   /**
@@ -25,11 +25,15 @@ class ExampleController extends BaseRestController
         //        'formatter' => '',
         //        'input' => [],
         'output' => [
-          'title',
-          'published',
-          'singleImage',
-          'multipleImages',
-          'created'
+          //Option 1
+//          'details',
+          //Option 2
+          'details' => [
+            'id',
+            'title',
+            'choiceField',
+            'sendDateTime'
+          ]
         ],
         //        'service' => ''
       ]

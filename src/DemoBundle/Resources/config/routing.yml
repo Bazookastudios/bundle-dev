@@ -64,9 +64,9 @@ demo_example_publish:
   path: /api/{_locale}/examples/{_id}/publish
   defaults:
     _controller: DemoBundle:api\Example:publish
-    _locale: %locale%
+    _locale: "%locale%"
   requirements:
-    _locale: %requiredlocales%
+    _locale: "%requiredlocales%"
   methods: [PUT]
 
 demo_file_upload:

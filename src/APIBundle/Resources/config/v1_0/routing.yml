@@ -19,3 +19,10 @@ api_v1_example:
   defaults:
     _controller: APIBundle:v1_0\Example:handleRequest
     _id: ~
+
+api_v1_product:
+  path: /product/{_id}
+  methods: [GET, DELETE, POST, PUT, PATCH]
+  defaults:
+    _controller: APIBundle:v1_0\Product:handleRequest
+    _id: ~
