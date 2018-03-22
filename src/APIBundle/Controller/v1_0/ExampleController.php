@@ -21,44 +21,52 @@ class ExampleController extends BaseRestController
 
   /**
    * @inheritdoc
+   * @throws \Symfony\Component\Validator\Exception\MissingOptionsException
+   * @throws \Symfony\Component\Validator\Exception\InvalidOptionsException
+   * @throws \Symfony\Component\Validator\Exception\ConstraintDefinitionException
    */
   protected function getConfiguration(string $method): array {
+    $updateConfiguration = [
+      //The constraints against which the input should be validated
+      'constraints' => [
+        'title' => [
+          'constraint' => new NotBlank()
+        ],
+        'published' => [
+          'constraint' => new Type('boolean')
+        ],
+        'created' => [
+          'constraint' => new NotBlank(),
+          'convertToType' => ValidationService::TYPE_DATETIME
+        ]
+      ],
+      //the input fields
+      'input' => [
+        'title',
+        'published',
+        'created'
+      ]
+    ];
+
     $configuration = [
       Request::METHOD_GET => [
-        //        'formatter' => '',
-        //        'input' => [],
         'output' => [
           'title',
           'published',
-          'singleImage',
-          'multipleImages',
+          'singleImage' => [
+            'id',
+            'url'
+          ],
+          'multipleImages' => [
+            'id',
+            'url'
+          ],
           'created'
         ],
-        //        'service' => ''
       ],
-      Request::METHOD_POST => [
-        //The constraints against which the input should be validated
-        'constraints' => [
-          'title' => [
-            'constraint' => new NotBlank()
-          ],
-          'published' => [
-            'constraint' => new Type('boolean')
-          ],
-          'created' => [
-            'constraint' => new NotBlank(),
-            'convertToType' => ValidationService::TYPE_DATETIME
-          ]
-        ],
-        //the input fields
-        'input' => [
-          'title',
-          'published',
-//          'singleImage',
-//          'multipleImages',
-          'created'
-        ]
-      ]
+      Request::METHOD_POST => $updateConfiguration, //create
+      Request::METHOD_PATCH => $updateConfiguration, //update
+      Request::METHOD_PUT => $updateConfiguration //update
     ];
 
     return $configuration[$method] ?? [];

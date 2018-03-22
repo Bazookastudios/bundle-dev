@@ -30,13 +30,7 @@ class ProductController extends BaseRestController
   protected function getConfiguration(string $method): array {
     $configuration = [
       Request::METHOD_GET => [
-        //        'formatter' => '',
-        //        'input' => [],
         'output' => [
-          //Option 1
-//          'details',
-          //Option 2
-          //nesting is only supported with 'details' fields at this time
           'details' => [
             'id',
             'title',
@@ -44,7 +38,6 @@ class ProductController extends BaseRestController
             'sendDateTime'
           ]
         ],
-        //        'service' => ''
       ],
     ];
 
