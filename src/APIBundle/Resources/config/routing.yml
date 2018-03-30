@@ -1,9 +1,19 @@
 #multi-language api:
-#api_v1:
-#    resource: "@APIBundle/Resources/config/v1_0/routing.yml"
-#    prefix:   /v1.0/{_locale}
-
-#single language api:
 api_v1:
-  resource: "@APIBundle/Resources/config/v1_0/routing.yml"
-  prefix:   /v1.0
+    resource: "@APIBundle/Resources/config/v1_0/routing.yml"
+    prefix:   /v1.0/{_locale}
+
+api_v1_token:
+    path: /v1.0/token
+    methods: [POST]
+    defaults:
+      _controller: APIBundle:v1_0\Auth:token
+
+api_v1_upload:
+  path: /v1.0/files/upload/{_hash}/{_index}
+  defaults:
+    _controller: BazookasAPIFrameworkBundle:FileUpload:upload
+    _locale: "%locale%"
+  requirements:
+    _locale: "%requiredlocales%"
+  methods: [POST]

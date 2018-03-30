@@ -18,11 +18,11 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="example")
  * @ORM\Entity(repositoryClass="DemoBundle\Repository\ExampleRepository")
  */
-class Example extends BaseEntity implements CloneableEntityInterface, VersionableInterface
+class Example extends BaseEntity implements CloneableEntityInterface, AuditableInterface
 {
   use CloneableEntityTrait;
-//  use AuditableTrait;
-  use VersionableTrait;
+  use AuditableTrait;
+//  use VersionableTrait;
 
   public function __construct()
   {
