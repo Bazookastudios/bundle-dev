@@ -3,14 +3,18 @@
 namespace DemoBundle\Controller;
 
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
+use Bazookas\AdminBundle\PageBuilder\Base\BaseFormPageBuilder;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\BulkPageBuilderInterface;
+use Bazookas\AdminBundle\PageBuilder\Interfaces\FormPageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
 use Bazookas\AdminBundle\Security\Roles;
 use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
 use DemoBundle\Entity\Example;
+use DemoBundle\Entity\Product;
 use DemoBundle\Form\ExampleAdminType;
 use DemoBundle\PageBuilder\ExamplePageBuilder;
+use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class ExampleAdminController extends BaseAdminListController
@@ -80,16 +84,6 @@ class ExampleAdminController extends BaseAdminListController
 
     return $builder;
   }
-
-  protected function modifyBulkEditBuilder(Request $request, BulkPageBuilderInterface $builder) : BulkPageBuilderInterface
-  {
-//    dump(parent::modifyBulkEditBuilder($request, $builder));
-//    exit();
-//    $formOptions = $this->getFormOptions();
-//    $builder->setFormOptions($formOptions);
-    return parent::modifyBulkEditBuilder($request, $builder);
-  }
-
 
   /**
    * @param string $action
