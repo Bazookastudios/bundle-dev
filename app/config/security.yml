@@ -41,26 +41,24 @@ security:
             id: api.user_provider.base_user_provider
 
     firewalls:
-        api_token:
-            pattern:    ^/api/v1.0/token
-            security:   false
-        oauth_token:
-            pattern:    ^/api/oauth/v2/token
-            security:   false
+        #Default Project configuration
         insecure:
-            pattern:  ^/(media|cron|(api/doc))
+            pattern:  ^/(media|cron|(api/doc)|_(profiler|wdt)|css|images|js)
             security: false
+
+        #Default API configuration
+        token:
+            pattern:    ^/(api/v1.0/token)|(api/oauth/v2/token)
+            security:   false
         api:
             pattern:    ^/api
             fos_oauth:  true
             stateless:  true
             provider: base_user_provider
-        dev:
-            pattern:  ^/(_(profiler|wdt)|css|images|js)/
-            security: false
+
+        #Default CMS configuration
         admin:
-            # NOTE put (/[^/]*)? before matching pattern to allow locales in admin paths
-            pattern: (/[^/]*)?/admin
+            pattern: ^\/(%requiredlocales%)+\/admin
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
@@ -80,8 +78,12 @@ security:
                 provider: ~
                 parameter: _switch_user
                 role: ROLE_ALLOWED_TO_SWITCH
+            logout_on_user_change: true
+
+        #Default Project configuration
         main:
             anonymous: ~
+            logout_on_user_change: true
 
     # any login or register paths can be visited anonymously
     # all other admin paths should be secured
