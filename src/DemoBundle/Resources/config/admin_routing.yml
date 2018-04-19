@@ -1,0 +1,46 @@
+bazookas_admin_homepage:
+  path: /
+  defaults:
+    _controller: DemoBundle:Dashboard:index
+
+demo_example_admin:
+  path:     /example/{_action}/{_id}
+  defaults:
+    _controller: DemoBundle:ExampleAdmin:index
+    _action: ~
+    _id: ~
+
+bazookas_api_framework_app_copy_admin:
+  path:     /app-copy/{_action}/{_id}
+  defaults:
+    _controller: BazookasAPIFrameworkBundle:Admin\AppCopyAdmin:index
+    _action: ~
+    _id: ~
+
+bazookas_api_framework_app_settings_admin:
+  path:     /app-settings/{_action}/{_id}
+  defaults:
+    _controller: BazookasAPIFrameworkBundle:Admin\AppSettingsAdmin:index
+    _action: ~
+    _id: ~
+
+demo_temp_admin:
+  path:     /temp/{_action}/{_id}
+  defaults:
+    _controller: DemoBundle:TempAdmin:index
+    _action: ~
+    _id: ~
+
+demo_product_admin:
+  path: /product/{_action}/{_id}
+  defaults:
+    _controller: DemoBundle:ProductAdmin:index
+    _action: ~
+    _id: ~
+
+demo_audit:
+  path: /audit/{_action}/{_id}
+  defaults:
+    _controller: DemoBundle:AuditLogAdmin:index
+    _action: ~
+    _id: ~
