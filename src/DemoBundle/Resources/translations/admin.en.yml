@@ -4,6 +4,14 @@ admin:
       label: Products
     example:
       label: Examples
+    event:
+      label: Events
+    app_copy:
+      label: App copy
+    app_settings:
+      label: App settings
+    containers:
+      app: App settings
   entities:
     example:
       namePlural: Examples
