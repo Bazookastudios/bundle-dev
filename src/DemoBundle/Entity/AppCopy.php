@@ -17,7 +17,7 @@ class AppCopy extends BaseAppCopy
 {
   /**
    * @var ArrayCollection<AppCopyDetail>
-   * @ORM\OneToMany(targetEntity="DemoBundle\Entity\AppCopyDetail", mappedBy="detailParent")
+   * @ORM\OneToMany(targetEntity="DemoBundle\Entity\AppCopyDetail", mappedBy="detailParent", cascade={"persist", "remove"})
    */
   protected $details;
 }
