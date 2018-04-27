@@ -1,6 +1,6 @@
 <?php
 
-namespace DemoBundle\Controller;
+namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
 use Bazookas\AdminBundle\PageBuilder\Base\BaseFormPageBuilder;

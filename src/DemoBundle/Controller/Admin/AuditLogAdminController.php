@@ -1,6 +1,6 @@
 <?php
 
-namespace DemoBundle\Controller;
+namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\Controller\AdminController\BaseAuditLogAdminController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
@@ -13,11 +13,20 @@ use Bazookas\AdminBundle\Security\Roles;
 class AuditLogAdminController extends BaseAuditLogAdminController
 {
 
+  /**
+   * @return null|string
+   */
   protected function getEntityClass(): ?string
   {
     return AuditLog::class;
   }
 
+  /**
+   * @param Request $request
+   * @param ListPageBuilderInterface $builder
+   * @return ListPageBuilderInterface
+   * @throws \ReflectionException
+   */
   protected function modifyListBuilder(Request $request, ListPageBuilderInterface $builder): ListPageBuilderInterface
   {
     /**
@@ -30,11 +39,10 @@ class AuditLogAdminController extends BaseAuditLogAdminController
     return $builder;
   }
 
-  protected function getFormClass(string $action): ?string
-  {
-    return null;
-  }
-
+  /**
+   * @param string $action
+   * @return bool
+   */
   protected function hasAccess(string $action): bool
   {
     switch ($action) {

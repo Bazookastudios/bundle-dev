@@ -1,6 +1,6 @@
 <?php
 
-namespace DemoBundle\Controller;
+namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\AdminElements\Containers\TabbedContainer;
 use Bazookas\AdminBundle\AdminElements\Containers\TabbedPanelContainer;
@@ -15,11 +15,20 @@ class DashboardController extends BaseAdminActionController
 {
   public const ACTION_DEFAULT = AccessControlInterface::ACTION_DASHBOARD;
 
+  /**
+   * DashboardController constructor.
+   */
   public function __construct()
   {
     $this->builders[AccessControlInterface::ACTION_DASHBOARD] = GenericPageBuilder::class;
   }
 
+  /**
+   * @param Request $request
+   * @param GenericPageBuilder $builder
+   * @return GenericPageBuilder
+   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
+   */
   protected function modifyDashboardBuilder(Request $request, GenericPageBuilder $builder): GenericPageBuilder
   {
     $tabOneOptions = [
@@ -64,6 +73,7 @@ class DashboardController extends BaseAdminActionController
    * Check whether the current logged in user has access to perform the action
    * @param string $action
    * @return bool
+   * @throws \LogicException
    */
   protected function hasAccess(string $action): bool
   {
