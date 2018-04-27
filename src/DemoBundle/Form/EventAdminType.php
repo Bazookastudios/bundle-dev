@@ -2,6 +2,7 @@
 
 namespace DemoBundle\Form;
 
+use Bazookas\AdminBundle\Form\Type\NestedFormType;
 use DemoBundle\Entity\Event;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
@@ -35,6 +36,11 @@ class EventAdminType extends AbstractType
         'attr' => array(
           'data-format' => 'dd/mm/yyyy',
         ),
+      ])
+      ->add('product', NestedFormType::class, [
+        'label' => 'admin.entities.event.fields.product',
+        'entry_type' => ProductAdminType::class,
+        'prototype_name' => '__product__',
       ])
     ;
   }

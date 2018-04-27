@@ -26,6 +26,12 @@ class Event extends BaseEntity
   private $title;
 
   /**
+   * @ORM\ManyToOne(targetEntity="DemoBundle\Entity\Product", cascade={"persist"})
+   * @var Product|null
+   */
+  private $product;
+
+  /**
    * @return \DateTime|null
    */
   public function getDate(): ?\DateTime
@@ -59,6 +65,25 @@ class Event extends BaseEntity
   public function setTitle(?string $title): Event
   {
     $this->title = $title;
+
+    return $this;
+  }
+
+  /**
+   * @return Product|null
+   */
+  public function getProduct(): ?Product
+  {
+    return $this->product;
+  }
+
+  /**
+   * @param Product|null $product
+   * @return Event
+   */
+  public function setProduct(?Product $product): Event
+  {
+    $this->product = $product;
 
     return $this;
   }

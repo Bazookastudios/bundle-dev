@@ -43,3 +43,4 @@ admin:
       fields:
         title: Titel
         date: Datum
+        product: Product
