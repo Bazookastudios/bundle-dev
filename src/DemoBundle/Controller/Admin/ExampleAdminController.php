@@ -97,7 +97,6 @@ class ExampleAdminController extends BaseAdminListController
       case AccessControlInterface::ACTION_ADD:
       case AccessControlInterface::ACTION_REMOVE:
       case AccessControlInterface::ACTION_CLONE:
-      case AccessControlInterface::ACTION_BULK_EDIT:
         return Roles::ROLE_SUPER_ADMIN;
       default:
         return false;

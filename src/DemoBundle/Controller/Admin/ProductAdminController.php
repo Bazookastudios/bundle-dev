@@ -1,6 +1,6 @@
 <?php
 
-namespace DemoBundle\Controller;
+namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
@@ -67,7 +67,6 @@ class ProductAdminController extends BaseAdminListController
       case AccessControlInterface::ACTION_ADD:
       case AccessControlInterface::ACTION_REMOVE:
       case AccessControlInterface::ACTION_CLONE:
-      case AccessControlInterface::ACTION_BULK_REMOVE:
         return true;
       default:
         return false;
