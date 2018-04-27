@@ -26,3 +26,12 @@ admin:
     productDetail:
       fields:
         title: Titel
+    event:
+      namePlural: Events
+      addLabel: Event toevoegen
+      editLabel: Event aanpassen
+      listLabel: Overzicht van alle events
+      cloneLabel: Dupliceer event
+      fields:
+        title: Titel
+        date: Datum

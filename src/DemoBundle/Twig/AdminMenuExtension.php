@@ -36,6 +36,13 @@ class AdminMenuExtension extends BaseAdminMenuExtension
       'roles' => [Roles::ROLE_SUPER_ADMIN],
     ]);
 
+    $this->elements[] = new MenuActionElement([
+      'label' => 'admin.menu.event.label',
+      'route' => 'demo_event_admin',
+      'iconClass' => 'fa fa-calendar',
+      'roles' => [Roles::ROLE_SUPER_ADMIN],
+    ]);
+
 //    $this->addMediaBundleMenuItems();
     $this->addAdminSettingsMenu();
   }

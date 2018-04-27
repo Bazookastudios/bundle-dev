@@ -37,5 +37,10 @@ demo_audit:
     _controller: DemoBundle:Admin\AuditLogAdmin:index
     _action: ~
     _id: ~
+
+demo_event_admin:
+  path: /event/{_action}/{_id}
+  defaults:
+    _controller: DemoBundle:Admin\EventAdmin:index
     _action: ~
     _id: ~

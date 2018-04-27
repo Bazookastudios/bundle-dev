@@ -4,6 +4,8 @@ namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
+use DemoBundle\Entity\Event;
+use DemoBundle\Form\EventAdminType;
 use Symfony\Component\HttpFoundation\Request;
 use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
 
@@ -28,7 +30,10 @@ class EventAdminController extends BaseAdminListController
   {
     $builder = parent::modifyListBuilder($request, $builder);
 
-    //TODO modify the builder here
+    $builder
+      ->addDateTimeField('date')
+      ->addField('title')
+    ;
 
     return $builder;
   }
@@ -42,8 +47,7 @@ class EventAdminController extends BaseAdminListController
     switch($action) {
       case AccessControlInterface::ACTION_ADD:
       case AccessControlInterface::ACTION_EDIT:
-        //TODO add a form class
-        return null;
+        return EventAdminType::class;
       default:
         return null;
     }

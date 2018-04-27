@@ -2,7 +2,9 @@
 
 namespace DemoBundle\Form;
 
+use DemoBundle\Entity\Event;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -17,9 +19,24 @@ class EventAdminType extends AbstractType
   public function buildForm(FormBuilderInterface $builder, array $options)
   {
     $builder
-      ->add('name', TextType::class, [
-        'label' => 'admin.entities.Event.fields.name',
-      ]);
+      ->add('title', TextType::class, [
+        'label' => 'admin.entities.event.fields.title',
+      ])
+      ->add('date',  DateTimeType::class, [
+        'label' => 'admin.entities.event.fields.date',
+        'required' => true,
+        'datetimepicker' => true,
+        'date_widget' => 'single_text',
+        'time_widget' => 'single_text',
+        'html5' => false,
+        'model_timezone' => 'UTC',
+        'view_timezone' => 'Europe/Brussels',
+        'date_format' => 'dd/MM/yyyy',
+        'attr' => array(
+          'data-format' => 'dd/mm/yyyy',
+        ),
+      ])
+    ;
   }
 
   /**

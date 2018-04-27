@@ -26,3 +26,12 @@ admin:
     productDetail:
       fields:
         title: Title
+    event:
+      namePlural: Events
+      addLabel: Add event
+      editLabel: Edit event
+      listLabel: Overview of all events
+      cloneLabel: Duplicate event
+      fields:
+        title: Title
+        date: Date
