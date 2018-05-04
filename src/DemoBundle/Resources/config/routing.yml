@@ -5,7 +5,7 @@ api_v1:
   defaults:
     _locale: "%locale%"
   requirements:
-    _locale: "%requiredlocales%"
+    _locale: "%require_admin_locales%"
 
 #mutli language api:
 demo_admin:
@@ -14,4 +14,4 @@ demo_admin:
   defaults:
     _locale: "%locale%"
   requirements:
-    _locale: "%requiredlocales%"
+    _locale: "%require_admin_locales%"

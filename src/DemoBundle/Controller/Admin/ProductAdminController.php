@@ -36,7 +36,10 @@ class ProductAdminController extends BaseAdminListController
     $builder = parent::modifyListBuilder($request, $builder);
 
     $builder
-      ->addDetailsField('title');
+      ->addDetailsField('title')
+
+      ->addDetailsFilterField('title')
+    ;
 
     return $builder;
   }

@@ -37,7 +37,7 @@ bazookas_admin:
     defaults:
         _locale: "%locale%"
     requirements:
-        _locale: "%requiredlocales%"
+        _locale: "%require_admin_locales%"
 
 bazookas_cron:
     resource: "@BazookasCronBundle/Resources/config/routing.yml"
@@ -45,7 +45,7 @@ bazookas_cron:
     defaults:
         _locale: "%locale%"
     requirements:
-        _locale: "%requiredlocales%"
+        _locale: "%require_admin_locales%"
 
 bazookas_media:
     resource: "@BazookasMediaBundle/Resources/config/routing.yml"
@@ -53,7 +53,7 @@ bazookas_media:
     defaults:
         _locale: "%locale%"
     requirements:
-        _locale: "%requiredlocales%"
+        _locale: "%require_admin_locales%"
 
 api_framework:
     resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"

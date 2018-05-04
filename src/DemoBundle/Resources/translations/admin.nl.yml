@@ -40,6 +40,7 @@ admin:
       editLabel: Event aanpassen
       listLabel: Overzicht van alle events
       cloneLabel: Dupliceer event
+      pageTitle: Events
       fields:
         title: Titel
         date: Datum

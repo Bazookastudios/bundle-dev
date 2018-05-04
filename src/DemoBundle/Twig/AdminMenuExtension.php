@@ -1,6 +1,7 @@
 <?php
 namespace DemoBundle\Twig;
 
+use APIFrameworkBundle\Menu\APIFrameworkMenuTrait;
 use Bazookas\AdminBundle\AdminElements\Containers\MenuContainer;
 use Bazookas\AdminBundle\AdminElements\Elements\Actions\MenuActions\MenuActionElement;
 use Bazookas\AdminBundle\Twig\Base\BaseAdminMenuExtension;
@@ -14,6 +15,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 
 //  use CronMenuTrait;
 //  use MediaMenuTrait;
+//  use APIFrameworkMenuTrait;
 
   /**
    * @param Request $request
@@ -44,37 +46,27 @@ class AdminMenuExtension extends BaseAdminMenuExtension
       'roles' => [Roles::ROLE_SUPER_ADMIN],
     ]);
 
-    $this->elements[] = $this->createApiFrameworkBundleMenuItems();
+//    $this->elements[] = $this->createApiFrameworkBundleMenuItems();
 
 //    $this->addMediaBundleMenuItems();
     $this->addAdminSettingsMenu();
   }
 
-  /**
-   * @return MenuContainer
-   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
-   */
-  private function createApiFrameworkBundleMenuItems(): MenuContainer {
-    return new MenuContainer(
-      [
-        'label' => 'admin.menu.containers.app',
-        'roles' => [Roles::ROLE_ADMIN],
-        'iconClass' => 'fa fa-list',
-        'children' => [
-          new MenuActionElement( [
-            'label' => 'admin.menu.app_copy.label',
-            'route' => 'bazookas_api_framework_app_copy_admin',
-            'roles' => [Roles::ROLE_ADMIN],
-            'iconClass' => 'fa fa-comment-o'
-          ]),
-          new MenuActionElement( [
-            'label' => 'admin.menu.app_settings.label',
-            'route' => 'bazookas_api_framework_app_settings_admin',
-            'roles' => [Roles::ROLE_ADMIN],
-            'iconClass' => 'fa fa-cog'
-          ]),
-        ]
-      ]
-    );
-  }
+//  /**
+//   * @return MenuContainer
+//   * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
+//   */
+//  private function createApiFrameworkBundleMenuItems(): MenuContainer {
+//    return new MenuContainer(
+//      [
+//        'label' => 'admin.menu.containers.app',
+//        'roles' => [Roles::ROLE_ADMIN],
+//        'iconClass' => 'fa fa-list',
+//        'children' => [
+//          $this->createAppCopyMenuItem('bazookas_api_framework_app_copy_admin'),
+//          $this->createAppSettingsMenuItem('bazookas_api_framework_app_settings_admin')
+//        ]
+//      ]
+//    );
+//  }
 }

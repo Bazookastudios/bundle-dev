@@ -7,7 +7,10 @@ imports:
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
+    #The fallback locale
     locale: en
+    #All supported locales
+    locales: [nl, en]
     requiredlocales: nl|en
     root_directory: "%kernel.root_dir%/../web"
     uploads_root_directory: "%kernel.root_dir%/../web/uploads"
@@ -44,10 +47,9 @@ twig:
         - 'bootstrap_3_layout.html.twig'
         - 'BazookasAdminBundle:Form:fields.html.twig'
     globals:
-      locales: [nl, en]
+      locales: "%locales%"
       showAdminMenu: true
       googleClientID: "%google_api.client_id%"
-
 
 # Doctrine Configuration
 doctrine:
@@ -173,6 +175,5 @@ bazookas_api_framework:
     # allowed_locales: nl|fr
   app_settings:
       entity: DemoBundle\Entity\AppSettings
-
 
 nelmio_api_doc: ~

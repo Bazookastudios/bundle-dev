@@ -79,20 +79,14 @@ Encore
     ],
   })
 
-  // add loaders for the Vue javascript framework
-  .addLoader({
-    test: /\.vue$/,
-    loader: 'vue-loader',
-    options: {
-      loaders: {
-        // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
-        // the "scss" and "sass" values for the lang attribute to the right configs here.
-        // other preprocessors should work out of the box, no loader config like this nessessary.
-        'scss': 'vue-style-loader!css-loader!sass-loader',
-        'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
-      }
-      // other vue-loader options go here
-    }
+  .enableVueLoader(function(options) {
+    options.loaders = {
+      // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
+      // the "scss" and "sass" values for the lang attribute to the right configs here.
+      // other preprocessors should work out of the box, no loader config like this nessessary.
+      'scss': 'vue-style-loader!css-loader!sass-loader',
+      'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
+    };
   })
 
   // you can use this method to provide other common global variables,
@@ -107,6 +101,31 @@ Encore
     'bootbox': 'bootbox'
   })
 ;
+
+//Indicate to Vue that we are running in production mode
+if (Encore.isProduction()) {
+  Encore.addPlugin(new Webpack.DefinePlugin({
+    'process.env': {
+      NODE_ENV: '"production"'
+    }
+  }));
+
+  //Prevent momentjs from loading ALL of the available locales
+  Encore.addPlugin(new Webpack.ContextReplacementPlugin(/moment[\/\\]locale$/, /en|nl/));
+
+  Encore.addPlugin(new Webpack.optimize.UglifyJsPlugin());
+  Encore.addPlugin(new Webpack.optimize.OccurrenceOrderPlugin());
+
+  //Post-process chunks to reduce code duplication
+  Encore.addPlugin(new Webpack.optimize.LimitChunkCountPlugin({maxChunks: 15}));
+
+  //Create only chunks of 25kb or larger
+  Encore.addPlugin(new Webpack.optimize.MinChunkSizePlugin({minChunkSize: 25000}));
+
+  //Enable this to view an analysis of the js files generated.
+  // var BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;
+  // Encore.addPlugin(new BundleAnalyzerPlugin());
+}
 
 function addBundleConfigs() {
   // vendor folder takes precedence, as is custom with composer dependencies
