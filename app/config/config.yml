@@ -37,7 +37,7 @@ framework:
     fragments:       ~
     http_method_override: true
     assets:
-        version: v1.0.0
+        json_manifest_path: '%kernel.root_dir%/../web/static/manifest.json'
 
 # Twig Configuration
 twig:
