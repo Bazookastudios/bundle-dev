@@ -58,7 +58,7 @@ security:
 
         #Default CMS configuration
         admin:
-            pattern: ^\/(%requiredlocales%)+\/admin
+            pattern: ^\/(nl|en)+\/admin
             form_login:
                 login_path: fos_user_security_login
                 check_path: fos_user_security_check
@@ -89,16 +89,16 @@ security:
     # all other admin paths should be secured
     access_control:
       #for a cms only project, use the settings below:
-        # - { path: ^\/(%requiredlocales%)+\/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^\/(%requiredlocales%)+\/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^\/(%requiredlocales%)+\/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        # - { path: ^\/(%requiredlocales%)+\?/$, role: [ROLE_CMS_USER, IS_AUTHENTICATED_ANONYMOUSLY] }
-        # - { path: ^\/(%requiredlocales%)+\/, role: ROLE_CMS_USER }
+        # - { path: ^\/(nl|en)+\/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^\/(nl|en)+\/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^\/(nl|en)+\/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        # - { path: ^\/(nl|en)+\?/$, role: [ROLE_CMS_USER, IS_AUTHENTICATED_ANONYMOUSLY] }
+        # - { path: ^\/(nl|en)+\/, role: ROLE_CMS_USER }
         # - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
 
       # #for a cms + website project, use the settings below:
-        - { path: ^\/(%requiredlocales%)+\/admin\/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^\/(%requiredlocales%)+\/admin\/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^\/(%requiredlocales%)+\/admin\/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
-        - { path: ^\/(%requiredlocales%)+\/admin((\/)*.)*$, role: ROLE_CMS_USER }
+        - { path: ^\/(nl|en)+\/admin\/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(nl|en)+\/admin\/registration, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(nl|en)+\/admin\/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(nl|en)+\/admin((\/)*.)*$, role: ROLE_CMS_USER }
         - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
