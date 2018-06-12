@@ -44,3 +44,10 @@ demo_event_admin:
     _controller: DemoBundle:Admin\EventAdmin:index
     _action: ~
     _id: ~
+
+demo_linked_list_admin:
+  path: /linked-list/{_action}/{_id}
+  defaults:
+    _controller: DemoBundle:Admin\LinkedListEntityAdmin:index
+    _action: ~
+    _id: ~
