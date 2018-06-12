@@ -9,6 +9,7 @@ const WEBSITE_ROOT = './src/WebsiteBundle/Resources/public/';
 Encore
   // directory where all compiled assets will be stored
   .setOutputPath('web/static/')
+  .enableVersioning(Encore.isProduction())
 
   // what's the public path to this directory (relative to your project's document root dir)
   .setPublicPath('/static')
@@ -87,6 +88,7 @@ Encore
       'scss': 'vue-style-loader!css-loader!sass-loader',
       'sass': 'vue-style-loader!css-loader!sass-loader?indentedSyntax'
     };
+    options.preserveWhitespace = false;
   })
 
   // you can use this method to provide other common global variables,
