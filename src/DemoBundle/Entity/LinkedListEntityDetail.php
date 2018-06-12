@@ -40,13 +40,13 @@ class LinkedListEntityDetail extends BaseEntity implements EntityDetailInterface
 
   /**
    * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Image")
-   * @var Image
+   * @var Image|null
    */
   private $image;
 
   /**
    * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Video")
-   * @var Video
+   * @var Video|null
    */
   private $video;
 
@@ -85,34 +85,34 @@ class LinkedListEntityDetail extends BaseEntity implements EntityDetailInterface
   }
 
   /**
-   * @return Image
+   * @return Image|null
    */
-  public function getImage(): Image {
+  public function getImage(): ?Image {
     return $this->image;
   }
 
   /**
-   * @param Image $image
+   * @param Image|null $image
    * @return LinkedListEntityDetail
    */
-  public function setImage(Image $image): LinkedListEntityDetail {
+  public function setImage(?Image $image): LinkedListEntityDetail {
     $this->image = $image;
 
     return $this;
   }
 
   /**
-   * @return Video
+   * @return Video|null
    */
-  public function getVideo(): Video {
+  public function getVideo(): ?Video {
     return $this->video;
   }
 
   /**
-   * @param Video $video
+   * @param Video|null $video
    * @return LinkedListEntityDetail
    */
-  public function setVideo(Video $video): LinkedListEntityDetail {
+  public function setVideo(?Video $video): LinkedListEntityDetail {
     $this->video = $video;
 
     return $this;
