@@ -30,13 +30,13 @@ class LinkedListEntity extends BaseEntity implements EntityDetailParentInterface
   private $details;
 
   /**
-   * @ORM\OneToOne(targetEntity="DemoBundle\Entity\LinkedListEntity")
+   * @ORM\OneToOne(targetEntity="DemoBundle\Entity\LinkedListEntity", cascade={"persist"})
    * @var LinkedListEntityInterface
    */
   protected $next;
 
   /**
-   * @ORM\OneToOne(targetEntity="DemoBundle\Entity\LinkedListEntity")
+   * @ORM\OneToOne(targetEntity="DemoBundle\Entity\LinkedListEntity", cascade={"persist"})
    * @var LinkedListEntityInterface
    */
   protected $previous;

@@ -30,13 +30,13 @@ class LinkedListEntityDetail extends BaseEntity implements EntityDetailInterface
    * @ORM\Column(type="string")
    * @var string
    */
-  private $title;
+  private $title = '';
 
   /**
    * @ORM\Column(type="text")
    * @var string
    */
-  private $description;
+  private $description = '';
 
   /**
    * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Image")

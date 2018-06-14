@@ -3,6 +3,7 @@
 namespace DemoBundle\Form;
 
 use Bazookas\AdminBundle\Form\Type\EntityPickerType;
+use Bazookas\CommonBundle\Form\Type\LocaleType;
 use Bazookas\MediaBundle\Entity\Image;
 use Bazookas\MediaBundle\Entity\Video;
 use DemoBundle\Entity\LinkedListEntityDetail;
@@ -21,6 +22,9 @@ class LinkedListEntityDetailAdminType extends AbstractType
    */
   public function buildForm(FormBuilderInterface $builder, array $options) {
     $builder
+      ->add('locale', LocaleType::class, [
+        'label' => false
+      ])
       ->add('title', TextType::class, [
         'label' => 'admin.entities.linkedListEntityDetail.fields.title',
       ])
