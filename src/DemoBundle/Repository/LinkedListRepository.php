@@ -16,10 +16,14 @@ class LinkedListRepository extends BaseRepository
     $qb = parent::beforeListQueryExecution($qb, $params);
 
     $qb
-      ->select('partial e.{id}')
-
       ->addSelect('partial details.{id, title, description, image, video}')
       ->leftJoin('e.details', 'details')
+
+      ->addSelect('image')
+      ->leftJoin('details.image', 'image')
+
+      ->addSelect('video')
+      ->leftJoin('details.video', 'video')
     ;
 
     return $qb;
