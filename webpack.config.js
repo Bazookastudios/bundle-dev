@@ -5,6 +5,7 @@ let FS = require("fs");
 //Project stuff
 let addedConfigs = {};
 const WEBSITE_ROOT = './src/WebsiteBundle/Resources/public/';
+const DEMO_ROOT = './src/DemoBundle/Resources/public/';
 
 Encore
   // directory where all compiled assets will be stored
@@ -19,6 +20,7 @@ Encore
 
   // will output as web/build/app.js
   .addEntry('js/app', WEBSITE_ROOT + 'js/main.js')
+  .addEntry('js/custom_admin_components', DEMO_ROOT + 'js/admin/CustomAdminComponents.js')
 
   // will output as web/build/global.css
   .addStyleEntry('css/app', WEBSITE_ROOT + 'css/main.scss')

@@ -29,8 +29,12 @@ class LinkedListEntityAdminController extends BaseAdminLinkedListController
     $builder = parent::modifyListBuilder($request, $builder);
 
     $builder
-      ->setEntityPreviewTemplate('DemoBundle:List:linkedEntityPreview.html.twig')
+      ->setListViewComponent('linked-list-view')
     ;
+
+    $this->setScripts([
+      'static/js/custom_admin_components.js'
+    ]);
 
     return $builder;
   }
@@ -58,7 +62,7 @@ class LinkedListEntityAdminController extends BaseAdminLinkedListController
       case AccessControlInterface::ACTION_LIST:
       case AccessControlInterface::ACTION_EDIT:
       case AccessControlInterface::ACTION_ADD:
-      case AccessControlInterface::ACTION_REMOVE:
+      case self::ACTION_ORDER:
         return true;
       default:
         return false;
