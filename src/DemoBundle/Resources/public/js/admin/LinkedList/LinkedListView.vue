@@ -3,7 +3,7 @@
     <div>
       <p>{{ data.details[0].title }}</p>
 
-      <img v-if="data.details[0].image" :src="data.details[0].image.url" />
+      <img v-if="data.details[0].image" :src="data.details[0].image.url" width="200px"/>
     </div>
   </div>
 </template>
