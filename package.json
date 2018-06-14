@@ -24,7 +24,8 @@
     "sortable": "^2.0.0",
     "sortablejs": "^1.7.0",
     "urijs": "^1.19.0",
-    "vue": "^2.5.13"
+    "vue": "^2.5.13",
+    "vuedraggable": "^2.16.0"
   },
   "devDependencies": {
     "@symfony/webpack-encore": "^0.16.0",
