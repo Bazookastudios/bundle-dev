@@ -23,7 +23,7 @@ class AppKernel extends Kernel
       new Bazookas\MediaBundle\BazookasMediaBundle(),
       new Bazookas\CommonBundle\BazookasCommonBundle(),
       new Bazookas\CronBundle\BazookasCronBundle(),
-//      new Bazookas\ExportBundle\BazookasExportBundle(),
+      new Bazookas\ExportBundle\BazookasExportBundle(),
       new Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle(),
 
       // -------------------------------

@@ -22,3 +22,7 @@
 	path = src/Bazookas/SecurityBundle
 	url = https://github.com/Bazookastudios/BazookasSecurityBundle.git
 	branch = master
+[submodule "ExportBundle"]
+	path = src/Bazookas/ExportBundle
+	url = https://github.com/Bazookastudios/BazookasExportBundle.git
+	branch = master

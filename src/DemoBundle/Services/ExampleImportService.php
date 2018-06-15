@@ -8,20 +8,18 @@ class ExampleImportService extends BaseImportService
 {
   /**
    * @param array $rowData
-   * @return array
+   * @throws \Doctrine\ORM\ORMException
    */
-  protected function parseRow(array &$rowData)
+  protected function parseRow(array &$rowData): void
   {
     $entity = new Example();
 
     $entity
-      ->setPublished($rowData['Published'] === '1' ? true : false)
+      ->setPublished($rowData['Published'] === '1')
       ->setTitle($rowData['Title'])
     ;
 
     $this->entityManager->persist($entity);
-
-    return $rowData;
   }
 
   /**
@@ -29,7 +27,7 @@ class ExampleImportService extends BaseImportService
    * mapping the headers in the file to the header that should be used when creating the $rowData arrays
    * @return array
    */
-  protected function getExpectedColumnHeaders()
+  protected function getExpectedColumnHeaders(): array
   {
     return [
       'Published',
@@ -39,8 +37,10 @@ class ExampleImportService extends BaseImportService
 
   /**
    * This function is called when the entire document has been parsed.
+   * @throws \Doctrine\ORM\ORMException
+   * @throws \Doctrine\ORM\OptimisticLockException
    */
-  protected function onComplete()
+  protected function onComplete(): void
   {
     $this->entityManager->flush();
   }
