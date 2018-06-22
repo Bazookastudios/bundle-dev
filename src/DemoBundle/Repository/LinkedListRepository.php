@@ -2,11 +2,15 @@
 
 namespace DemoBundle\Repository;
 
+use Bazookas\AdminBundle\Repository\Interfaces\LinkedListRepositoryInterface;
+use Bazookas\AdminBundle\Repository\Traits\LinkedListRepositoryTrait;
 use Bazookas\AdminBundle\Repository\Base\BaseRepository;
 use Doctrine\ORM\QueryBuilder;
 
-class LinkedListRepository extends BaseRepository
+class LinkedListRepository extends BaseRepository implements LinkedListRepositoryInterface
 {
+  use LinkedListRepositoryTrait;
+
   /**
    * @param QueryBuilder $qb
    * @param array $params
@@ -19,13 +23,14 @@ class LinkedListRepository extends BaseRepository
       ->addSelect('partial details.{id, title, description, image, video}')
       ->leftJoin('e.details', 'details')
 
-      ->addSelect('image')
+      ->addSelect('partial image.{id, url}')
       ->leftJoin('details.image', 'image')
 
-      ->addSelect('video')
+      ->addSelect('partial video.{id, url}')
       ->leftJoin('details.video', 'video')
     ;
 
     return $qb;
   }
+
 }
