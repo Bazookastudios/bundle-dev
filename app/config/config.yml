@@ -155,8 +155,10 @@ bazookas_media:
         uploads_root_directory: "%uploads_root_directory%"
         baseUrl: "%baseUrl%"
     video_providers:
-        native:
-            type: NATIVE
+#        native:
+#            type: NATIVE
+        youtube:
+            type: YOUTUBE
     default_folders:
         appUsers: APP_USER
 

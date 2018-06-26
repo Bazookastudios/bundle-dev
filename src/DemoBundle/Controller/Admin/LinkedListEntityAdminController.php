@@ -63,6 +63,7 @@ class LinkedListEntityAdminController extends BaseAdminLinkedListController
       case AccessControlInterface::ACTION_EDIT:
       case AccessControlInterface::ACTION_ADD:
       case AccessControlInterface::ACTION_LIST_DATA:
+      case AccessControlInterface::ACTION_REMOVE:
       case self::ACTION_ORDER:
         return true;
       default:

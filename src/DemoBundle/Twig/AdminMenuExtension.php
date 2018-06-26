@@ -14,7 +14,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 {
 
 //  use CronMenuTrait;
-//  use MediaMenuTrait;
+  use MediaMenuTrait;
 //  use APIFrameworkMenuTrait;
 
   /**
@@ -55,7 +55,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 
 //    $this->elements[] = $this->createApiFrameworkBundleMenuItems();
 
-//    $this->addMediaBundleMenuItems();
+    $this->addMediaBundleMenuItems(true);
     $this->addAdminSettingsMenu();
   }
 
