@@ -1,176 +1,179 @@
 imports:
-    - { resource: parameters.yml }
-    - { resource: '@DemoBundle/Resources/config/config.yml' }
-    - { resource: security.yml }
-    - { resource: services.yml }
+  - { resource: parameters.yml }
+  - { resource: '@DemoBundle/Resources/config/config.yml' }
+  - { resource: security.yml }
+  - { resource: services.yml }
 
 # Put parameters here that don't need to change on each machine where the app is deployed
 # http://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
 parameters:
-    #The fallback locale
-    locale: en
-    #All supported locales
-    locales: [nl, en]
-    requiredlocales: nl|en
-    root_directory: "%kernel.root_dir%/../web"
-    uploads_root_directory: "%kernel.root_dir%/../web/uploads"
-    baseUrl: "http://localhost:8000"
+  #The fallback locale
+  locale: en
+  #All supported locales
+  locales: [nl, en]
+  requiredlocales: nl|en
+  root_directory: "%kernel.root_dir%/../web"
+  uploads_root_directory: "%kernel.root_dir%/../web/uploads"
+  baseUrl: "http://localhost:8000"
 
 framework:
-    #esi:             ~
-    translator:      { fallbacks: ["%locale%"] }
-    secret:          "%secret%"
-    router:
-        resource: "%kernel.root_dir%/config/routing.yml"
-        strict_requirements: ~
-    form:            ~
-    csrf_protection: ~
-    validation:      { enable_annotations: true }
-    #serializer:      { enable_annotations: true }
-    templating:
-        engines: ['twig']
-    default_locale:  "%locale%"
-    session:
-        # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
-        handler_id:  session.handler.native_file
-        save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
-    fragments:       ~
-    http_method_override: true
-    assets:
-        json_manifest_path: '%kernel.root_dir%/../web/static/manifest.json'
+  #esi:             ~
+  translator:      { fallbacks: ["%locale%"] }
+  secret:          "%secret%"
+  router:
+    resource: "%kernel.root_dir%/config/routing.yml"
+    strict_requirements: ~
+  form:            ~
+  csrf_protection: ~
+  validation:      { enable_annotations: true }
+  #serializer:      { enable_annotations: true }
+  templating:
+    engines: ['twig']
+  default_locale:  "%locale%"
+  session:
+    # http://symfony.com/doc/current/reference/configuration/framework.html#handler-id
+    handler_id:  session.handler.native_file
+    save_path:   "%kernel.root_dir%/../var/sessions/%kernel.environment%"
+  fragments:       ~
+  http_method_override: true
+  assets:
+    json_manifest_path: '%kernel.root_dir%/../web/static/manifest.json'
 
 # Twig Configuration
 twig:
-    debug:            "%kernel.debug%"
-    strict_variables: "%kernel.debug%"
-    form_themes:
-        - 'bootstrap_3_layout.html.twig'
-        - 'BazookasAdminBundle:Form:fields.html.twig'
-    globals:
-      locales: "%locales%"
-      showAdminMenu: true
-      googleClientID: "%google_api.client_id%"
+  debug:            "%kernel.debug%"
+  strict_variables: "%kernel.debug%"
+  form_themes:
+    - 'bootstrap_3_layout.html.twig'
+    - 'BazookasAdminBundle:Form:fields.html.twig'
+  globals:
+    locales: "%locales%"
+    showAdminMenu: true
+    googleClientID: "%google_api.client_id%"
 
 # Doctrine Configuration
 doctrine:
-    dbal:
-        driver:   pdo_mysql
-        host:     "%database_host%"
-        port:     "%database_port%"
-        dbname:   "%database_name%"
-        user:     "%database_user%"
-        password: "%database_password%"
-#        charset: utf8mb4
-        charset:  UTF8
-        #this causes issues with fos user bundle
-#        default_table_options:
-#            charset: utf8mb4
-#            collate: utf8mb4_unicode_ci
-        types:
-          datetime: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
-        # types:
-        #     datetime: SharedBundles\EntityBundle\DoctrineExtensions\DBAL\Types\UTCDateTimeType
-        # if using pdo_sqlite as your database driver:
-        #   1. add the path in parameters.yml
-        #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-        #   2. Uncomment database_path in parameters.yml.dist
-        #   3. Uncomment next line:
-        #     path:     "%database_path%"
+  dbal:
+    driver:   pdo_mysql
+    host:     "%database_host%"
+    port:     "%database_port%"
+    dbname:   "%database_name%"
+    user:     "%database_user%"
+    password: "%database_password%"
+    #        charset: utf8mb4
+    charset:  UTF8
+    #this causes issues with fos user bundle
+    #        default_table_options:
+    #            charset: utf8mb4
+    #            collate: utf8mb4_unicode_ci
+    types:
+      datetime: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
+    # types:
+    #     datetime: SharedBundles\EntityBundle\DoctrineExtensions\DBAL\Types\UTCDateTimeType
+    # if using pdo_sqlite as your database driver:
+    #   1. add the path in parameters.yml
+    #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
+    #   2. Uncomment database_path in parameters.yml.dist
+    #   3. Uncomment next line:
+    #     path:     "%database_path%"
 
-    orm:
-        auto_generate_proxy_classes: "%kernel.debug%"
-        naming_strategy: doctrine.orm.naming_strategy.underscore
-        auto_mapping: true
+  orm:
+    auto_generate_proxy_classes: "%kernel.debug%"
+    naming_strategy: doctrine.orm.naming_strategy.underscore
+    auto_mapping: true
+    #see https://symfony.com/doc/3.4/doctrine/resolve_target_entity.html
+    resolve_target_entities:
+      Bazookas\AdminBundle\Entity\Interfaces\CMSUserInterface: Bazookas\AdminBundle\Entity\CMSUser
 
 # Swiftmailer Configuration
 swiftmailer:
-    default_mailer: primary_mailer
-    mailers:
-        debug_mailer:
-            transport: mail
-            host:      ~
-            username:  ~
-            password:  ~
-            spool:     { type: memory }
-        primary_mailer:
-            transport: "%mailer_transport%"
-            host:      "%mailer_host%"
-            username:  "%mailer_user%"
-            password:  "%mailer_password%"
-            spool:     { type: memory }
+  default_mailer: primary_mailer
+  mailers:
+    debug_mailer:
+      transport: mail
+      host:      ~
+      username:  ~
+      password:  ~
+      spool:     { type: memory }
+    primary_mailer:
+      transport: "%mailer_transport%"
+      host:      "%mailer_host%"
+      username:  "%mailer_user%"
+      password:  "%mailer_password%"
+      spool:     { type: memory }
 
 # FOS User bundle config
 # more info here: http://symfony.com/doc/master/bundles/FOSUserBundle/configuration_reference.html
 fos_user:
-    db_driver: orm
-    firewall_name: admin
-    user_class: Bazookas\AdminBundle\Entity\CMSUser
-    group:
-        group_class: Bazookas\AdminBundle\Entity\CMSUserGroup
-    from_email:
-        address: noreply@bazookas.be
-        sender_name: noreply@bazookas.be
-    resetting:
-        token_ttl: 86400
-        email:
-            template:   FOSUserBundle:Resetting:email.txt.twig
-            # from_email:
-            #     address:        ...
-            #     sender_name:    ...
-    service:
-        mailer: fos_user.mailer.default
-    profile:
-        form:
-            type:               Bazookas\AdminBundle\Form\ProfileFormType
-            validation_groups:  [Profile, Default]
-    registration:
-        confirmation:
-            # from_email: # Use this node only if you don't want the global email address for the confirmation email
-            #    address:        ...
-            #    sender_name:    ...
-            enabled:    false # change to true for required email confirmation
-            template:   FOSUserBundle:Registration:email.txt.twig
-        form:
-            type:               Bazookas\AdminBundle\Form\RegistrationType
-            name:               fos_user_registration_form
-            validation_groups:  [Registration, Default]
+  db_driver: orm
+  firewall_name: admin
+  user_class: Bazookas\AdminBundle\Entity\CMSUser
+  group:
+    group_class: Bazookas\AdminBundle\Entity\CMSUserGroup
+  from_email:
+    address: noreply@bazookas.be
+    sender_name: noreply@bazookas.be
+  resetting:
+    token_ttl: 86400
+    email:
+      template:   FOSUserBundle:Resetting:email.txt.twig
+      # from_email:
+      #     address:        ...
+      #     sender_name:    ...
+  service:
+    mailer: fos_user.mailer.default
+  profile:
+    form:
+      type:               Bazookas\AdminBundle\Form\ProfileFormType
+      validation_groups:  [Profile, Default]
+  registration:
+    confirmation:
+      # from_email: # Use this node only if you don't want the global email address for the confirmation email
+      #    address:        ...
+      #    sender_name:    ...
+      enabled:    false # change to true for required email confirmation
+      template:   FOSUserBundle:Registration:email.txt.twig
+    form:
+      type:               Bazookas\AdminBundle\Form\RegistrationType
+      name:               fos_user_registration_form
+      validation_groups:  [Registration, Default]
 
 fos_oauth_server:
-    db_driver: orm
-    client_class:        APIBundle\Entity\OAuth2Client
-    access_token_class:  APIBundle\Entity\OAuth2AccessToken
-    refresh_token_class: APIBundle\Entity\OAuth2RefreshToken
-    auth_code_class:     APIBundle\Entity\OAuth2AuthCode
-    service:
-        user_provider: api.user_provider.base_user_provider
-        options:
-            # Changing tokens and authcode lifetime
-            access_token_lifetime: 86400     # 1 day
-            refresh_token_lifetime: 1209600  # 14 days
+  db_driver: orm
+  client_class:        APIBundle\Entity\OAuth2Client
+  access_token_class:  APIBundle\Entity\OAuth2AccessToken
+  refresh_token_class: APIBundle\Entity\OAuth2RefreshToken
+  auth_code_class:     APIBundle\Entity\OAuth2AuthCode
+  service:
+    user_provider: api.user_provider.base_user_provider
+    options:
+      # Changing tokens and authcode lifetime
+      access_token_lifetime: 86400     # 1 day
+      refresh_token_lifetime: 1209600  # 14 days
 
 # Bazookas media bundle configuration
 bazookas_media:
-    settings:
-        root_directory: "%root_directory%"
-        uploads_root_directory: "%uploads_root_directory%"
-        baseUrl: "%baseUrl%"
-    video_providers:
-#        native:
-#            type: NATIVE
-        youtube:
-            type: YOUTUBE
-    default_folders:
-        appUsers: APP_USER
+  settings:
+    root_directory: "%root_directory%"
+    uploads_root_directory: "%uploads_root_directory%"
+    baseUrl: "%baseUrl%"
+  video_providers:
+    #        native:
+    #            type: NATIVE
+    youtube:
+      type: YOUTUBE
+  default_folders:
+    appUsers: APP_USER
 
 # bazookas api framework configuration
 bazookas_api_framework:
-#  file_upload:
-#    settings:
-#      # probably always equal to media uploads root dir, but you never know, it's a strange world
-#      root_directory: "%root_directory%"
-#      uploads_root_directory: "%uploads_root_directory%"
-#      baseUrl: "%baseUrl%"
-#      uploadRoute: api_v1_upload
+  #  file_upload:
+  #    settings:
+  #      # probably always equal to media uploads root dir, but you never know, it's a strange world
+  #      root_directory: "%root_directory%"
+  #      uploads_root_directory: "%uploads_root_directory%"
+  #      baseUrl: "%baseUrl%"
+  #      uploadRoute: api_v1_upload
   app_copy:
     entity: DemoBundle\Entity\AppCopy
     # required when working with the admin bundle
@@ -178,6 +181,6 @@ bazookas_api_framework:
     # optionally provide API specific language constraint (defaults to %requiredlocales%).
     # allowed_locales: nl|fr
   app_settings:
-      entity: DemoBundle\Entity\AppSettings
+    entity: DemoBundle\Entity\AppSettings
 
 nelmio_api_doc: ~
