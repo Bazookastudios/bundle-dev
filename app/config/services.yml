@@ -11,5 +11,6 @@ services:
     class: DemoBundle\Twig\AdminMenuExtension
     arguments:
       - "%kernel.bundles%"
+      - "@security.authorization_checker"
     tags:
       - { name: twig.extension }

@@ -14,7 +14,7 @@ class AdminMenuExtension extends BaseAdminMenuExtension
 {
 
 //  use CronMenuTrait;
-//  use MediaMenuTrait;
+  use MediaMenuTrait;
 //  use APIFrameworkMenuTrait;
 
   /**
@@ -46,9 +46,16 @@ class AdminMenuExtension extends BaseAdminMenuExtension
       'roles' => [Roles::ROLE_SUPER_ADMIN],
     ]);
 
+    $this->elements[] = new MenuActionElement([
+      'label' => 'admin.menu.linkedListEntity.label',
+      'route' => 'demo_linked_list_admin',
+      'iconClass' => 'fa fa-link',
+      'roles' => [Roles::ROLE_SUPER_ADMIN],
+    ]);
+
 //    $this->elements[] = $this->createApiFrameworkBundleMenuItems();
 
-//    $this->addMediaBundleMenuItems();
+    $this->addMediaBundleMenuItems(true);
     $this->addAdminSettingsMenu();
   }
 

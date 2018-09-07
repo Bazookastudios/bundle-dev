@@ -10,6 +10,8 @@ admin:
       label: App copy
     app_settings:
       label: App settings
+    linkedListEntity:
+      label: Linked list entities
     containers:
       app: App settings
   entities:
@@ -45,3 +47,19 @@ admin:
         title: Titel
         date: Datum
         product: Product
+    linkedListEntity:
+      namePlural: Linked list entity
+      addLabel: Entity toevoegen
+      editLabel: Entity aanpassen
+      listLabel: Timeline
+      cloneLabel: Dupliceer entity
+      pageTitle: Linked list entities
+      fields:
+        title: Titel
+        description: Beschrijving
+    linkedListEntityDetail:
+      fields:
+        title: Titel
+        description: Beschrijving
+        image: Afbeelding
+        video: Video
