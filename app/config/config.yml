@@ -157,6 +157,7 @@ bazookas_media:
     root_directory: "%root_directory%"
     uploads_root_directory: "%uploads_root_directory%"
     baseUrl: "%baseUrl%"
+    enable360Items: true
   video_providers:
     native:
       type: NATIVE

@@ -1,10 +1,9 @@
 <?php
+
 namespace DemoBundle\Entity;
 
 use Bazookas\AdminBundle\Entity\Interfaces\AuditableInterface;
-use Bazookas\AdminBundle\Entity\Interfaces\VersionableInterface;
 use Bazookas\AdminBundle\Entity\Traits\AuditableTrait;
-use Bazookas\AdminBundle\Entity\Traits\VersionableTrait;
 use Bazookas\CommonBundle\Entity\Base\BaseEntity;
 use Bazookas\CommonBundle\Entity\Interfaces\CloneableEntityInterface;
 use Bazookas\CommonBundle\Entity\Traits\CloneableEntityTrait;
@@ -20,12 +19,13 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Example extends BaseEntity implements CloneableEntityInterface, AuditableInterface
 {
+
   use CloneableEntityTrait;
   use AuditableTrait;
-//  use VersionableTrait;
 
-  public function __construct()
-  {
+  //  use VersionableTrait;
+
+  public function __construct() {
     parent::__construct();
     $this->entityId = (new \DateTime())->getTimestamp();
     $this->multipleImages = new ArrayCollection();
@@ -73,8 +73,7 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
    *
    * @return Example
    */
-  public function setTitle($title)
-  {
+  public function setTitle($title) {
     $this->title = $title;
 
     return $this;
@@ -85,16 +84,14 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
    *
    * @return string
    */
-  public function getTitle()
-  {
+  public function getTitle() {
     return $this->title;
   }
 
   /**
    * @return boolean
    */
-  public function isPublished()
-  {
+  public function isPublished() {
     return $this->published;
   }
 
@@ -106,9 +103,9 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
    * @param boolean $published
    * @return Example
    */
-  public function setPublished($published)
-  {
+  public function setPublished($published) {
     $this->published = $published;
+
     return $this;
   }
 
@@ -116,8 +113,7 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
   /**
    * @return Image
    */
-  public function getSingleImage()
-  {
+  public function getSingleImage() {
     return $this->singleImage;
   }
 
@@ -125,17 +121,16 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
    * @param Image $singleImage
    * @return Example
    */
-  public function setSingleImage($singleImage)
-  {
+  public function setSingleImage($singleImage) {
     $this->singleImage = $singleImage;
+
     return $this;
   }
 
   /**
    * @return mixed
    */
-  public function getMultipleImages()
-  {
+  public function getMultipleImages() {
     return $this->multipleImages;
   }
 
@@ -143,21 +138,21 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
    * @param mixed $multipleImages
    * @return Example
    */
-  public function setMultipleImages($multipleImages)
-  {
+  public function setMultipleImages($multipleImages) {
     $this->multipleImages = $multipleImages;
+
     return $this;
   }
 
-  public function addMultipleImage($image)
-  {
+  public function addMultipleImage($image) {
     $this->multipleImages->add($image);
+
     return $this;
   }
 
-  public function removeMultipleImage($image)
-  {
+  public function removeMultipleImage($image) {
     $this->multipleImage->removeElement($image);
+
     return $this;
   }
 
@@ -165,8 +160,7 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
    * @inheritdoc
    * @return array
    */
-  public function getViewableLayout(): array
-  {
+  public static function getViewableLayout(): array {
     return [
       'title' => 'string',
       'published' => 'boolean',
