@@ -4,6 +4,7 @@ namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\Controller\AdminController\BaseAuditLogAdminController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
+use Bazookas\AdminBundle\PageBuilder\Interfaces\ListTablePageBuilderInterface;
 use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
 use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
 use Symfony\Component\HttpFoundation\Request;
@@ -16,19 +17,19 @@ class AuditLogAdminController extends BaseAuditLogAdminController
   /**
    * @return null|string
    */
-  protected function getEntityClass(): ?string
-  {
+  protected function getEntityClass(): ?string {
     return AuditLog::class;
   }
 
   /**
    * @param Request $request
-   * @param ListPageBuilderInterface $builder
-   * @return ListPageBuilderInterface
-   * @throws \ReflectionException
+   * @param ListTablePageBuilderInterface $builder
+   * @return ListTablePageBuilderInterface
    */
-  protected function modifyListBuilder(Request $request, ListPageBuilderInterface $builder): ListPageBuilderInterface
-  {
+  protected function modifyListBuilder(
+    Request $request,
+    ListTablePageBuilderInterface $builder
+  ): ListTablePageBuilderInterface {
     /**
      * @var ListPageBuilder $builder
      */
@@ -43,9 +44,8 @@ class AuditLogAdminController extends BaseAuditLogAdminController
    * @param string $action
    * @return bool
    */
-  protected function hasAccess(string $action): bool
-  {
-    switch ($action) {
+  protected function hasAccess(string $action): bool {
+    switch($action) {
       case AccessControlInterface::ACTION_LIST:
       case AccessControlInterface::ACTION_VIEW:
         return $this->isGranted(Roles::ROLE_SUPER_ADMIN);

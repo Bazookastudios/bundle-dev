@@ -3,6 +3,7 @@
 namespace APIBundle\Entity;
 
 use Bazookas\AdminBundle\Security\Roles;
+use Bazookas\CommonBundle\Entity\Base\BaseEntity;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -11,63 +12,63 @@ use Bazookas\CommonBundle\Entity\Traits;
 use Bazookas\CommonBundle\Entity\Interfaces\LocalisedEntityInterface;
 
 /**
-* @ORM\Table(name="app_user")
-* @ORM\Entity
-* @UniqueEntity(
-*     fields={"email"},
-*     message="email.notUnique"
-* )
-* @UniqueEntity(
-*     fields={"facebookId"},
-*     message="facebookId.notUnique"
-* )
-* @ORM\HasLifecycleCallbacks
-*/
-class AppUser extends BaseUser implements LocalisedEntityInterface {
+ * @ORM\Table(name="app_user")
+ * @ORM\Entity
+ * @UniqueEntity(
+ *     fields={"email"},
+ *     message="email.notUnique"
+ * )
+ * @UniqueEntity(
+ *     fields={"facebookId"},
+ *     message="facebookId.notUnique"
+ * )
+ * @ORM\HasLifecycleCallbacks
+ */
+class AppUser extends BaseEntity implements LocalisedEntityInterface
+{
 
   use Traits\LocalisedTrait;
+  use Traits\UserTrait;
 
   public const DEFAULT_REQUIRED_ROLE = Roles::ROLE_ADMIN;
 
   /**
-  * @ORM\Column(type="string")
-  * @Assert\NotBlank
-  */
+   * @ORM\Column(type="string")
+   * @Assert\NotBlank
+   */
   private $firstName;
 
   /**
-  * @ORM\Column(type="string")
-  * @Assert\NotBlank
-  */
+   * @ORM\Column(type="string")
+   * @Assert\NotBlank
+   */
   private $surname;
 
   /**
-  * @ORM\Column(type="datetime")
-  * @Assert\NotBlank
-  * @Assert\Date
-  */
+   * @ORM\Column(type="datetime")
+   * @Assert\NotBlank
+   * @Assert\Date
+   */
   private $birthDate;
 
   /**
-  * @ORM\Column(type="string")
-  * @Assert\NotBlank
-  * @Assert\Email
-  */
+   * @ORM\Column(type="string")
+   * @Assert\NotBlank
+   * @Assert\Email
+   */
   private $email;
 
   /**
-  * @ORM\Column(type="string", length=2, options={"fixed" = true})
-  * @Assert\NotBlank
-  * @Assert\Choice({"M", "F"})
-  */
+   * @ORM\Column(type="string", length=2, options={"fixed" = true})
+   * @Assert\NotBlank
+   * @Assert\Choice({"M", "F"})
+   */
   private $gender;
 
   /**
-  * @ORM\OneToOne(targetEntity="Bazookas\MediaBundle\Entity\Image", cascade="all")
-  */
+   * @ORM\OneToOne(targetEntity="Bazookas\MediaBundle\Entity\Image", cascade="all")
+   */
   private $image;
-
-  private $plainPassword;
 
   /**
    * @ORM\OneToMany(targetEntity="OAuth2AccessToken", mappedBy="user", cascade="remove")
@@ -79,10 +80,12 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
    */
   private $refreshTokens;
 
-  public function __construct($username, $password, $salt, array $roles) {
-    parent::__construct($username, $password, $salt, $roles);
-
-    $this->roles = [ "ROLE_APP_USER" ];
+  /**
+   * AppUser constructor.
+   */
+  public function __construct() {
+    parent::__construct();
+    $this->roles = ['ROLE_APP_USER'];
   }
 
   public function getFirstName() {
@@ -91,6 +94,7 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
 
   public function setFirstName($name) {
     $this->firstName = $name;
+
     return $this;
   }
 
@@ -100,6 +104,7 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
 
   public function setSurname($name) {
     $this->surname = $name;
+
     return $this;
   }
 
@@ -119,6 +124,7 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
 
   public function setEmail($email) {
     $this->email = $email;
+
     return $this;
   }
 
@@ -128,6 +134,7 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
 
   public function setGender($gender) {
     $this->gender = strtoupper($gender);
+
     return $this;
   }
 
@@ -137,36 +144,35 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
 
   public function setImage($image) {
     $this->image = $image;
+
     return $this;
   }
 
   public function getPlainPassword() {
     return $this->plainPassword;
   }
+
   public function setPlainPassword($password) {
     $this->plainPassword = $password;
+
     return $this;
   }
 
-  public function getAccessTokens()
-  {
+  public function getAccessTokens() {
     return $this->accessTokens;
   }
 
-  public function setAccessTokens($accessTokens)
-  {
+  public function setAccessTokens($accessTokens) {
     $this->accessTokens = $accessTokens;
 
     return $this;
   }
 
-  public function getRefreshTokens()
-  {
+  public function getRefreshTokens() {
     return $this->refreshTokens;
   }
 
-  public function setRefreshTokens($refreshTokens)
-  {
+  public function setRefreshTokens($refreshTokens) {
     $this->refreshTokens = $refreshTokens;
 
     return $this;
@@ -177,6 +183,6 @@ class AppUser extends BaseUser implements LocalisedEntityInterface {
    * @return string
    */
   public function toHumanReadable(string $locale = 'nl'): string {
-    return 'Gebruiker {username: ' .$this->getUsername(). '}';
+    return 'Gebruiker {username: ' . $this->getUsername() . '}';
   }
 }

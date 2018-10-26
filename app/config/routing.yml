@@ -1,74 +1,67 @@
 # ---------------------------
 # Import routes from bundles first, so they can be overwritten
 # import FOS user routing
-fos_user_security:
-    resource: "@FOSUserBundle/Resources/config/routing/security.xml"
-
-fos_user_resetting:
-    resource: "@FOSUserBundle/Resources/config/routing/resetting.xml"
-    prefix: resetting
-
 fos_oauth_server_token:
-    resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
-    prefix: /api
+  resource: "@FOSOAuthServerBundle/Resources/config/routing/token.xml"
+  prefix: /api
 
 fos_oauth_server_authorize:
-    resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
-    prefix: /api
+  resource: "@FOSOAuthServerBundle/Resources/config/routing/authorize.xml"
+  prefix: /api
 
 _liip_imagine:
-    resource: "@LiipImagineBundle/Resources/config/routing.xml"
+  resource: "@LiipImagineBundle/Resources/config/routing.xml"
 
 NelmioApiDocBundle:
-    resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
-    prefix:   api/doc
+  resource: "@NelmioApiDocBundle/Resources/config/routing.yml"
+  prefix:   api/doc
 
 # ---------------------------
 # Bazookas bundles
 bazookas_common:
-    resource: "@BazookasCommonBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@BazookasCommonBundle/Resources/config/routing.yml"
+  prefix:   /
 
 # prefix all admin routes with /admin/
 # this way we can provide custom admin URLs per project
 bazookas_admin:
-    resource: "@BazookasAdminBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/admin
-    defaults:
-        _locale: "%locale%"
-    requirements:
-        _locale: "%require_admin_locales%"
+  resource: "@BazookasAdminBundle/Resources/config/routing.yml"
+  prefix:   /{_locale}/admin
+  defaults:
+    _locale: "%locale%"
+  requirements:
+    _locale: "%require_admin_locales%"
 
 bazookas_cron:
-    resource: "@BazookasCronBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/admin
-    defaults:
-        _locale: "%locale%"
-    requirements:
-        _locale: "%require_admin_locales%"
+  resource: "@BazookasCronBundle/Resources/config/routing.yml"
+  prefix:   /{_locale}/admin
+  defaults:
+    _locale: "%locale%"
+  requirements:
+    _locale: "%require_admin_locales%"
 
 bazookas_media:
-    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
-    prefix:   /{_locale}/admin
-    defaults:
-        _locale: "%locale%"
-    requirements:
-        _locale: "%require_admin_locales%"
+  resource: "@BazookasMediaBundle/Resources/config/routing.yml"
+  prefix:   /{_locale}/admin
+  defaults:
+    _locale: "%locale%"
+  requirements:
+    _locale: "%require_admin_locales%"
 
 api_framework:
-    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
+  prefix:   /
 
 # ---------------------------
 # Custom bundles last
 website:
-    resource: "@WebsiteBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@WebsiteBundle/Resources/config/routing.yml"
+  prefix:   /
 
 api:
-    resource: "@APIBundle/Resources/config/routing.yml"
-    prefix:   /api
+  resource: "@APIBundle/Resources/config/routing.yml"
+  prefix:   /api
 
 bazookas_demo_bundle:
-    resource: "@DemoBundle/Resources/config/routing.yml"
-    prefix:   /
+  resource: "@DemoBundle/Resources/config/routing.yml"
+  prefix:   /

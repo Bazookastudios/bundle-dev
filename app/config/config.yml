@@ -102,42 +102,6 @@ swiftmailer:
       password:  "%mailer_password%"
       spool:     { type: memory }
 
-# FOS User bundle config
-# more info here: http://symfony.com/doc/master/bundles/FOSUserBundle/configuration_reference.html
-fos_user:
-  db_driver: orm
-  firewall_name: admin
-  user_class: Bazookas\AdminBundle\Entity\CMSUser
-  group:
-    group_class: Bazookas\AdminBundle\Entity\CMSUserGroup
-  from_email:
-    address: noreply@bazookas.be
-    sender_name: noreply@bazookas.be
-  resetting:
-    token_ttl: 86400
-    email:
-      template:   FOSUserBundle:Resetting:email.txt.twig
-      # from_email:
-      #     address:        ...
-      #     sender_name:    ...
-  service:
-    mailer: fos_user.mailer.default
-  profile:
-    form:
-      type:               Bazookas\AdminBundle\Form\ProfileFormType
-      validation_groups:  [Profile, Default]
-  registration:
-    confirmation:
-      # from_email: # Use this node only if you don't want the global email address for the confirmation email
-      #    address:        ...
-      #    sender_name:    ...
-      enabled:    false # change to true for required email confirmation
-      template:   FOSUserBundle:Registration:email.txt.twig
-    form:
-      type:               Bazookas\AdminBundle\Form\RegistrationType
-      name:               fos_user_registration_form
-      validation_groups:  [Registration, Default]
-
 fos_oauth_server:
   db_driver: orm
   client_class:        APIBundle\Entity\OAuth2Client
