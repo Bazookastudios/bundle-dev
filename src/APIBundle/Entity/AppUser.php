@@ -2,8 +2,12 @@
 
 namespace APIBundle\Entity;
 
+use Bazookas\AdminBundle\Entity\Interfaces\AccessControlInterface;
+use Bazookas\AdminBundle\Entity\Traits\AccessControlTrait;
 use Bazookas\AdminBundle\Security\Roles;
 use Bazookas\CommonBundle\Entity\Base\BaseEntity;
+use Bazookas\CommonBundle\Entity\Interfaces\EntityInterface;
+use Bazookas\CommonBundle\Entity\Interfaces\TimestampableInterface;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Validator\Constraints as Assert;
 use Symfony\Bridge\Doctrine\Validator\Constraints\UniqueEntity;
@@ -24,13 +28,23 @@ use Bazookas\CommonBundle\Entity\Interfaces\LocalisedEntityInterface;
  * )
  * @ORM\HasLifecycleCallbacks
  */
-class AppUser extends BaseEntity implements LocalisedEntityInterface
+class AppUser implements EntityInterface, AccessControlInterface, TimestampableInterface
 {
 
+  use Traits\EntityTrait;
+  use Traits\TimestampableTrait;
   use Traits\LocalisedTrait;
   use Traits\UserTrait;
+  use AccessControlTrait;
 
   public const DEFAULT_REQUIRED_ROLE = Roles::ROLE_ADMIN;
+
+  /**
+   * @ORM\Column(type="integer")
+   * @ORM\Id
+   * @ORM\GeneratedValue(strategy="AUTO")
+   */
+  protected $id;
 
   /**
    * @ORM\Column(type="string")
