@@ -2,85 +2,41 @@
 
 namespace DemoBundle\Controller\Admin;
 
-use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
-use Bazookas\AdminBundle\PageBuilder\Base\BaseFormPageBuilder;
-use Bazookas\AdminBundle\PageBuilder\Interfaces\BulkPageBuilderInterface;
-use Bazookas\AdminBundle\PageBuilder\Interfaces\FormPageBuilderInterface;
-use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
-use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
+use Bazookas\AdminBundle\Controller\Base\BaseAdminListTableController;
+use Bazookas\AdminBundle\PageBuilder\Interfaces\ListTablePageBuilderInterface;
 use Bazookas\AdminBundle\Security\Roles;
-use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
+use Bazookas\AdminBundle\Entity\Interfaces\AccessControlInterface;
 use DemoBundle\Entity\Example;
-use DemoBundle\Entity\Product;
 use DemoBundle\Form\ExampleAdminType;
 use DemoBundle\PageBuilder\ExamplePageBuilder;
-use Doctrine\ORM\EntityManagerInterface;
 use Symfony\Component\HttpFoundation\Request;
 
-class ExampleAdminController extends BaseAdminListController
+class ExampleAdminController extends BaseAdminListTableController
 {
 
-  public function __construct()
-  {
+  public function __construct() {
     // make sure parent construct is called!
     parent::__construct();
 
-//    $this->builders[AccessControlInterface::ACTION_BULK_EDIT] = null;
     $this->builders[AccessControlInterface::ACTION_LIST] = ExamplePageBuilder::class;
   }
 
-  protected function modifyListBuilder(Request $request, ListPageBuilderInterface $builder): ListPageBuilderInterface
-  {
-    /** @var ListPageBuilder $builder */
+  /**
+   * @param Request $request
+   * @param ListTablePageBuilderInterface $builder
+   * @return ListTablePageBuilderInterface
+   */
+  protected function modifyListBuilder(
+    Request $request,
+    ListTablePageBuilderInterface $builder
+  ): ListTablePageBuilderInterface {
     $builder = parent::modifyListBuilder($request, $builder);
 
     $builder
       ->addBooleanField('published')
       ->addSortableField('title')
-
       ->addBooleanFilterField('published')
-      ->addTextFilterField('title')
-    ;
-
-
-    //Add the import functionality
-//    $entity = new GenericFileEntity();
-//    $form = $this->createForm(ImportFileForm::class, $entity);
-//
-//    $form->handleRequest($request);
-//    $builder->setForm($form);
-//
-//    if ($form->isValid() && $form->isSubmitted()) {
-//      $service = $this->get('demo.example.import_service');
-//      $entity = $service->handleUpload($entity);
-//      try {
-//        $service->process($entity, true, true);
-//
-//        $translator = $this->get('translator');
-//
-//        $this->addFlash('success', $translator->trans('admin.entities.example.onImported', [
-//          '%filename%' => $entity->getOriginalFileName()
-//        ], 'admin'));
-//      } catch(ImportException $e) {
-//        $this->addFlash('error', $e->getMessage());
-//      }
-//    }
-//
-//    //Add the import button
-//    $importPageAction = new ImportPageActionElement([], [
-//      'label' => 'admin.entities.example.import',
-//      'action' => self::ACTION_LIST,
-//      'route' => $request->get('_route'),
-//      'attr' => [
-//        'data-toggle' => 'collapse',
-//        'role' => 'button',
-//        'aria-expanded' => !$form->isValid() && $form->isSubmitted() ? 'true' : 'false',
-//        'aria-controls' => 'js-inline-add-form',
-//        'href' => '#js-inline-add-form'
-//      ]
-//    ]);
-//
-//    $builder->prependAction($importPageAction);
+      ->addTextFilterField('title');
 
     return $builder;
   }
@@ -106,8 +62,7 @@ class ExampleAdminController extends BaseAdminListController
   /**
    * @return string the entity fully qualified class name
    */
-  protected function getEntityClass(): ?string
-  {
+  protected function getEntityClass(): ?string {
     return Example::class;
   }
 
@@ -115,8 +70,7 @@ class ExampleAdminController extends BaseAdminListController
    * @param $action
    * @return string the fully qualified class name of the form
    */
-  protected function getFormClass(string $action): ?string
-  {
+  protected function getFormClass(string $action): ?string {
     return ExampleAdminType::class;
   }
 }

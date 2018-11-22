@@ -2,38 +2,38 @@
 
 namespace DemoBundle\Controller\Admin;
 
-use Bazookas\AdminBundle\Controller\Base\BaseAdminListController;
-use Bazookas\AdminBundle\PageBuilder\Interfaces\ListPageBuilderInterface;
+use Bazookas\AdminBundle\Controller\Base\BaseAdminListTableController;
+use Bazookas\AdminBundle\PageBuilder\Interfaces\ListTablePageBuilderInterface;
 use DemoBundle\Entity\Event;
 use DemoBundle\Form\EventAdminType;
 use Symfony\Component\HttpFoundation\Request;
-use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
+use Bazookas\AdminBundle\Entity\Interfaces\AccessControlInterface;
 
-class EventAdminController extends BaseAdminListController
+class EventAdminController extends BaseAdminListTableController
 {
 
   /**
    * @return string|null
    */
-  protected function getEntityClass(): ?string
-  {
+  protected function getEntityClass(): ?string {
     return Event::class;
   }
 
   /**
    * @param Request $request
-   * @param ListPageBuilderInterface $builder
-   * @return ListPageBuilderInterface
+   * @param ListTablePageBuilderInterface $builder
+   * @return ListTablePageBuilderInterface
    * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
    */
-  protected function modifyListBuilder(Request $request, ListPageBuilderInterface $builder): ListPageBuilderInterface
-  {
+  protected function modifyListBuilder(
+    Request $request,
+    ListTablePageBuilderInterface $builder
+  ): ListTablePageBuilderInterface {
     $builder = parent::modifyListBuilder($request, $builder);
 
     $builder
       ->addDateTimeField('date')
-      ->addField('title')
-    ;
+      ->addField('title');
 
     return $builder;
   }
@@ -42,8 +42,7 @@ class EventAdminController extends BaseAdminListController
    * @param string $action
    * @return string|null
    */
-  protected function getFormClass(string $action): ?string
-  {
+  protected function getFormClass(string $action): ?string {
     switch($action) {
       case AccessControlInterface::ACTION_ADD:
       case AccessControlInterface::ACTION_EDIT:
@@ -57,8 +56,7 @@ class EventAdminController extends BaseAdminListController
    * @param string $action
    * @return bool
    */
-  protected function hasAccess(string $action): bool
-  {
+  protected function hasAccess(string $action): bool {
     switch($action) {
       case AccessControlInterface::ACTION_LIST:
       case AccessControlInterface::ACTION_EDIT:

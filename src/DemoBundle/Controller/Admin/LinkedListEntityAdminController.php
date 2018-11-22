@@ -7,7 +7,7 @@ use Bazookas\AdminBundle\Controller\Base\BaseAdminLinkedListController;
 use DemoBundle\Entity\LinkedListEntity;
 use DemoBundle\Form\LinkedListEntityAdminType;
 use Symfony\Component\HttpFoundation\Request;
-use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
+use Bazookas\AdminBundle\Entity\Interfaces\AccessControlInterface;
 
 class LinkedListEntityAdminController extends BaseAdminLinkedListController
 {
@@ -25,15 +25,17 @@ class LinkedListEntityAdminController extends BaseAdminLinkedListController
    * @return LinkedListPageBuilderInterface
    * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
    */
-  protected function modifyListBuilder(Request $request, LinkedListPageBuilderInterface $builder): LinkedListPageBuilderInterface {
+  protected function modifyListBuilder(
+    Request $request,
+    LinkedListPageBuilderInterface $builder
+  ): LinkedListPageBuilderInterface {
     $builder = parent::modifyListBuilder($request, $builder);
 
     $builder
-      ->setListViewComponent('linked-list-view')
-    ;
+      ->setListViewComponent('linked-list-view');
 
     $this->setScripts([
-      'static/js/custom_admin_components.js'
+      'static/js/custom_admin_components.js',
     ]);
 
     return $builder;

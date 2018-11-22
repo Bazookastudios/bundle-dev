@@ -4,8 +4,7 @@ namespace DemoBundle\Controller\Admin;
 
 use Bazookas\AdminBundle\Controller\AdminController\BaseAuditLogAdminController;
 use Bazookas\AdminBundle\PageBuilder\Interfaces\ListTablePageBuilderInterface;
-use Bazookas\AdminBundle\PageBuilder\ListPageBuilder;
-use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
+use Bazookas\AdminBundle\Entity\Interfaces\AccessControlInterface;
 use Symfony\Component\HttpFoundation\Request;
 use DemoBundle\Entity\AuditLog;
 use Bazookas\AdminBundle\Security\Roles;
@@ -29,9 +28,6 @@ class AuditLogAdminController extends BaseAuditLogAdminController
     Request $request,
     ListTablePageBuilderInterface $builder
   ): ListTablePageBuilderInterface {
-    /**
-     * @var ListPageBuilder $builder
-     */
     $builder = parent::modifyListBuilder($request, $builder);
 
     $builder->setMaintainFilterState(true);

@@ -8,18 +8,18 @@ use Bazookas\AdminBundle\AdminElements\Elements\TextElement;
 use Bazookas\AdminBundle\Controller\Base\BaseAdminActionController;
 use Bazookas\AdminBundle\PageBuilder\GenericPageBuilder;
 use Bazookas\AdminBundle\Security\Roles;
-use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
+use Bazookas\AdminBundle\Entity\Interfaces\AccessControlInterface;
 use Symfony\Component\HttpFoundation\Request;
 
 class DashboardController extends BaseAdminActionController
 {
+
   public const ACTION_DEFAULT = AccessControlInterface::ACTION_DASHBOARD;
 
   /**
    * DashboardController constructor.
    */
-  public function __construct()
-  {
+  public function __construct() {
     $this->builders[AccessControlInterface::ACTION_DASHBOARD] = GenericPageBuilder::class;
   }
 
@@ -29,21 +29,20 @@ class DashboardController extends BaseAdminActionController
    * @return GenericPageBuilder
    * @throws \Symfony\Component\OptionsResolver\Exception\ExceptionInterface
    */
-  protected function modifyDashboardBuilder(Request $request, GenericPageBuilder $builder): GenericPageBuilder
-  {
+  protected function modifyDashboardBuilder(Request $request, GenericPageBuilder $builder): GenericPageBuilder {
     $tabOneOptions = [
       'label' => 'test1',
-      'navName' => 'test1'
+      'navName' => 'test1',
     ];
     $tabTwoOptions = [
       'label' => 'test2',
-      'navName' => 'test2'
+      'navName' => 'test2',
     ];
 
     $builder->addElement(new TabbedContainer([
       'children' => [
         new TextElement($tabOneOptions),
-        new TextElement($tabTwoOptions)
+        new TextElement($tabTwoOptions),
       ],
       'tabOrientation' => TabbedContainer::ORIENTATION_VERTICAL,
       'tabLocation' => TabbedContainer::LOCATION_RIGHT,
@@ -51,7 +50,7 @@ class DashboardController extends BaseAdminActionController
     $builder->addElement(new TabbedPanelContainer([
       'children' => [
         new TextElement($tabOneOptions),
-        new TextElement($tabTwoOptions)
+        new TextElement($tabTwoOptions),
       ],
       'headerLabel' => 'test',
       'tabOrientation' => TabbedPanelContainer::ORIENTATION_VERTICAL,
@@ -64,8 +63,7 @@ class DashboardController extends BaseAdminActionController
   /**
    * @return null|string the entity fully qualified class name
    */
-  protected function getEntityClass(): ?string
-  {
+  protected function getEntityClass(): ?string {
     return null;
   }
 
@@ -75,8 +73,7 @@ class DashboardController extends BaseAdminActionController
    * @return bool
    * @throws \LogicException
    */
-  protected function hasAccess(string $action): bool
-  {
+  protected function hasAccess(string $action): bool {
     return $this->isGranted(Roles::ROLE_SUPER_ADMIN);
   }
 }
