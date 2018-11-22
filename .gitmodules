@@ -22,3 +22,11 @@
 	path = src/Bazookas/SecurityBundle
 	url = https://github.com/Bazookastudios/BazookasSecurityBundle.git
 	branch = master
+[submodule "BazookasIntegrationsBundle"]
+	path = src/Bazookas/IntegrationsBundle
+	url = https://github.com/Bazookastudios/BazookasIntegrationsBundle.git
+	branch = master
+[submodule "NotificationBundle"]
+	path = src/Bazookas/NotificationBundle
+	url = https://github.com/Bazookastudios/BazookasNotificationBundle.git
+	branch = master
