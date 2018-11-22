@@ -84,6 +84,7 @@ doctrine:
     #see https://symfony.com/doc/3.4/doctrine/resolve_target_entity.html
     resolve_target_entities:
       Bazookas\AdminBundle\Entity\Interfaces\CMSUserInterface: Bazookas\AdminBundle\Entity\CMSUser
+      Bazookas\AdminBundle\Entity\Interfaces\CMSUserGroupInterface: Bazookas\AdminBundle\Entity\CMSUserGroup
 
 # Swiftmailer Configuration
 swiftmailer:
