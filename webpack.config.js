@@ -1,6 +1,7 @@
 // webpack.config.js
 let Encore = require('@symfony/webpack-encore');
-let FS = require("fs");
+let FS = require('fs');
+let Webpack = require('webpack');
 
 //Project stuff
 let addedConfigs = {};
@@ -8,7 +9,7 @@ const WEBSITE_ROOT = './src/WebsiteBundle/Resources/public/';
 const DEMO_ROOT = './src/DemoBundle/Resources/public/';
 
 Encore
-  // directory where all compiled assets will be stored
+// directory where all compiled assets will be stored
   .setOutputPath('web/static/')
   .enableVersioning(Encore.isProduction())
 
@@ -26,7 +27,8 @@ Encore
   .addStyleEntry('css/app', WEBSITE_ROOT + 'css/main.scss')
 
   // allow sass/scss files to be processed
-  .enableSassLoader(function(sassOptions) {},{
+  .enableSassLoader(function (sassOptions) {
+  }, {
     resolveUrlLoader: false
   })
 
@@ -46,8 +48,7 @@ Encore
             let path = 'images/';
             if (/(\/vendor\/bazookas\/)|(\/src\/Bazookas\/)/.test(file)) {
               path += 'bundles/';
-            }
-            else if (/node_modules/.test(file)) {
+            } else if (/node_modules/.test(file)) {
               path += 'node_modules/';
             }
 
@@ -82,7 +83,7 @@ Encore
     ],
   })
 
-  .enableVueLoader(function(options) {
+  .enableVueLoader(function (options) {
     options.loaders = {
       // Since sass-loader (weirdly) has SCSS as its default parse mode, we map
       // the "scss" and "sass" values for the lang attribute to the right configs here.
@@ -162,12 +163,11 @@ function addConfig(composer, config) {
     // use the composer package name to check for duplicates
     let composerJson = require(composer);
     if (addedConfigs.hasOwnProperty(composerJson.name) === false) {
-      console.info(composerJson.name+':', 'adding ' + config);
+      console.info(composerJson.name + ':', 'adding ' + config);
       require(config).mount(Encore);
       addedConfigs[composerJson.name] = config;
-    }
-    else {
-      console.warn(composerJson.name+':', 'already added ' + config + ' from ' + addedConfigs[composerJson.name]);
+    } else {
+      console.warn(composerJson.name + ':', 'already added ' + config + ' from ' + addedConfigs[composerJson.name]);
     }
   }
 }
