@@ -4,12 +4,16 @@ namespace DemoBundle\Entity;
 
 use Bazookas\AdminBundle\Entity\Interfaces\AuditableInterface;
 use Bazookas\AdminBundle\Entity\Traits\AuditableTrait;
-use Bazookas\CommonBundle\Entity\Base\BaseEntity;
+use Bazookas\AdminBundle\Security\Roles;
+use Bazookas\CommonBundle\Entity\Interfaces\AccessControlInterface;
 use Bazookas\CommonBundle\Entity\Interfaces\CloneableEntityInterface;
+use Bazookas\CommonBundle\Entity\Interfaces\EntityInterface;
+use Bazookas\CommonBundle\Entity\Interfaces\TimestampableInterface;
 use Bazookas\CommonBundle\Entity\Traits\CloneableEntityTrait;
 use Bazookas\MediaBundle\Entity\Image;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Bazookas\CommonBundle\Entity\Traits;
 
 /**
  * Example
@@ -17,17 +21,33 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="example")
  * @ORM\Entity(repositoryClass="DemoBundle\Repository\ExampleRepository")
  */
-class Example extends BaseEntity implements CloneableEntityInterface, AuditableInterface
+class Example implements EntityInterface, AccessControlInterface, TimestampableInterface, CloneableEntityInterface, AuditableInterface
 {
 
+  use Traits\EntityTrait;
+  use Traits\AccessControlTrait;
+  use Traits\TimestampableTrait {
+    Traits\TimestampableTrait::__construct as TimestampableTraitConstruct;
+  }
   use CloneableEntityTrait;
   use AuditableTrait;
 
-  //  use VersionableTrait;
+  //Default role for access control
+  public const DEFAULT_REQUIRED_ROLE = Roles::ROLE_SUPER_ADMIN;
 
+  /**
+   * @ORM\Column(type="integer")
+   * @ORM\Id
+   * @ORM\GeneratedValue(strategy="AUTO")
+   */
+  protected $id;
+
+  /**
+   * Example constructor.
+   * @throws \Exception
+   */
   public function __construct() {
-    parent::__construct();
-    $this->entityId = (new \DateTime())->getTimestamp();
+    $this->TimestampableTraitConstruct();
     $this->multipleImages = new ArrayCollection();
   }
 
@@ -151,7 +171,7 @@ class Example extends BaseEntity implements CloneableEntityInterface, AuditableI
   }
 
   public function removeMultipleImage($image) {
-    $this->multipleImage->removeElement($image);
+    $this->multipleImages->removeElement($image);
 
     return $this;
   }

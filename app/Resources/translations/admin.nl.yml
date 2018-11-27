@@ -1,0 +1,671 @@
+admin:
+    general:
+        admin: Admin
+        impersonate: 'Voordoen als'
+        exitImpersonation: 'Stoppen met voordoen als'
+    language:
+        nl: Nederlands
+        fr: Français
+        de: Deutsch
+        en: English
+    title:
+        login: Login
+        register: 'Account aanvragen'
+        resetting: 'Wachtwoord vergeten'
+        newUser: 'Account aanmaken'
+    alert:
+        success: Succes!
+        error: Fout!
+        notice: Info
+        info: Info
+    list:
+        actions: Acties
+        previous: Vorige
+        next: Volgende
+        showingResult: 'Resultaat %start% - %end% van %total% %entityPlural%'
+        messages:
+            edited: 'De %entity% is succesvol gewijzigd!'
+            added: 'De %entity% is toegevoegd!'
+            removed: 'De %entity% is verwijderd!'
+            couldNotBeRemoved: 'De %entity% kon niet verwijderd worden!'
+            accessDenied: 'U heeft niet de nodige rechten om deze actie uit te voeren.'
+            entityAccessDenied: 'Deze actie kon niet uitgevoerd worden op het geselecteerde object.'
+    form:
+        submit: Bevestigen
+        errors: 'Dit formulier bevat fouten, gelieve deze hieronder op te lossen voor het opnieuw verzenden'
+    actions:
+        edit: Bewerken
+        remove: Verwijderen
+        add: Toevoegen
+        archive: Archiveren
+        unArchive: Dearchiveren
+        bulkEdit: 'Bulk bewerken'
+        bulkExport: 'Bulk exporteren'
+        bulkRemove: 'Bulk verwijderen'
+        bulkSelect: 'Selecteer alles'
+        cancel: Annuleren
+        logout: Afmelden
+        select: Selecteer
+        view: Bekijk
+        export: Exporteer
+        back: Terug
+        bulkViewed: 'Items gezien'
+        clone: Kopiëren
+        overview: 'Terug naar overzicht'
+        download: Download
+        orderItems: 'Volgorde aanpassen'
+        save: Opslaan
+        publish: Publiceren
+        preview: Voorvertoning
+        leavePreview: 'Voorvertoning verlaten'
+        media:
+            addMediaFolder: 'Media folder toevoegen'
+    error:
+        entityNotFound: 'Geen ''%entity%'' gevonden met id %id%'
+        genericEntityNotFound: 'Er is nog geen data beschikbaar van dit type.'
+        genericActionError: 'Er is een fout opgetreden bij het verwerken van je verzoek. Deze actie kon niet uitgevoerd worden op het geselecteerde object.'
+    translation-form:
+        main: Hoofdtaal
+        add: 'Vertaling toevoegen'
+        remove-confirm-title: 'Verwijderen?'
+        remove-confirm: 'Weet je zeker dat je deze vertaling wil verwijderen?'
+    nestedForm:
+        add: Toevoegen
+    locationPicker:
+        confirmLocation: 'Locatie bevestigen'
+    entities:
+        cMSUser:
+            name: 'CMS gebruiker'
+            namePlural: 'CMS gebruikers'
+            listLabel: 'Overzicht CMS gebruikers'
+            addLabel: 'CMS gebruiker toevoegen'
+            editLabel: 'CMS gebruiker aanpassen'
+            onAdd: 'CMS gebruiker is toegevoegd'
+            onEdit: 'CMS gebruiker is aangepast'
+            onRemoved: 'CMS gebruiker is verwijdert'
+            changePasswordLabel: 'Wachtwoord aanpassen'
+            fields:
+                name: Voornaam
+                surname: Achternaam
+                enabled: Actief
+                plainPassword: Wachtwoord
+                plainPasswordRepeat: 'Herhaal wachtwoord'
+                email: E-mail
+                username: Gebruikersnaam
+                locale: Taal
+                groups: Groepen
+            forms:
+                panelHeader1: 'Gegevens van de gebruiker'
+                panelHeader2: Groepen
+        cMSUserGroup:
+            name: Groep
+            namePlural: Groepen
+            listLabel: 'Overzicht groepen'
+            addLabel: 'Groep toevoegen'
+            editLabel: 'Groep aanpassen'
+            onAdd: 'Groep is toegevoegd'
+            onEdit: 'Groep is aangepast'
+            onRemoved: 'Groep is verwijdert'
+            fields:
+                name: 'Groep naam'
+                description: Omschrijving
+                roles: Rollen
+                groups: Groepen
+                created: Aangemaakt
+                modified: Aangepast
+        copy:
+            name: Copy
+            namePlural: Copy
+            listLabel: 'Overzicht copy'
+            editLabel: 'Copy aanpassen'
+            onEdit: 'Copy is aangepast'
+            reloadCache: 'Vertalingen opnieuw inladen'
+            onReloadSuccess: 'De vertalingen werden opnieuw geladen'
+            fields:
+                key: 'Vertaal sleutel'
+                domain: Domein
+            enums:
+                nl: Nederlands
+                fr: Frans
+                de: Duits
+                en: Engels
+            help:
+                navName: Help
+                content:
+                    item1:
+                        header: 'Dynamische parameters'
+                        text: "\"Sommige vertaling kunnen een dynamische parameter bevatten. Deze worden altijd gemarkeerd met een % teken voor en na de naam van de parameter. Voordat de eindgebruiker de copy te zien krijgt zal het systeem deze parameter vervangen met de correcte waarde. Let op: de parameter zelf mag niet mee vertaald worden.\\n\\n\n\n    Bijvoorbeeld: er is een vertaling 'Hallo %firstName%,' en een vertaling 'Bonjour %firstname%,', en de naam van de gebruiker is Simon. Deze gebruiker zal op de Nederlandse pagina de tekst 'Hallo Simon' zien, en op de Franse pagina 'Bonjour Simon'.\"\n"
+        packageVersion:
+            name: 'Package version'
+            namePlural: 'Package versions'
+            listLabel: 'Package overview'
+            menuLabel: 'Installed packages'
+            fields:
+                name: Name
+                version: Version
+                type: Type
+                description: Description
+        auditLog:
+            listLabel: 'Geschiedenis van acties'
+            name: 'Audit log'
+            namePlural: 'Audit logs'
+            fields:
+                action: Actie
+                entityName: 'Object naam'
+                entityId: 'Object ID'
+                date: Datum
+                user: Gebruiker
+                lastModifiedBy: 'Laatst aangepast door'
+        accessControlInterface:
+            enums:
+                ACTION_ADD: Toevoegen
+                ACTION_EDIT: Aanpassen
+                ACTION_REMOVE: Verwijderen
+                ACTION_VIEW: Bekijken
+                ACTION_EXPORT: Exporteren
+                ACTION_BULK_EDIT: 'In bulk aanpassen'
+                ACTION_BULK_REMOVE: 'In bulk verwijderen'
+        media:
+            fields:
+                locale: Taal
+                title: Naam
+                description: Beschrijving
+            buttons:
+                submit: Opslaan
+        image:
+            name: Afbeelding
+            namePlural: Afbeeldingen
+            listLabel: Afbeeldingen
+            editLabel: 'Afbeelding aanpassen'
+            addLabel: 'Afbeelding toevoegen'
+            onAdd: 'Afbeelding is toegevoegd'
+            onEdit: 'Afbeelding is aangepast'
+            onRemoved: 'Afbeelding is verwijdert'
+            fields:
+                id: ID
+                file: Bestand
+                is360: '360 Afbeelding'
+            preview: Voorvertoning
+        video:
+            name: Video
+            namePlural: Videos
+            listLabel: Videos
+            editLabel: 'Video aanpassen'
+            addLabel: 'Video toevoegen'
+            onAdd: 'Video is toegevoegd'
+            onEdit: 'Video is aangepast'
+            onRemoved: 'Video is verwijdert'
+            fields:
+                id: ID
+                provider: Provider
+                providerId: 'Video ID'
+                uploadedFile: 'Bestand uploaden'
+                file: Bestand
+                is360: '360 Video'
+            enums:
+                PROVIDER_VIMEO: Vimeo
+                PROVIDER_YOUTUBE: YouTube
+                PROVIDER_NATIVE: Lokaal
+            help:
+                providerId: "De id van de video zoals die gebruikt word door de video provider. Voor YouTube filmpjes is dit het stukje achter ?v=. Bijvoorbeeld voor de url \"https://www.youtube.com/watch?v=123asd\" is de id \"123asd\". Voor vimeo videos kan de link bijvoorbeeld \"http://player.vimeo.com/external/188275654.sd.mp4\" zijn, dan zou de id \"188275654\" zijn.\n"
+                errors:
+                    playError: 'Uw browser ondersteunt deze video tag niet.'
+        videoProvider:
+            name: 'Video instelling'
+            namePlural: 'Video instellingen'
+            listLabel: 'Overzicht van alle video instellingen'
+            editLabel: 'Video instelling aanpassen'
+            addLabel: 'Video instelling toevoegen'
+            onAdd: 'Video instelling is toegevoegd'
+            onEdit: 'Video instelling is aangepast'
+            onRemoved: 'Video instelling is verwijdert'
+            fields:
+                accessToken: 'Access token'
+                provider: Aanbieder
+                providerId: 'Aanbieder ID'
+        mediaFolder:
+            name: 'Media map'
+            namePlural: 'Media mappen'
+            listLabel: 'Overzicht van alle media mappen'
+            editLabel: 'Media map aanpassen'
+            addLabel: 'Media map toevoegen'
+            onAdd: 'Media map is toegevoegd'
+            onEdit: 'Media map is aangepast'
+            onRemoved: 'Media map is verwijdert'
+            fields:
+                name: Naam
+                parent: 'Bovenliggende map'
+                type: 'Folder type'
+                defaultFolder: 'Default folder van type'
+            enums:
+                TYPE_FOLDER: Folder
+                TYPE_HIDDEN_FOLDER: 'Hidden folder'
+        presetImage:
+            listLabel: 'Overzicht van alle app assets'
+            editLabel: 'Asset aanpassen'
+            addLabel: 'Asset toevoegen'
+            removeLabel: 'Verwijder asset'
+            onAdd: 'Asset is toegevoegd'
+            onEdit: 'Asset is aangepast'
+            onRemoved: 'Asset is verwijdert'
+            name: 'App asset'
+            namePlural: 'App assets'
+            fields:
+                constantGroup: 'Constant namespace'
+                constantValue: 'Constant value'
+            tooltip:
+                constantValueTitle: 'Constant value'
+                constantValueContent: 'De constant value kan dezelfde zijn voor meerdere app assets, maar moet een geheel getal (integer) zijn.'
+        genericFile:
+            listLabel: 'Overzicht van alle bestanden'
+            editLabel: 'Bestand aanpassen'
+            addLabel: 'Bestand toevoegen'
+            removeLabel: 'Verwijder bestand'
+            onAdd: 'Bestand is toegevoegd'
+            onEdit: 'Bestand is aangepast'
+            onRemoved: 'Bestand is verwijdert'
+            name: Bestand
+            namePlural: Bestanden
+            fields:
+                file: Bestand
+        enums:
+            VIMEO: Vimeo
+            NATIVE: Native
+            YOUTUBE: YouTube
+        cron:
+            name: Cron
+            namePlural: Cron
+            addLabel: 'Cron toevoegen'
+            editLabel: 'Cron aanpassen'
+            listLabel: 'Overzicht van alle crons'
+            onAdd: 'Cron is toegevoegd'
+            onEdit: 'Cron is aangepast'
+            onRemoved: 'Cron is verwijdert'
+            fields:
+                command: Commando
+                description: Beschrijving
+                executionInterval: 'Executie interval'
+                intervalUnit: 'Interval eenheid'
+                executionTimeString: 'Relatieve executie tijd'
+                nextRunOn: 'Volgende uitvoering op'
+                status: Status
+                lastRunOn: 'Laatste uitvoering op'
+                lastRunStatus: 'Status laatste uitvoering'
+                maxExecutionTime: 'Maximale uitvoeringstijd'
+                maxExecutionsBeforeFail: 'Maximaal aantal mislukte uitvoeringen'
+                failureCount: 'Aantal mislukkingen'
+                continueAfterFailCount: 'Cronjob blijven uitvoeren wanneer maximum aantal mislukkingen bereikt is'
+                notificationSent: 'Waarschuwing verzonden'
+            enums:
+                status:
+                    scheduled: gepland
+                    inactive: 'niet actief'
+                    failed: mislukt
+                    success: success
+                    error: fout
+                    locked: locked
+                interval:
+                    seconds: seconden
+                    minutes: minuten
+                    hours: uren
+                    days: dagen
+            actions:
+                start: Start
+                stop: Stop
+        cronHistory:
+            name: Uitvoeringsgeschiedening
+            namePlural: Uitvoeringsgeschiedenis
+            listLabel: 'Cron geschiedenis'
+            showSuccess: 'Toon succesvolle uitvoeringen'
+            hideSuccess: 'Verberg succesvolle uitvoeringen'
+            fields:
+                runStart: 'Gestart op'
+                runEnd: 'Gestopt op'
+                runStatus: 'Status uitvoering'
+                runOutput: 'Output uitvoering'
+                showhistory: 'Toon output'
+                nohistory: 'Geen geschiedenis gevonden'
+        appSettings:
+            name: 'App instelling'
+            namePlural: 'App instellingen'
+            onRemoved: 'De instelling werd succesvol verwijderd.'
+            onEdit: 'De instelling werd succesvol aangepast.'
+            onAdd: 'De instelling werd succesvol toegevoegd.'
+            listLabel: 'Lijst van app instellingen'
+            editLabel: 'App instelling aanpassen'
+            addLabel: 'App instelling toevoegen'
+            fields:
+                type: Type
+                key: Key
+                setting: Instelling
+            enums:
+                type:
+                    string: Tekst
+                    php_serialized: Object
+        appCopy:
+            name: 'App vertaling'
+            namePlural: 'App vertalingen'
+            onRemoved: 'De vertaling werd succesvol verwijderd.'
+            onEdit: 'De vertaling werd succesvol aangepast.'
+            onAdd: 'De vertaling werd succesvol toegevoegd.'
+            listLabel: 'Lijst van vertalingen'
+            editLabel: 'Vertaling aanpassen'
+            addLabel: 'Vertaling toevoegen'
+            fields:
+                key: Key
+                value: Tekst
+                locale: Taal
+                details: Vertalingen
+                detailsValue: Vertaling
+        example:
+            namePlural: Voorbeelden
+            addLabel: 'Voorbeeld toevoegen'
+            editLabel: 'Voorbeeld aanpassen'
+            listLabel: 'Overzicht van alle voorbeelden'
+            fields:
+                published: Gepubliceerd
+                title: Titel
+                singleImage: 'Alleenstaande afbeelding'
+                multipleImages: 'Reeks afbeeldingen'
+        product:
+            namePlural: Producten
+            addLabel: 'Product toevoegen'
+            editLabel: 'Product aanpassen'
+            listLabel: 'Overzicht van alle producten'
+            cloneLabel: 'Dupliceer product'
+            fields:
+                title: Titel
+        productDetail:
+            fields:
+                title: Titel
+        event:
+            namePlural: Events
+            addLabel: 'Event toevoegen'
+            editLabel: 'Event aanpassen'
+            listLabel: 'Overzicht van alle events'
+            cloneLabel: 'Dupliceer event'
+            pageTitle: Events
+            fields:
+                title: Titel
+                date: Datum
+                product: Product
+        linkedListEntity:
+            namePlural: 'Linked list entity'
+            addLabel: 'Entity toevoegen'
+            editLabel: 'Entity aanpassen'
+            listLabel: Timeline
+            cloneLabel: 'Dupliceer entity'
+            pageTitle: 'Linked list entities'
+            fields:
+                title: Titel
+                description: Beschrijving
+        linkedListEntityDetail:
+            fields:
+                title: Titel
+                description: Beschrijving
+                image: Afbeelding
+                video: Video
+    roles:
+        ROLE_SUPER_ADMIN: 'Super admin'
+        ROLE_ADMIN: Administrator
+    filter:
+        buttons:
+            add: 'Filter toevoegen'
+            remove: 'Filter verwijderen'
+            clear: 'Filters wissen'
+            filter: 'Filters toepassen'
+        name: Filters
+        operator:
+            equals: 'gelijk aan'
+            notEquals: 'niet gelijk aan'
+            contains: bevat
+            notContains: 'bevat niet'
+            like: bevat
+            notLike: 'bevat niet'
+            greaterThan: '>'
+            greaterThanEquals: '>='
+            lessThan: '<'
+            lessThanEquals: '<='
+    errors:
+        404:
+            code: 'Pagina niet gevonden!'
+            description: 'Sorry, de pagina kon niet gevonden worden.'
+            toHome: 'Terug naar de home pagina'
+        500:
+            code: 'Interne server fout!'
+            description: 'Er is een fout opgetreden bij het verwerken van je verzoek.'
+            toHome: 'Terug naar de home pagina'
+        other:
+            code: 'Er is een fout opgetreden!'
+            description: 'Er is een fout opgetreden bij het verwerken van je verzoek.'
+            toHome: 'Terug naar de home pagina'
+    elements:
+        errors:
+            noData: 'Er is nog geen data beschikbaar'
+        warnings:
+            unpublishedData: 'Er zijn ongepubliceerde aanpassingen. De aanpassing zijn niet zichtbaar voor de eind-gebruiker totdat deze gepubliceerd worden.'
+    login:
+        title: Aanmelden
+        username: Gebruikersnaam
+        password: Wachtwoord
+        remember: 'Ingelogd blijven'
+        submit: Aanmelden
+        forgotPassword: 'Wachtwoord vergeten?'
+        requestAccount: Registreren
+        alreadyLoggedIn: '<strong>Waarschuwing:</strong> U bent reeds ingelogd als <em>%username%</em>'
+    resetting:
+        login: Aanmelden
+        request:
+            title: 'Nieuw wachtwoord aanvragen'
+            username: 'Gebruikersnaam of e-mailadres'
+            submit: 'Wijzig wachtwoord'
+        checkEmail:
+            title: 'E-mail verzonden'
+        passwordAlreadyRequested:
+            title: 'Reeds aangevraagd'
+        reset:
+            title: 'Wachtwoord instellen'
+    profile:
+        show:
+            title: Profiel
+            edit: 'Profiel bewerken'
+            roles: Gebruikersrollen
+            back: Terug
+        edit:
+            title: 'Profiel bewerken'
+            show: 'Terug naar profiel'
+            cancel: Annuleren
+            form:
+                username: Gebruikersnaam
+                name: Voornaam
+                surname: Achternaam
+                email: 'E-mail adres'
+                password: 'Huidig wachtwoord'
+                submit: 'Profiel opslaan'
+        changePassword:
+            title: 'Wachtwoord aanpassen'
+            form:
+                submit: Opslaan
+    registration:
+        title: Registratie
+        back: Terug
+        new:
+            form:
+                submit: 'Account aanmaken'
+                surname: Familienaam
+                name: Voornaam
+    menu:
+        main:
+            header: Hoofdmenu
+        admin:
+            header: Hoofdmenu
+        users:
+            label: 'CMS Gebruikers'
+            description: 'Beheer de gebruikers, groepen en hun rechten binnen het CMS.'
+        copy:
+            label: Copy
+            description: 'Copy beheer'
+        settings:
+            label: Instellingen
+            description: 'Beheer CMS instellingen'
+        media: Media
+        media_description: 'Beheer van media items'
+        cron_description: 'Beheer en bekijk de status van cron jobs.'
+        app:
+            label: Applicatie
+            description: 'Instellingen voor applicaties die via API doorgestuurd worden'
+        product:
+            label: Producten
+        example:
+            label: Voorbeelden
+        event:
+            label: Event
+        app_copy:
+            label: 'App copy'
+        app_settings:
+            label: 'App settings'
+        linkedListEntity:
+            label: 'Linked list entities'
+        containers:
+            app: 'App settings'
+    auditableView:
+        date: Datum
+        modifiedBy: 'Aangepast door'
+        action: Actie
+        fieldName: Veld
+        fieldData: Data
+        oldFieldData: 'Oude data'
+        newFieldData: 'Nieuwe data'
+        errors:
+            entityNotAuditable: 'Er is een fout opgetreden bij het weergeven van de data.'
+            auditLogNotFound: 'Er is geen log gevonden voor dit veld'
+    enums:
+        roles:
+            ROLE_SUPER_ADMIN: 'ROLE_SUPER_ADMIN - Kan alles aanpassen, enkel voor gebruik door Bazookas.'
+            ROLE_ALLOWED_TO_SWITCH: 'ROLE_ALLOWED_TO_SWITCH - laat toe om zich voor te doen als een andere gebruiker (Werkt enkel in development).'
+            ROLE_ADD_GROUP: 'ROLE_ADD_GROUP - Laat toe om nieuwe gebruikers groepen aan te maken.'
+            ROLE_CMS_GROUP_ADMIN: 'ROLE_CMS_GROUP_ADMIN - Laat toe om nieuwe gebruikers groepen aan te maken.'
+            ROLE_ADMIN: 'ROLE_ADMIN - Heeft toegang tot alle functionaliteit.'
+            ROLE_ADD_USER: 'ROLE_ADD_USER - Kan nieuwe CMS gebruikers toevoegen of huidige gebruikers aanpassen.'
+            ROLE_CMS_USER_ADMIN: 'ROLE_CMS_USER_ADMIN - Kan nieuwe CMS gebruikers toevoegen of huidige gebruikers aanpassen.'
+            ROLE_CMS_USER: 'ROLE_CMS_USER - Heeft enkel basis toegang tot het cms.'
+            ROLE_MEDIA_ADMIN: 'ROLE_MEDIA_ADMIN - Kan media toevoegen, bewerken, en verwijderen.'
+            ROLE_MEDIA_USER: 'ROLE_MEDIA_USER - Kunnen media items aanmaken en hun eigen media media items aanpassen en verwijderen. Deze gebruikers zien enkel hun eigen media items.'
+            ROLE_CRON_ADMIN: 'ROLE_CRON_ADMIN - Kan cron jobs toevoegen, bewerken, en verwijderen.'
+            ROLE_COPY_MANAGER: 'ROLE_COPY_MANAGER - Kan copy aanpassen.'
+            ROLE_AUDITOR: 'ROLE_AUDITOR - Kan gebruik maken van de auditing functionaliteit om CMS gebruiker acties na te gaan.'
+        roleType:
+            _USER: 'USER rollen - Rollen die toegang geven tot functionaliteit en beheer van zelf aangemaakte content.'
+            _ADMIN: 'ADMIN rollen - Rollen die toegang geven tot functionaliteit en beheer van alle content.'
+            _GENERAL: 'GENERAL rollen - Rollen die toegang geven tot algemene functionaliteit.'
+    dialog:
+        confirm:
+            title: 'Weet je het zeker?'
+            description: 'Weet je zeker dat je dit element wilt verwijderen?'
+            actions:
+                cancel: Annuleren
+                confirm: Bevestigen
+                close: Sluiten
+    exceptions:
+        MediaServiceException:
+            vimeo:
+                apiException: 'Er is een fout opgetreden bij verwerken van video.'
+    media:
+        messages:
+            couldNotBeRemoved: 'De %entity% kon niet verwijderd worden omdat het nog gekoppeld is aan: '
+        breadcrumb:
+            root: 'Media hoofdmap'
+        folder:
+            empty: 'Deze map is leeg.'
+            addFolder: 'Map toevoegen'
+            go:
+                up: 'Bovenliggende map'
+    mail:
+        failure: 'Een cron job is gefaald op'
+        locked: 'Een cron job is gefaald op'
+dashboard:
+    title: Dashboard
+    elements:
+        alert:
+            enums:
+                TYPE_INFO: 'Let op!'
+                TYPE_DANGER: Fout!
+                TYPE_SUCCESS: Success!
+        calendarElement:
+            enums:
+                Mon: Ma
+                Tue: Di
+                Wed: Woe
+                Thu: Do
+                Fri: Vr
+                Sat: Za
+                Sun: Zo
+                January: Januari
+                February: Februari
+                March: Maart
+                April: April
+                May: Mei
+                June: Juni
+                July: Juli
+                August: Augustus
+                September: September
+                October: Oktober
+                November: November
+                December: December
+adminlist:
+    user:
+        entity: gebruiker
+        index:
+            title: Gebruikers
+        fields:
+            username: Gebruikersnaam
+            name: Voornaam
+            surname: Achternaam
+            enabled: Actief
+youtube:
+    upload:
+        title: 'Upload video naar youtube'
+        cancel: Annuleren
+        confirm: Bevestigen
+        upload: Uploaden
+        channel: 'De video wordt aan het volgende kanaal toegevoegd'
+        disclaimer: 'By uploading a video, you certify that you own all rights to the content or that you are authorized by the owner to make the content publicly available on YouTube, and that it otherwise complies with the YouTube Terms of Service located at <a href="http://www.youtube.com/t/terms" target="_blank">http://www.youtube.com/t/terms</a>'
+        startUpload: 'Start upload'
+        uploading: 'Video wordt geüpload'
+        uploadComplete: 'Upload voltooid, status controleren...'
+        titleLabel: Titel
+        descriptionLabel: Beschrijving
+        privacyLabel: 'Privacy instellingen'
+        privacy:
+            public: Publiek
+            unlisted: 'Niet opgelijst'
+            private: Prive
+        fileLabel: 'Selecteer bestand'
+adminElements:
+    buttons:
+        show: Toon
+    graph:
+        error:
+            noData: 'Er is nog niet genoeg data beschikbaar om deze grafiek te kunnen weergeven.'
+common:
+    entity:
+        field:
+            locale: Taal
+    entities:
+        BaseAppUser:
+            fields:
+                password: Wachtwoord
+                repeatedPassword: 'Herhaal wachtwoord'
+            buttons:
+                submit: Opslaan
+            flash:
+                passwordChanged: 'Je wachtwoord werd gewijzigd.'
+                hashInvalid: 'Deze link is niet meer geldig. <br><br>Let op: kan maximaal 1 keer gebruikt worden.'
+                errorChangingPassword: 'Er is een fout opgetreden bij het aanpassen van je paswoord.'
+                hashExpired: 'Deze link is niet meer geldig. <br><br>Let op: deze link moet binnen de 2 weken gebruikt worden.'
+    util:
+        convertTimeToReadable: '%day%d %hour%u %min%m %sec%s'
+user:
+    resetting:
+        reset:
+            title: 'Wachtwoord opnieuw instellen'
