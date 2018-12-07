@@ -68,14 +68,6 @@ doctrine:
     #            collate: utf8mb4_unicode_ci
     types:
       datetime: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
-    # types:
-    #     datetime: SharedBundles\EntityBundle\DoctrineExtensions\DBAL\Types\UTCDateTimeType
-    # if using pdo_sqlite as your database driver:
-    #   1. add the path in parameters.yml
-    #     e.g. database_path: "%kernel.root_dir%/data/data.db3"
-    #   2. Uncomment database_path in parameters.yml.dist
-    #   3. Uncomment next line:
-    #     path:     "%database_path%"
 
   orm:
     auto_generate_proxy_classes: "%kernel.debug%"
