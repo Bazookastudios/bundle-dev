@@ -150,6 +150,7 @@ bazookas_media:
         uploads_root_directory: "%uploads_root_directory%"
         baseUrl: "%baseUrl%"
         enable360Items: true
+        enableSecureMedia: true
     video_providers:
         native:
             type: NATIVE
@@ -184,17 +185,26 @@ oneup_flysystem:
         local_media_adapter:
             local:
                 directory: "%kernel.root_dir%/../web/uploads"
-
-        #TODO
-    #        s3_file_system:
-    #            awss3v3:
-    #                client: aws_s3_client
-    #                bucket: ~
-    #                prefix: ~
+        s3_file_system:
+            awss3v3:
+                client: media_s3_client
+                bucket: test.bazookas.be
+                prefix: 'uploads'
 
     filesystems:
-        media:
-            adapter: local_media_adapter
-
-            # optional - defines the default visibility of the filesystem: `public` or `private`(default)
+        public_media:
+            adapter: s3_file_system
+            visibility: public
+        private_media:
+            adapter: s3_file_system
             visibility: private
+
+liip_imagine:
+    loaders:
+        public_media:
+            flysystem:
+                filesystem_service: oneup_flysystem.public_media_filesystem
+        private_media:
+            flysystem:
+                filesystem_service: oneup_flysystem.private_media_filesystem
+    data_loader: private_media
