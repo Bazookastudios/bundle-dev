@@ -179,7 +179,6 @@ bazookas_api_framework:
 
 nelmio_api_doc: ~
 
-# app/config/config.yml
 oneup_flysystem:
     adapters:
         local_media_adapter:
@@ -190,6 +189,11 @@ oneup_flysystem:
                 client: media_s3_client
                 bucket: test.bazookas.be
                 prefix: 'uploads'
+        s3_media_cache_system:
+            awss3v3:
+                client: media_s3_client
+                bucket: test.bazookas.be
+                prefix: ''
 
     filesystems:
         public_media:
@@ -198,6 +202,11 @@ oneup_flysystem:
         private_media:
             adapter: s3_file_system
             visibility: private
+        # We need a cache media file system since liip imagine can't correctly resolve prefixes being applied to files
+        # which are uploaded to the s3 buckets. SAD.
+        cache_media:
+            adapter: s3_media_cache_system
+            visibility: public
 
 liip_imagine:
     loaders:
@@ -207,4 +216,12 @@ liip_imagine:
         private_media:
             flysystem:
                 filesystem_service: oneup_flysystem.private_media_filesystem
-    data_loader: private_media
+    data_loader: public_media
+    resolvers:
+        public_media:
+            flysystem:
+                filesystem_service: oneup_flysystem.cache_media_filesystem
+                root_url: "https://s3-eu-west-1.amazonaws.com/test.bazookas.be"
+                cache_prefix: media/cache
+                visibility: public
+    cache: public_media
