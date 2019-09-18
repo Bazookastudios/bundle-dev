@@ -21,3 +21,6 @@ parameters:
     # NOTE these are localhost keys
     google_api.client_id: 573433013303-p2qqaavdvik09mlg23hj3f9taoapnmnk.apps.googleusercontent.com
     google_api.client_secret: 2wrAb3zJYNFFhy9tHQwKNZ7Q
+
+    aws_s3_client_id: ~
+    aws_s3_client_secret: ~
