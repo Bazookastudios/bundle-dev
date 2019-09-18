@@ -154,8 +154,6 @@ bazookas_media:
     video_providers:
         native:
             type: NATIVE
-        youtube:
-            type: YOUTUBE
     default_folders:
         appUsers: APP_USER
 
