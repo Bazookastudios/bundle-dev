@@ -6,27 +6,3 @@
 	path = src/Bazookas/CommonBundle
 	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
 	branch = master
-[submodule "CronBundle"]
-	path = src/Bazookas/CronBundle
-	url = https://github.com/Bazookastudios/BazookasCronBundle.git
-	branch = master
-[submodule "MediaBundle"]
-	path = src/Bazookas/MediaBundle
-	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
-	branch = master
-[submodule "APIFrameworkBundle"]
-	path = src/Bazookas/APIFrameworkBundle
-	url = https://github.com/Bazookastudios/BazookasAPIFrameWorkBundle
-	branch = master
-[submodule "SecurityBundle"]
-	path = src/Bazookas/SecurityBundle
-	url = https://github.com/Bazookastudios/BazookasSecurityBundle.git
-	branch = master
-[submodule "BazookasIntegrationsBundle"]
-	path = src/Bazookas/IntegrationsBundle
-	url = https://github.com/Bazookastudios/BazookasIntegrationsBundle.git
-	branch = master
-[submodule "NotificationBundle"]
-	path = src/Bazookas/NotificationBundle
-	url = https://github.com/Bazookastudios/BazookasNotificationBundle.git
-	branch = master
