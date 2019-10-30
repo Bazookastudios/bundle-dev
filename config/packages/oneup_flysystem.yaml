@@ -1,0 +1,29 @@
+# Read the documentation: https://github.com/1up-lab/OneupFlysystemBundle/tree/master/Resources/doc/index.md
+oneup_flysystem:
+    adapters:
+        local_media_adapter:
+            local:
+                directory: "%kernel.root_dir%/../web/uploads"
+        s3_file_system:
+            awss3v3:
+                client: media_s3_client
+                bucket: test.bazookas.be
+                prefix: 'uploads'
+        s3_media_cache_system:
+            awss3v3:
+                client: media_s3_client
+                bucket: test.bazookas.be
+                prefix: ''
+
+    filesystems:
+        public_media:
+            adapter: s3_file_system
+            visibility: public
+        private_media:
+            adapter: s3_file_system
+            visibility: private
+        # We need a cache media file system since liip imagine can't correctly resolve prefixes being applied to files
+        # which are uploaded to the s3 buckets. SAD.
+        cache_media:
+            adapter: s3_media_cache_system
+            visibility: public

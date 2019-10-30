@@ -1,0 +1,41 @@
+version: "3"
+services:
+    php:
+        image: 255331728746.dkr.ecr.eu-west-1.amazonaws.com/php7-nginx:master
+        ports:
+            - 8085:80
+        volumes:
+            - .:/var/www
+            - ./vendor:/var/www/vendor:cached
+            - ./var:/var/www/var:delegated
+            - /var/www/node_modules/
+        links:
+            - mysql
+        env_file:
+            - .env.local
+
+    mysql:
+        image: mysql:5.7
+        ports:
+            - 33306:3306
+        volumes:
+            - ./docker_var/mysql-data:/var/lib/mysql
+        environment:
+            MYSQL_RANDOM_ROOT_PASSWORD: "yes"
+            MYSQL_DATABASE: "bazookas"
+            MYSQL_USER: "bazookas"
+            MYSQL_PASSWORD: "bazookas"
+
+    codeception:
+        image: codeception/codeception
+        links:
+            - php
+        env_file:
+            - .env.local
+        volumes:
+            - ./:/project
+
+    mailcatcher:
+        image: schickling/mailcatcher
+        ports:
+            - 1080:1080

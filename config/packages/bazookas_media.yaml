@@ -1,0 +1,12 @@
+bazookas_media:
+    settings:
+        root_directory: "%root_directory%"
+        uploads_root_directory: "%uploads_root_directory%"
+        baseUrl: "%baseUrl%"
+        enable360Items: true
+        enableSecureMedia: true
+    video_providers:
+        native:
+            type: NATIVE
+    default_folders:
+        appUsers: APP_USER

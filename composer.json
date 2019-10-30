@@ -2,51 +2,50 @@
   "name": "bazookastudios/bundle-dev",
   "license": "proprietary",
   "type": "project",
+  "config": {
+    "preferred-install": {
+      "*": "dist"
+    },
+    "sort-packages": true
+  },
   "autoload": {
     "psr-4": {
-      "": "src/"
-    },
-    "classmap": [
-      "app/AppKernel.php",
-      "app/AppCache.php"
-    ]
+      "App\\": "src/",
+      "Bazookas\\": "bundles/"
+    }
   },
   "autoload-dev": {
     "psr-4": {
-      "Tests\\": "tests/"
+      "App\\Tests\\": "tests/"
     }
   },
   "require": {
-    "php": ">=5.5.9",
-    "symfony/symfony": "3.*.*",
-    "doctrine/orm": "^2.6",
-    "doctrine/doctrine-bundle": "^1.6",
-    "doctrine/doctrine-cache-bundle": "^1.2",
-    "symfony/swiftmailer-bundle": "^2.3",
-    "symfony/monolog-bundle": "~3.0",
-    "sensio/distribution-bundle": "^5.0",
-    "sensio/framework-extra-bundle": "^3.0.2",
-    "incenteev/composer-parameter-handler": "^2.0",
-    "symfony/assetic-bundle": "^2.8",
-    "friendsofsymfony/user-bundle": "2.0.x-dev#612649c",
-    "friendsofsymfony/oauth-server-bundle": "^1.5",
-    "liip/imagine-bundle": "^1.5",
-    "nelmio/api-doc-bundle": "^2.13",
-    "symfony/proxy-manager-bridge": "^3.2",
-    "symfony/web-server-bundle": "^3.3",
+    "php": ">7.2.0",
+    "league/flysystem-aws-s3-v3": "^1.0",
+    "liip/imagine-bundle": "^2.2",
     "ocramius/proxy-manager": "^2.2",
-    "php-ffmpeg/php-ffmpeg": "^0.12.0",
     "oneup/flysystem-bundle": "^3.1",
-    "league/flysystem-aws-s3-v3": "^1.0"
+    "php-ffmpeg/php-ffmpeg": "^0.14.0",
+    "ramsey/uuid": "^3.8",
+    "symfony/asset": "^4.3",
+    "symfony/flex": "^1.4",
+    "symfony/form": "^4.3",
+    "symfony/monolog-bundle": "^3.4",
+    "symfony/orm-pack": "^1.0",
+    "symfony/proxy-manager-bridge": "^3.0",
+    "symfony/security-bundle": "^4.3",
+    "symfony/swiftmailer-bundle": "^3.3",
+    "symfony/templating": "^4.3",
+    "symfony/translation": "^4.3",
+    "symfony/twig-pack": "^1.0",
+    "symfony/validator": "^4.3",
+    "symfony/yaml": "^4.3"
   },
   "require-dev": {
-    "sensio/generator-bundle": "^3.0",
-    "symfony/phpunit-bridge": "^3.0",
-    "doctrine/doctrine-fixtures-bundle": "^2.3",
-    "liip/functional-test-bundle": "^1.7",
-    "mockery/mockery": "^1.0",
-    "phpunit/phpunit": "^6.4",
-    "roave/security-advisories": "dev-master"
+    "doctrine/doctrine-fixtures-bundle": "^3.2",
+    "roave/security-advisories": "dev-master",
+    "symfony/dotenv": "^4.3",
+    "symfony/profiler-pack": "^1.0"
   },
   "repositories": [
     {
@@ -79,32 +78,10 @@
     }
   ],
   "scripts": {
-    "post-install-cmd": [
-      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
-    ],
-    "post-update-cmd": [
-      "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile",
-      "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::prepareDeploymentTarget"
-    ]
+    "post-install-cmd": []
   },
-  "extra": {
-    "symfony-app-dir": "app",
-    "symfony-bin-dir": "bin",
-    "symfony-var-dir": "var",
-    "symfony-web-dir": "web",
-    "symfony-tests-dir": "tests",
-    "symfony-assets-install": "relative",
-    "incenteev-parameters": {
-      "file": "app/config/parameters.yml"
-    }
-  }
+  "conflict": {
+    "symfony/symfony": "*"
+  },
+  "extra": {}
 }

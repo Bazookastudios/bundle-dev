@@ -1,0 +1,55 @@
+# This file is the entry point to configure your own services.
+# Files in the packages/ subdirectory configure your dependencies.
+
+# Put parameters here that don't need to change on each machine where the app is deployed
+# https://symfony.com/doc/current/best_practices/configuration.html#application-related-configuration
+parameters:
+    #The fallback locale
+    locale: en
+    #All supported locales
+    locales: [nl, en]
+    requiredlocales: nl|en
+    required_locales: "%requiredlocales%"
+    root_directory: "%kernel.root_dir%/../web"
+    uploads_root_directory: "%kernel.root_dir%/../web/uploads"
+    baseUrl: "http://localhost:8000"
+
+    google_api.client_id: "%env(GOOGLE_API_CLIENT_ID)%"
+    google_api.client_secret: "%env(GOOGLE_API_CLIENT_SECRET)%"
+    aws_s3_client_id: "%env(AWS_S3_CLIENT_ID)%"
+    aws_s3_client_secret: "%env(AWS_S3_CLIENT_SECRET)%"
+
+    mailer_transport: '%env(MAILER_TRANSPORT)%'
+    mailer_host: "%env(MAILER_HOST)%"
+    mailer_port: "%env(MAILER_PORT)%"
+    mailer_user: '%env(MAILER_USER)%'
+    mailer_password: '%env(MAILER_PASSWORD)%'
+
+services:
+    # default configuration for services in *this* file
+    _defaults:
+        autowire: true      # Automatically injects dependencies in your services.
+        autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
+
+    # makes classes in src/ available to be used as services
+    # this creates a service per class whose id is the fully-qualified class name
+    App\:
+        resource: '../src/*'
+        exclude: '../src/{DependencyInjection,Entity,Migrations,Tests,Kernel.php}'
+
+    # controllers are imported separately to make sure services can be injected
+    # as action arguments even if you don't extend any base controller class
+    App\Controller\:
+        resource: '../src/Controller'
+        tags: ['controller.service_arguments']
+
+    # add more service definitions when explicit configuration is needed
+    # please note that last definitions always *replace* previous ones
+    media_s3_client:
+        class: Aws\S3\S3Client
+        arguments:
+            -   version: '2006-03-01' # or 'latest'
+                region: "eu-west-1" # 'eu-central-1' for example
+                credentials:
+                    key: "%aws_s3_client_id%"
+                    secret: "%aws_s3_client_secret%"

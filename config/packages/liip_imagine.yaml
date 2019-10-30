@@ -1,0 +1,18 @@
+# See dos how to configure the bundle: https://symfony.com/doc/current/bundles/LiipImagineBundle/basic-usage.html
+liip_imagine:
+    loaders:
+        public_media:
+            flysystem:
+                filesystem_service: oneup_flysystem.public_media_filesystem
+        private_media:
+            flysystem:
+                filesystem_service: oneup_flysystem.private_media_filesystem
+    data_loader: public_media
+    resolvers:
+        public_media:
+            flysystem:
+                filesystem_service: oneup_flysystem.cache_media_filesystem
+                root_url: "https://s3-eu-west-1.amazonaws.com/test.bazookas.be"
+                cache_prefix: media/cache
+                visibility: public
+    cache: public_media

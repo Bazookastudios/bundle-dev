@@ -1,3 +1,0 @@
-website_home:
-    path:     /
-    defaults: { _controller: WebsiteBundle:Default:index }
