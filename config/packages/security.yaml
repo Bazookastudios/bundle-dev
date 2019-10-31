@@ -53,12 +53,10 @@ security:
             #                provider: ~
             #                parameter: _switch_user
             #                role: ROLE_ALLOWED_TO_SWITCH
-            logout_on_user_change: true
 
         #Default Project configuration
         main:
             anonymous: ~
-            logout_on_user_change: true
 
     # any login or register paths can be visited anonymously
     # all other admin paths should be secured

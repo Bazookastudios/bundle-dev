@@ -14,7 +14,8 @@ doctrine:
 
         url: '%env(resolve:DATABASE_URL)%'
         types:
-            datetime: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
+            datetime:
+                class: Bazookas\CommonBundle\Entity\DoctrineExtensions\Types\UTCDateTimeType
 
     orm:
         auto_generate_proxy_classes: true
