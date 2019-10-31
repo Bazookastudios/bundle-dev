@@ -105,6 +105,9 @@
     "evenement/evenement": {
         "version": "v2.1.0"
     },
+    "fig/link-util": {
+        "version": "1.0.0"
+    },
     "guzzlehttp/guzzle": {
         "version": "6.4.1"
     },
@@ -177,6 +180,9 @@
     },
     "psr/http-message": {
         "version": "1.0.1"
+    },
+    "psr/link": {
+        "version": "1.0.0"
     },
     "psr/log": {
         "version": "1.1.1"
@@ -461,6 +467,9 @@
         "version": "v4.3.5"
     },
     "symfony/var-exporter": {
+        "version": "v4.3.5"
+    },
+    "symfony/web-link": {
         "version": "v4.3.5"
     },
     "symfony/web-profiler-bundle": {

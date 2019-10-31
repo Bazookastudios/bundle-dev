@@ -20,4 +20,4 @@ framework:
             - twig
 
     assets:
-        json_manifest_path: '%kernel.root_dir%/../web/static/manifest.json'
+        json_manifest_path: '%kernel.root_dir%/../public/static/manifest.json'
