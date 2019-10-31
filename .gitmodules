@@ -1,6 +1,6 @@
 [submodule "bundles/Bazookas/AdminBundle"]
 	path = bundles/Bazookas/AdminBundle
 	url = https://github.com/Bazookastudios/BazookasAdminBundle.git
-[submodule "bundle/Bazookas/CommonBundle"]
-	path = bundle/Bazookas/CommonBundle
+[submodule "bundles/Bazookas/CommonBundle"]
+	path = bundles/Bazookas/CommonBundle
 	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
