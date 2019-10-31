@@ -1,8 +1,0 @@
-[submodule "AdminBundle"]
-	path = src/Bazookas/AdminBundle
-	url = https://github.com/Bazookastudios/BazookasAdminBundle.git
-	branch = master
-[submodule "CommonBundle"]
-	path = src/Bazookas/CommonBundle
-	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
-	branch = master
