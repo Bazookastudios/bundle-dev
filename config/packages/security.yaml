@@ -14,6 +14,7 @@ security:
             - ROLE_ADD_USER
             - ROLE_MEDIA_ADMIN
             - ROLE_CRON_ADMIN
+            - ROLE_ALLOWED_TO_SWITCH
         ROLE_ADMIN:
             #inherited roles
             #
@@ -27,6 +28,7 @@ security:
         users:
             entity:
                 class: Bazookas\AdminBundle\Entity\Interfaces\CMSUserInterface
+                property: username
 
     firewalls:
         #Default Project configuration
@@ -48,11 +50,9 @@ security:
                 lifetime: 604800
                 path:     /
                 domain:   ~
-            # TODO fix this
-            #            switch_user:
-            #                provider: ~
-            #                parameter: _switch_user
-            #                role: ROLE_ALLOWED_TO_SWITCH
+            switch_user:
+                parameter: _switch_user
+                role: ROLE_ALLOWED_TO_SWITCH
 
         #Default Project configuration
         main:
