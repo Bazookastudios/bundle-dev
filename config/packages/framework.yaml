@@ -17,3 +17,7 @@ framework:
 
     assets:
         json_manifest_path: '%kernel.root_dir%/../public/static/manifest.json'
+
+    # You need to add the "templating" section if you want to auto-wire the twig EngineInterface
+    templating:
+        engines: ['twig']

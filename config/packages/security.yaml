@@ -63,5 +63,6 @@ security:
     access_control:
         # #for a cms + website project, use the settings below:
         - { path: ^\/(nl|en)+\/admin\/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^\/(nl|en)+\/admin\/forgot-password, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^\/(nl|en)+\/admin((\/)*.)*$, role: ROLE_CMS_USER }
         - { path: ^/api, roles: [ IS_AUTHENTICATED_FULLY ] }
