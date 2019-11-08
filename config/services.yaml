@@ -45,6 +45,17 @@ services:
 
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
+
+    App\Twig\AdminMenuExtension:
+        class: App\Twig\AdminMenuExtension
+        arguments:
+            $bundles: "%kernel.bundles%"
+        tags:
+            - { name: twig.extension }
+
+    bazookas.admin.twig.admin_menu_extension:
+        alias: App\Twig\AdminMenuExtension
+
     media_s3_client:
         class: Aws\S3\S3Client
         arguments:

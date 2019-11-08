@@ -1,0 +1,16 @@
+admin:
+    entities:
+        fact:
+            listLabel: Overzicht van alle feiten
+            editLabel: Feit aanpassen
+            addLabel: Feit toevoegen
+            onAdd: Feit is toegevoegd
+            onEdit: Feit is aangepast
+            onRemoved: Feit is verwijderd
+            name: Feit
+            namePlural: Feiten
+            fields:
+                fact: Feit
+        factDetail:
+            fields:
+                fact: Feit

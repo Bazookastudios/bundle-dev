@@ -27,3 +27,11 @@ bazookas_admin:
 #api_framework:
 #    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
 #    prefix:   /
+
+project_admin:
+    resource: './routes/admin_routing.yaml'
+    prefix:   /{_locale}/admin
+    defaults:
+        _locale: "%locale%"
+    requirements:
+        _locale: "%require_admin_locales%"

@@ -1,0 +1,12 @@
+# ---------------------------------------------------
+#                          Fact
+# ---------------------------------------------------
+admin_facts:
+    path: /facts/{_action}/{_id}
+    defaults:
+        _controller: App\Controller\Admin\Fact\FactAdminController:indexAction
+        _action: ~
+        _id: ~
+    requirements:
+        _locale: "%require_admin_locales%"
+        _id: .+

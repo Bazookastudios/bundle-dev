@@ -1,0 +1,16 @@
+admin:
+    entities:
+        fact:
+            listLabel: Overview of all facts
+            editLabel: Edit fact
+            addLabel: Add fact
+            onAdd: Fact has been added
+            onEdit: Fact has been modified
+            onRemoved: Fact has been removed
+            name: Fact
+            namePlural: Facts
+            fields:
+                fact: Fact
+        factDetail:
+            fields:
+                fact: Fact
