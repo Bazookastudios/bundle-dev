@@ -1,6 +1,12 @@
 [submodule "bundles/Bazookas/AdminBundle"]
 	path = bundles/Bazookas/AdminBundle
 	url = https://github.com/Bazookastudios/BazookasAdminBundle.git
+[submodule "bundles/Bazookas/APIFrameworkBundle"]
+	path = bundles/Bazookas/APIFrameworkBundle
+	url = https://github.com/Bazookastudios/BazookasAPIFrameworkBundle.git
 [submodule "bundles/Bazookas/CommonBundle"]
 	path = bundles/Bazookas/CommonBundle
 	url = https://github.com/Bazookastudios/BazookasCommonBundle.git
+[submodule "bundles/Bazookas/MediaBundle"]
+	path = bundles/Bazookas/MediaBundle
+	url = https://github.com/Bazookastudios/BazookasMediaBundle.git
