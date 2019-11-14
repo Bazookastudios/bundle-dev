@@ -1,0 +1,4 @@
+bazookas_media:
+    video_providers:
+        native:
+            type: NATIVE
