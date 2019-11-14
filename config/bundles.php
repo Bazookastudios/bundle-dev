@@ -16,7 +16,7 @@ return [
     Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle::class => ['dev' => true, 'test' => true],
     Bazookas\AdminBundle\BazookasAdminBundle::class => ['all' => true],
     Bazookas\CommonBundle\BazookasCommonBundle::class => ['all' => true],
-    //    Bazookas\MediaBundle\BazookasMediaBundle::class => ['all' => true],
+    Bazookas\MediaBundle\BazookasMediaBundle::class => ['all' => true],
     //    Bazookas\CronBundle\BazookasCronBundle::class => ['all' => true],
-    //    Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle::class => ['all' => true],
+    Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle::class => ['all' => true],
 ];

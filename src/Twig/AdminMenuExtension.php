@@ -5,6 +5,7 @@ namespace App\Twig;
 use Bazookas\AdminBundle\AdminElements\Elements\Actions\MenuActions\MenuActionElement;
 use Bazookas\AdminBundle\Security\Roles;
 use Bazookas\AdminBundle\Twig\Base\BaseAdminMenuExtension;
+use Bazookas\MediaBundle\Menu\MediaMenuTrait;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\OptionsResolver\Exception\ExceptionInterface;
 use Twig\Extension\ExtensionInterface;
@@ -15,6 +16,8 @@ use Twig\Extension\ExtensionInterface;
  */
 class AdminMenuExtension extends BaseAdminMenuExtension implements ExtensionInterface
 {
+    use MediaMenuTrait;
+
     /**
      * @param Request $request
      *
@@ -28,7 +31,9 @@ class AdminMenuExtension extends BaseAdminMenuExtension implements ExtensionInte
         //Add project menu items
         $this->elements[] = $this->createFactsMenuItem();
 
+
         // Add (super) admin items
+        $this->addMediaBundleMenuItems(true, true);
         $this->addAdminSettingsMenu();
     }
 

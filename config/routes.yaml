@@ -16,17 +16,17 @@ bazookas_admin:
 #    requirements:
 #        _locale: "%require_admin_locales%"
 #
-#bazookas_media:
-#    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
-#    prefix:   /{_locale}/admin
-#    defaults:
-#        _locale: "%locale%"
-#    requirements:
-#        _locale: "%require_admin_locales%"
-#
-#api_framework:
-#    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
-#    prefix:   /
+bazookas_media:
+    resource: "@BazookasMediaBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/admin
+    defaults:
+        _locale: "%locale%"
+    requirements:
+        _locale: "%require_admin_locales%"
+
+api_framework:
+    resource: "@BazookasAPIFrameworkBundle/Resources/config/routing.yml"
+    prefix:   /
 
 project_admin:
     resource: './routes/admin_routing.yaml'
