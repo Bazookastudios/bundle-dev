@@ -1,4 +1,29 @@
 # ---------------------------------------------------
+#                       App Copy & Settings
+# ---------------------------------------------------
+bazookas_api_framework_app_copy_admin:
+    path: /app_copy/{_action}/{_id}
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:Admin\AppCopyAdmin:index
+        _locale: "%locale%"
+        _action: ~
+        _id: ~
+    requirements:
+        _locale: "%require_admin_locales%"
+        _id: .+
+
+bazookas_api_framework_app_settings_admin:
+    path: /app_settings/{_action}/{_id}
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:Admin\AppSettingsAdmin:index
+        _locale: "%locale%"
+        _action: ~
+        _id: ~
+    requirements:
+        _locale: "%require_admin_locales%"
+        _id: .+
+
+# ---------------------------------------------------
 #                          Fact
 # ---------------------------------------------------
 admin_facts:

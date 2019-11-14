@@ -2,6 +2,7 @@
 
 namespace App\Twig;
 
+use Bazookas\AdminBundle\AdminElements\Containers\MenuContainer;
 use Bazookas\AdminBundle\AdminElements\Elements\Actions\MenuActions\MenuActionElement;
 use Bazookas\AdminBundle\Security\Roles;
 use Bazookas\AdminBundle\Twig\Base\BaseAdminMenuExtension;
@@ -33,8 +34,36 @@ class AdminMenuExtension extends BaseAdminMenuExtension implements ExtensionInte
 
 
         // Add (super) admin items
+        $this->elements[] = $this->createMobileAppMenuItems();
         $this->addMediaBundleMenuItems(true, true);
         $this->addAdminSettingsMenu();
+    }
+
+    /**
+     * @return MenuContainer
+     * @throws ExceptionInterface
+     */
+    private function createMobileAppMenuItems(): MenuContainer
+    {
+        return new MenuContainer([
+            'label' => 'admin.menu.containers.mobileApp',
+            'roles' => [Roles::ROLE_ADMIN, Roles::ROLE_SUPER_ADMIN],
+            'iconClass' => 'ti-mobile',
+            'children' => [
+                new MenuActionElement([
+                    'label' => 'admin.entities.appCopy.namePlural',
+                    'route' => 'bazookas_api_framework_app_copy_admin',
+                    'iconClass' => 'fa fa-language',
+                    'roles' => [Roles::ROLE_ADMIN],
+                ]),
+                new MenuActionElement([
+                    'label' => 'admin.entities.appSettings.namePlural',
+                    'route' => 'bazookas_api_framework_app_settings_admin',
+                    'iconClass' => 'fa fa-gears',
+                    'roles' => [Roles::ROLE_ADMIN, Roles::ROLE_SUPER_ADMIN],
+                ]),
+            ],
+        ]);
     }
 
     /**

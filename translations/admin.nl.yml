@@ -1,4 +1,8 @@
 admin:
+    menu:
+        containers:
+            mobileApp: Mobile items
+
     entities:
         fact:
             listLabel: Overzicht van alle feiten

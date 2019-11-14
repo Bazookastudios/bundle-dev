@@ -1,0 +1,6 @@
+bazookas_api_framework:
+    app_copy:
+        entity: App\Entity\App\AppCopy
+        details_entity: App\Entity\App\AppCopyDetail
+    app_settings:
+        entity: App\Entity\App\AppSettings
