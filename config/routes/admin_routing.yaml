@@ -4,7 +4,7 @@
 bazookas_api_framework_app_copy_admin:
     path: /app_copy/{_action}/{_id}
     defaults:
-        _controller: BazookasAPIFrameworkBundle:Admin\AppCopyAdmin:index
+        _controller: Bazookas\APIFrameworkBundle\Controller\Admin\AppCopyAdminController::indexAction
         _locale: "%locale%"
         _action: ~
         _id: ~
@@ -15,7 +15,7 @@ bazookas_api_framework_app_copy_admin:
 bazookas_api_framework_app_settings_admin:
     path: /app_settings/{_action}/{_id}
     defaults:
-        _controller: BazookasAPIFrameworkBundle:Admin\AppSettingsAdmin:index
+        _controller: Bazookas\APIFrameworkBundle\Controller\Admin\AppSettingsAdminController::indexAction
         _locale: "%locale%"
         _action: ~
         _id: ~
@@ -29,7 +29,7 @@ bazookas_api_framework_app_settings_admin:
 bazookas_api_framework_app_log_admin:
     path: /app_logs/{_action}/{_id}
     defaults:
-        _controller: BazookasAPIFrameworkBundle:Admin\AppLogAdmin:index
+        _controller: Bazookas\APIFrameworkBundle\Controller\Admin\AppLogAdminController::indexAction
         _locale: "%locale%"
         _action: ~
         _id: ~
@@ -40,7 +40,7 @@ bazookas_api_framework_app_log_admin:
 bazookas_api_framework_device_admin:
     path: /devices/{_action}/{_id}
     defaults:
-        _controller: BazookasAPIFrameworkBundle:Admin\DeviceAdmin:index
+        _controller: Bazookas\APIFrameworkBundle\Controller\Admin\DeviceAdminController::indexAction
         _locale: "%locale%"
         _action: ~
         _id: ~
