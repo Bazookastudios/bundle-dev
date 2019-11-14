@@ -24,6 +24,31 @@ bazookas_api_framework_app_settings_admin:
         _id: .+
 
 # ---------------------------------------------------
+#                       Devices & Logs
+# ---------------------------------------------------
+bazookas_api_framework_app_log_admin:
+    path: /app_logs/{_action}/{_id}
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:Admin\AppLogAdmin:index
+        _locale: "%locale%"
+        _action: ~
+        _id: ~
+    requirements:
+        _locale: "%require_admin_locales%"
+        _id: .+
+
+bazookas_api_framework_device_admin:
+    path: /devices/{_action}/{_id}
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:Admin\DeviceAdmin:index
+        _locale: "%locale%"
+        _action: ~
+        _id: ~
+    requirements:
+        _locale: "%require_admin_locales%"
+        _id: .+
+
+# ---------------------------------------------------
 #                          Fact
 # ---------------------------------------------------
 admin_facts:

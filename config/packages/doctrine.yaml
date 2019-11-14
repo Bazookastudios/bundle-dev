@@ -31,3 +31,5 @@ doctrine:
         resolve_target_entities:
             Bazookas\AdminBundle\Entity\Interfaces\CMSUserInterface: Bazookas\AdminBundle\Entity\User\CMSUser
             Bazookas\AdminBundle\Entity\Interfaces\CMSUserGroupInterface: Bazookas\AdminBundle\Entity\User\CMSUserGroup
+            Bazookas\APIFrameworkBundle\Entity\Interfaces\AppLogInterface: App\Entity\App\AppLog
+            Bazookas\APIFrameworkBundle\Entity\Interfaces\DeviceInterface: App\Entity\App\Device

@@ -62,6 +62,18 @@ class AdminMenuExtension extends BaseAdminMenuExtension implements ExtensionInte
                     'iconClass' => 'fa fa-gears',
                     'roles' => [Roles::ROLE_ADMIN, Roles::ROLE_SUPER_ADMIN],
                 ]),
+                new MenuActionElement([
+                    'label' => 'admin.entities.appLog.namePlural',
+                    'route' => 'bazookas_api_framework_app_log_admin',
+                    'iconClass' => 'fa fa-files-o',
+                    'roles' => [Roles::ROLE_SUPER_ADMIN],
+                ]),
+                new MenuActionElement([
+                    'label' => 'admin.entities.device.namePlural',
+                    'route' => 'bazookas_api_framework_device_admin',
+                    'iconClass' => 'ti-mobile',
+                    'roles' => [Roles::ROLE_SUPER_ADMIN],
+                ]),
             ],
         ]);
     }

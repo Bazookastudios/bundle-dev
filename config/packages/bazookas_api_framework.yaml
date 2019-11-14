@@ -4,3 +4,7 @@ bazookas_api_framework:
         details_entity: App\Entity\App\AppCopyDetail
     app_settings:
         entity: App\Entity\App\AppSettings
+    app_log:
+        entity: App\Entity\App\AppLog
+    device:
+        entity: App\Entity\App\Device
