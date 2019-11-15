@@ -35,3 +35,7 @@ project_admin:
         _locale: "%locale%"
     requirements:
         _locale: "%require_admin_locales%"
+
+project_api:
+    resource: './routes/api_routing.yaml'
+    prefix: /api/v1.0

@@ -1,0 +1,41 @@
+# Copy & Settings
+api_v1_get_copy:
+    path: /{_locale}/translations
+    methods: [GET]
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:AppCopy:get
+    requirements:
+        _locale: '%bazookas_api_framework.app_copy.allowed_locales%'
+
+api_v1_get_settings:
+    path: /settings
+    methods: [GET]
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:AppSettings:get
+
+api_v1_post_app_log:
+    path: /log
+    methods: [POST]
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:AppLog:postAppLog
+
+api_v1_device_ping:
+    path: /device/{_id}/ping
+    methods: [POST]
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:Device:ping
+    requirements:
+        _id: .+
+
+# File upload
+api_v1_upload:
+    path: /files/upload/{_hash}/{_index}
+    methods: [POST]
+    defaults:
+        _controller: BazookasAPIFrameworkBundle:FileUpload:upload
+
+api_v1_create_image_upload:
+    path: /images/uploads
+    methods: [GET]
+    defaults:
+        _controller: App\Controller\Api\ImageUploadController:createImageUploadAction

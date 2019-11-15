@@ -8,3 +8,6 @@ bazookas_api_framework:
         entity: App\Entity\App\AppLog
     device:
         entity: App\Entity\App\Device
+    file_upload:
+        settings:
+            uploadRoute: api_v1_upload
