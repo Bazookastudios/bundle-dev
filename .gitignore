@@ -6,6 +6,9 @@
 !var/log/.gitkeep
 !var/sessions/.gitkeep
 
+# File uploads (if they linger behind)
+/public/uploads
+
 # Managed by Composer
 /var/bootstrap.php.cache
 /bin/*

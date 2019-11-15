@@ -3,12 +3,12 @@ oneup_flysystem:
     adapters:
         local_media_adapter:
             local:
-                directory: "%kernel.root_dir%/../web/uploads"
+                directory: "%kernel.root_dir%/../public/uploads"
         s3_file_system:
             awss3v3:
                 client: media_s3_client
                 bucket: test.bazookas.be
-                prefix: 'uploads'
+                prefix: ''
         s3_media_cache_system:
             awss3v3:
                 client: media_s3_client
