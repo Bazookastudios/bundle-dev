@@ -8,14 +8,14 @@ bazookas_admin:
     requirements:
         _locale: "%require_admin_locales%"
 
-#bazookas_cron:
-#    resource: "@BazookasCronBundle/Resources/config/routing.yml"
-#    prefix:   /{_locale}/admin
-#    defaults:
-#        _locale: "%locale%"
-#    requirements:
-#        _locale: "%require_admin_locales%"
-#
+bazookas_cron:
+    resource: "@BazookasCronBundle/Resources/config/routing.yml"
+    prefix:   /{_locale}/admin
+    defaults:
+        _locale: "%locale%"
+    requirements:
+        _locale: "%require_admin_locales%"
+
 bazookas_media:
     resource: "@BazookasMediaBundle/Resources/config/routing.yml"
     prefix:   /{_locale}/admin

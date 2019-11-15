@@ -294,6 +294,9 @@
     "symfony/intl": {
         "version": "v4.3.5"
     },
+    "symfony/lock": {
+        "version": "v4.3.8"
+    },
     "symfony/mime": {
         "version": "v4.3.5"
     },
