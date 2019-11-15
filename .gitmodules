@@ -14,3 +14,7 @@
 	path = bundles/Bazookas/CronBundle
 	url = https://github.com/Bazookastudios/BazookasCronBundle.git
 	branch = master
+[submodule "NitroTokenAuthenticationBundle"]
+	path = bundles/Bazookas/NitroTokenAuthenticationBundle
+	url = https://github.com/Bazookastudios/NitroTokenAuthenticationBundle.git
+	branch = master
