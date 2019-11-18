@@ -25,10 +25,13 @@ security:
             - ROLE_MEDIA_ADMIN
 
     providers:
-        users:
+        admin_user_provider:
             entity:
                 class: Bazookas\AdminBundle\Entity\Interfaces\CMSUserInterface
                 property: username
+
+        token_provider:
+            id: Nitro\TokenAuthenticationBundle\UserProvider\TokenProvider
 
     firewalls:
         #Default Project configuration
@@ -36,12 +39,22 @@ security:
             pattern:  ^/(media|cron|(api/doc)|_(profiler|wdt)|css|images|js)
             security: false
 
+        api:
+            pattern: ^/api
+            security: true
+            stateless: true
+            guard:
+                authenticators:
+                    - Nitro\TokenAuthenticationBundle\Authenticator\TokenAuthenticator
+            provider: token_provider
+
         #Default CMS configuration
         admin:
             pattern: ^\/(nl|en)+\/admin
             guard:
                 authenticators:
                     - Bazookas\AdminBundle\Security\LoginFormAuthenticator
+            provider: admin_user_provider
             anonymous:    true
             logout:
                 path:   admin_logout

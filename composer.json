@@ -11,7 +11,8 @@
   "autoload": {
     "psr-4": {
       "App\\": "src/",
-      "Bazookas\\": "bundles/Bazookas/"
+      "Bazookas\\": "bundles/Bazookas/",
+      "Nitro\\": "bundles/Nitro/"
     }
   },
   "autoload-dev": {
