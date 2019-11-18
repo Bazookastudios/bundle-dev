@@ -18,3 +18,7 @@
 	path = bundles/Nitro/TokenAuthenticationBundle
 	url = https://github.com/Bazookastudios/NitroTokenAuthenticationBundle.git
 	branch = master
+[submodule "NitroRequestValidationBundle"]
+	path = bundles/Nitro/RequestValidationBundle
+	url = https://github.com/Bazookastudios/NitroRequestValidationBundle.git
+	branch = master
