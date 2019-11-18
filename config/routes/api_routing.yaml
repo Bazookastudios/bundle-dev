@@ -39,3 +39,9 @@ api_v1_create_image_upload:
     methods: [GET]
     defaults:
         _controller: App\Controller\Api\ImageUploadController:createImageUploadAction
+
+api_token:
+    path: /token
+    methods: [POST]
+    defaults:
+        _controller: Nitro\TokenAuthenticationBundle\Controller\TokenController::getToken

@@ -36,7 +36,7 @@ security:
     firewalls:
         #Default Project configuration
         insecure:
-            pattern:  ^/(media|cron|(api/doc)|_(profiler|wdt)|css|images|js)
+            pattern:  ^/(media|cron|(api/doc|api/token)|_(profiler|wdt)|css|images|js)
             security: false
 
         api:
