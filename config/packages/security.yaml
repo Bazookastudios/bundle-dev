@@ -36,7 +36,7 @@ security:
     firewalls:
         #Default Project configuration
         insecure:
-            pattern:  ^/(media|cron|(api/doc|api/token)|_(profiler|wdt)|css|images|js)
+            pattern:  ^/(media|cron|(api/doc)|_(profiler|wdt)|css|images|js)
             security: false
 
         api:
@@ -47,6 +47,7 @@ security:
                 authenticators:
                     - Nitro\TokenAuthenticationBundle\Authenticator\TokenAuthenticator
             provider: token_provider
+            anonymous: true
 
         #Default CMS configuration
         admin:
@@ -78,4 +79,5 @@ security:
         - { path: ^\/(nl|en)+\/admin\/login, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^\/(nl|en)+\/admin\/forgot-password, role: IS_AUTHENTICATED_ANONYMOUSLY }
         - { path: ^\/(nl|en)+\/admin((\/)*.)*$, role: ROLE_CMS_USER }
-        - { path: ^/api, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api/token, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+        - { path: ^/api, roles: IS_AUTHENTICATED_FULLY }
