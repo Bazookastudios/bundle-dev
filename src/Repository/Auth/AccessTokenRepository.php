@@ -7,10 +7,10 @@ use Nitro\TokenAuthenticationBundle\Repository\Interfaces\AccessTokenRepositoryI
 use Nitro\TokenAuthenticationBundle\Repository\Traits\AccessTokenRepositoryTrait;
 
 /**
- * Class TokenRepository
+ * Class AccessTokenRepository
  * @package App\Repository\Auth
  */
-class TokenRepository extends BaseRepository implements AccessTokenRepositoryInterface
+class AccessTokenRepository extends BaseRepository implements AccessTokenRepositoryInterface
 {
     use AccessTokenRepositoryTrait;
 }
