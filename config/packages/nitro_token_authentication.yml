@@ -1,1 +1,5 @@
-nitro_token_authentication: ~
+nitro_token_authentication:
+    access_token:
+        expires_in: 1 day
+    refresh_token:
+        expires_in: 14 days

@@ -54,32 +54,8 @@
   },
   "repositories": [
     {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasAdminBundle.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasMediaBundle.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasAPIFrameworkBundle.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasCronBundle.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasIntegrationsBundle.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasGeneratorBundle.git"
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/Bazookastudios/BazookasCommonBundle.git"
+      "type": "composer",
+      "url": "https://satis.ops.bazookas.be"
     }
   ],
   "scripts": {

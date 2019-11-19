@@ -9,7 +9,7 @@ use Nitro\TokenAuthenticationBundle\Entity\Traits\AccessTokenTrait;
 use Ramsey\Uuid\Uuid;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\Auth\TokenRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\Auth\AccessTokenRepository")
  *
  * Class AccessToken
  * @package Entity\Auth
