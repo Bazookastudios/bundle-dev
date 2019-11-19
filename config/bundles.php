@@ -20,4 +20,5 @@ return [
     Bazookas\CronBundle\BazookasCronBundle::class => ['all' => true],
     Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle::class => ['all' => true],
     Nitro\TokenAuthenticationBundle\NitroTokenAuthenticationBundle::class => ['all' => true],
+    Nitro\ApiUploadBundle\NitroApiUploadBundle::class => ['all' => true],
 ];

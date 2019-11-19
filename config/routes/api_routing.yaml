@@ -32,7 +32,7 @@ api_v1_upload:
     path: /files/upload/{_hash}/{_index}
     methods: [POST]
     defaults:
-        _controller: BazookasAPIFrameworkBundle:FileUpload:upload
+        _controller: Nitro\ApiUploadBundle\Controller\FileUploadController::uploadFileAction
 
 api_v1_create_image_upload:
     path: /images/uploads
