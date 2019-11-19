@@ -22,3 +22,7 @@
 	path = bundles/Nitro/RequestValidationBundle
 	url = https://github.com/Bazookastudios/NitroRequestValidationBundle.git
 	branch = master
+[submodule "NitroApiUploadBundle"]
+	path = bundles/Nitro/ApiUploadBundle
+	url = https://github.com/Bazookastudios/NitroApiUploadBundle.git
+	branch = master
