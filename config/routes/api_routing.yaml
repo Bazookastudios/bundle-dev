@@ -11,7 +11,7 @@ api_v1_get_settings:
     path: /settings
     methods: [GET]
     defaults:
-        _controller: BazookasAPIFrameworkBundle:AppSettings:get
+        _controller: Nitro\AppSettingsBundle\Controller\Api\AppSettingsApiController::getSettings
 
 api_v1_post_app_log:
     path: /log

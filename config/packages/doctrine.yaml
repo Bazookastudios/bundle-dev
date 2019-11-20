@@ -38,3 +38,4 @@ doctrine:
             Symfony\Component\Security\Core\User\UserInterface: App\Entity\User\AppUser
             Nitro\TokenAuthenticationBundle\Entity\Interfaces\RefreshTokenInterface: App\Entity\Auth\RefreshToken
             Nitro\ApiUploadBundle\Entity\Interfaces\ApiFileUploadInterface: App\Entity\Upload\ApiFileUpload
+            Nitro\AppSettingsBundle\Entity\Interfaces\AppSettingsInterface: App\Entity\App\AppSettings

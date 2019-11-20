@@ -15,7 +15,7 @@ bazookas_api_framework_app_copy_admin:
 bazookas_api_framework_app_settings_admin:
     path: /app_settings/{_action}/{_id}
     defaults:
-        _controller: Bazookas\APIFrameworkBundle\Controller\Admin\AppSettingsAdminController::indexAction
+        _controller: Nitro\AppSettingsBundle\Controller\Admin\AppSettingsAdminController::indexAction
         _locale: "%locale%"
         _action: ~
         _id: ~

@@ -21,4 +21,5 @@ return [
     Bazookas\APIFrameworkBundle\BazookasAPIFrameworkBundle::class => ['all' => true],
     Nitro\TokenAuthenticationBundle\NitroTokenAuthenticationBundle::class => ['all' => true],
     Nitro\ApiUploadBundle\NitroApiUploadBundle::class => ['all' => true],
+    Nitro\AppSettingsBundle\NitroAppSettingsBundle::class => ['all' => true],
 ];
