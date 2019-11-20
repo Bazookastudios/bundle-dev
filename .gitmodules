@@ -30,3 +30,7 @@
 	path = bundles/Nitro/AppSettingsBundle
 	url = https://github.com/Bazookastudios/NitroAppSettingsBundle.git
 	branch = master
+[submodule "NitroAppCopyBundle"]
+	path = bundles/Nitro/AppCopyBundle
+	url = https://github.com/Bazookastudios/NitroAppCopyBundle.git
+	branch = master
