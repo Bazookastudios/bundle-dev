@@ -37,6 +37,7 @@ class AppSettings implements AppSettingsInterface, EntityInterface, Timestampabl
     public function __construct()
     {
         $this->created = new DateTimeImmutable('UTC', new DateTimeZone('UTC'));
+        $this->modified = new DateTimeImmutable('UTC', new DateTimeZone('UTC'));
     }
 
     /**
