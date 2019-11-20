@@ -26,3 +26,7 @@
 	path = bundles/Nitro/ApiUploadBundle
 	url = https://github.com/Bazookastudios/NitroApiUploadBundle.git
 	branch = master
+[submodule "NitroAppSettingsBundle"]
+	path = bundles/Nitro/AppSettingsBundle
+	url = https://github.com/Bazookastudios/NitroAppSettingsBundle.git
+	branch = master
