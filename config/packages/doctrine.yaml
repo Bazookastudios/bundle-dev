@@ -39,3 +39,5 @@ doctrine:
             Nitro\TokenAuthenticationBundle\Entity\Interfaces\RefreshTokenInterface: App\Entity\Auth\RefreshToken
             Nitro\ApiUploadBundle\Entity\Interfaces\ApiFileUploadInterface: App\Entity\Upload\ApiFileUpload
             Nitro\AppSettingsBundle\Entity\Interfaces\AppSettingsInterface: App\Entity\App\AppSettings
+            Nitro\AppCopyBundle\Entity\Interfaces\AppCopyInterface: App\Entity\App\AppCopy
+            Nitro\AppCopyBundle\Entity\Interfaces\AppCopyDetailInterface: App\Entity\App\AppCopyDetail

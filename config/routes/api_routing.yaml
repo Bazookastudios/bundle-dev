@@ -3,9 +3,9 @@ api_v1_get_copy:
     path: /{_locale}/translations
     methods: [GET]
     defaults:
-        _controller: BazookasAPIFrameworkBundle:AppCopy:get
+        _controller: Nitro\AppCopyBundle\Controller\Api\AppCopyApiController::getCopy
     requirements:
-        _locale: '%bazookas_api_framework.app_copy.allowed_locales%'
+        _locale: '%required_locales%'
 
 api_v1_get_settings:
     path: /settings
