@@ -32,7 +32,7 @@ api_v1_upload:
     path: /files/upload/{_hash}/{_index}
     methods: [POST]
     defaults:
-        _controller: Nitro\ApiUploadBundle\Controller\FileUploadController::uploadFileAction
+        _controller: Nitro\ApiUploadBundle\Controller\ApiUploadController::uploadFileAction
 
 api_v1_create_image_upload:
     path: /images/uploads

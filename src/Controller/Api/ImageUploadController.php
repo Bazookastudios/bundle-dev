@@ -2,12 +2,12 @@
 
 namespace App\Controller\Api;
 
-use Bazookas\APIFrameworkBundle\Services\Upload\ApiFileUploadService;
-use Bazookas\APIFrameworkBundle\Util\ApiFileUploadCallback;
 use Bazookas\MediaBundle\Entity\Image;
 use Bazookas\MediaBundle\Services\Data\ImageCallbackService;
 use Doctrine\ORM\EntityManagerInterface;
 use Exception;
+use Nitro\ApiUploadBundle\Factory\ApiFileUploadFactory;
+use Nitro\ApiUploadBundle\Model\ApiUploadCallback;
 use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\ParameterBag;
 
@@ -18,7 +18,7 @@ use Symfony\Component\HttpFoundation\ParameterBag;
 class ImageUploadController
 {
     /**
-     * @param ApiFileUploadService   $fileUploadService
+     * @param ApiFileUploadFactory   $fileUploadFactory
      * @param EntityManagerInterface $manager
      *
      * @return JsonResponse
@@ -26,25 +26,25 @@ class ImageUploadController
      * @throws Exception
      */
     public function createImageUploadAction(
-        ApiFileUploadService $fileUploadService,
+        ApiFileUploadFactory $fileUploadFactory,
         EntityManagerInterface $manager
     ): JsonResponse {
         $image = new Image();
         $manager->persist($image);
 
-        $uploadTargets = $fileUploadService->createFileUploads([
+        $uploadTargets = $fileUploadFactory->createFileUploads([
             [
                 'targetDirectory' => 'images',
                 'filename' => $image->getId(),
                 'mimeTypes' => '#^image/.+$#',
-                'callback' => new ApiFileUploadCallback(
-                    ImageCallbackService::class,
+                'callback' => new ApiUploadCallback(
                     'uploadCroppedImage',
                     new ParameterBag([
                         'id' => $image->getId(),
                         'width' => 500,
                         'height' => 500,
-                    ])
+                    ]),
+                    ImageCallbackService::class
                 ),
             ],
         ]);

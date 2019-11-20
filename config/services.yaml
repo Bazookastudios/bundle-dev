@@ -46,6 +46,18 @@ services:
     # add more service definitions when explicit configuration is needed
     # please note that last definitions always *replace* previous ones
 
+    App\Services\Upload\UploadHandlerService:
+        class: App\Services\Upload\UploadHandlerService
+        public: true
+        arguments:
+            $baseUrl: '%nitro.api_upload.base_url%'
+            $publicDirectory: '%nitro.api_upload.root_directory%'
+            $uploadsDirectory: '%nitro.api_upload.uploads_root_directory%'
+        tags: ['container.service_subscriber']
+
+    Nitro\ApiUploadBundle\Services\Interfaces\ApiUploadHandlerInterface:
+        alias: App\Services\Upload\UploadHandlerService
+
     App\Twig\AdminMenuExtension:
         class: App\Twig\AdminMenuExtension
         arguments:
