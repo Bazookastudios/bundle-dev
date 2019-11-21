@@ -4,7 +4,7 @@
 bazookas_api_framework_app_copy_admin:
     path: /app_copy/{_action}/{_id}
     defaults:
-        _controller: Bazookas\APIFrameworkBundle\Controller\Admin\AppCopyAdminController::indexAction
+        _controller: Nitro\AppCopyBundle\Controller\Admin\AppCopyAdminController::indexAction
         _locale: "%locale%"
         _action: ~
         _id: ~
