@@ -34,3 +34,7 @@
 	path = bundles/Nitro/AppCopyBundle
 	url = https://github.com/Bazookastudios/NitroAppCopyBundle.git
 	branch = master
+[submodule "TranslationBundle"]
+	path = bundles/Nitro/TranslationBundle
+	url = https://github.com/Bazookastudios/NitroTranslationBundle.git
+	branch = master
