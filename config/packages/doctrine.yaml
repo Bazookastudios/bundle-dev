@@ -41,3 +41,4 @@ doctrine:
             Nitro\AppSettingsBundle\Entity\Interfaces\AppSettingsInterface: App\Entity\App\AppSettings
             Nitro\AppCopyBundle\Entity\Interfaces\AppCopyInterface: App\Entity\App\AppCopy
             Nitro\AppCopyBundle\Entity\Interfaces\AppCopyDetailInterface: App\Entity\App\AppCopyDetail
+            Nitro\TranslationBundle\Entity\Interfaces\TranslationInterface: App\Entity\Translation\Translation

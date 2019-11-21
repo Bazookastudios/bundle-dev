@@ -20,7 +20,7 @@ class AppUser implements UserInterface
      * @ORM\Id
      * @var string
      */
-    protected $id;
+    protected $id = '';
 
     /**
      * @ORM\Column(type="json_array")
@@ -32,19 +32,19 @@ class AppUser implements UserInterface
      * @ORM\Column(type="string")
      * @var string
      */
-    private $username;
+    private $username = '';
 
     /**
      * @ORM\Column(type="string")
      * @var string
      */
-    private $password;
+    private $password = '';
 
     /**
      * @ORM\Column(type="string")
      * @var string
      */
-    private $salt;
+    private $salt = '';
 
     /**
      * AppUser constructor.

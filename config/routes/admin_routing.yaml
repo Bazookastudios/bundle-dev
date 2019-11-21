@@ -60,3 +60,18 @@ admin_facts:
     requirements:
         _locale: "%require_admin_locales%"
         _id: .+
+
+# ---------------------------------------------------
+#                          Translations
+# ---------------------------------------------------
+admin_copy:
+    path: /copy/{_action}/{_id}
+    defaults:
+        _controller: Nitro\TranslationBundle\Controller\Admin\CopyAdminController::indexAction
+        _locale: "%locale%"
+        _action: ~
+        _id: ~
+    requirements:
+        _locale: "%require_admin_locales%"
+        _action: 'list|reloadCache|ajaxInlineEdit'
+        _id: .+

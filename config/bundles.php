@@ -7,7 +7,6 @@ return [
     Doctrine\Bundle\MigrationsBundle\DoctrineMigrationsBundle::class => ['all' => true],
     Symfony\Bundle\SecurityBundle\SecurityBundle::class => ['all' => true],
     Symfony\Bundle\WebProfilerBundle\WebProfilerBundle::class => ['dev' => true, 'test' => true],
-    Doctrine\Bundle\DoctrineCacheBundle\DoctrineCacheBundle::class => ['all' => true],
     Liip\ImagineBundle\LiipImagineBundle::class => ['all' => true],
     Oneup\FlysystemBundle\OneupFlysystemBundle::class => ['all' => true],
     Symfony\Bundle\MonologBundle\MonologBundle::class => ['all' => true],
@@ -23,4 +22,5 @@ return [
     Nitro\ApiUploadBundle\NitroApiUploadBundle::class => ['all' => true],
     Nitro\AppSettingsBundle\NitroAppSettingsBundle::class => ['all' => true],
     Nitro\AppCopyBundle\NitroAppCopyBundle::class => ['all' => true],
+    Nitro\TranslationBundle\NitroTranslationBundle::class => ['all' => true],
 ];
