@@ -70,6 +70,7 @@ security:
 
         #Default Project configuration
         main:
+            provider: admin_user_provider
             anonymous: ~
 
     # any login or register paths can be visited anonymously
