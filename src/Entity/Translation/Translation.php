@@ -37,19 +37,19 @@ class Translation implements TranslationInterface, TimestampableInterface, Entit
     use TimestampableTrait;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      * @var string|null
      */
     private $translationNL;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      * @var string|null
      */
     private $translationEN;
 
     /**
-     * @ORM\Column(type="string", nullable=true)
+     * @ORM\Column(type="text", nullable=true)
      * @var string|null
      */
     private $translationFR;
