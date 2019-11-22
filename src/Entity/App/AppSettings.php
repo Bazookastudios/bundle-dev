@@ -8,6 +8,7 @@ use Bazookas\AdminBundle\Security\Roles;
 use Bazookas\CommonBundle\Entity\Interfaces\EntityInterface;
 use Bazookas\CommonBundle\Entity\Interfaces\TimestampableInterface;
 use Bazookas\CommonBundle\Entity\Traits\TimestampableTrait;
+use DateTime;
 use DateTimeImmutable;
 use DateTimeZone;
 use Doctrine\ORM\Mapping as ORM;
@@ -37,7 +38,7 @@ class AppSettings implements AppSettingsInterface, EntityInterface, Timestampabl
     public function __construct()
     {
         $this->created = new DateTimeImmutable('UTC', new DateTimeZone('UTC'));
-        $this->modified = new DateTimeImmutable('UTC', new DateTimeZone('UTC'));
+        $this->modified = new DateTime('UTC', new DateTimeZone('UTC'));
     }
 
     /**
