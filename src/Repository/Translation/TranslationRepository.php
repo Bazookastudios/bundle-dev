@@ -64,18 +64,19 @@ class TranslationRepository extends BaseRepository implements TranslationReposit
 
     /**
      * @return array
-     * @throws QueryException
      */
     public function getAllTranslationsAsAMap(): array
     {
         $qb = $this->createQueryBuilder('translation');
         $qb->select('partial translation.{id, domain, key, translationNL, translationFR, translationEN }');
-        $qb->indexBy('translation', 'translation.domain');
         $translations = $qb->getQuery()->getArrayResult();
 
         $formatted = [];
-        foreach ($translations as $domain => $translation) {
-            $formatted[$domain][$translation['key']] = [
+        foreach ($translations as $translation) {
+            $domain = $translation['domain'];
+            $key = $translation['key'];
+
+            $formatted[$domain][$key] = [
                 'nl' => $translation['translationNL'],
                 'fr' => $translation['translationFR'],
                 'en' => $translation['translationEN'],
