@@ -10,6 +10,7 @@ use Bazookas\CommonBundle\Entity\Interfaces\TimestampableInterface;
 use Bazookas\CommonBundle\Entity\Traits\DetailTrait;
 use Bazookas\CommonBundle\Entity\Traits\EntityTrait;
 use Bazookas\CommonBundle\Entity\Traits\TimestampableTrait;
+use Bazookas\MediaBundle\Entity\Image;
 use DateTime;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
@@ -62,6 +63,14 @@ class FactDetail implements
     private $fact = '';
 
     /**
+     * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Image")
+     * @var Image|null
+     * @Assert\NotBlank
+     * @Assert\Valid
+     */
+    private $image;
+
+    /**
      * FactDetail constructor.
      *
      * @throws Exception
@@ -97,6 +106,26 @@ class FactDetail implements
     public function setFact(string $fact): FactDetail
     {
         $this->fact = $fact;
+
+        return $this;
+    }
+
+    /**
+     * @return Image|null
+     */
+    public function getImage(): ?Image
+    {
+        return $this->image;
+    }
+
+    /**
+     * @param Image|null $image
+     *
+     * @return FactDetail
+     */
+    public function setImage(?Image $image): FactDetail
+    {
+        $this->image = $image;
 
         return $this;
     }

@@ -3,7 +3,9 @@
 namespace App\Form\Admin\Fact;
 
 use App\Entity\Fact\FactDetail;
+use Bazookas\AdminBundle\Form\Type\EntityPickerType;
 use Bazookas\CommonBundle\Form\Type\LocaleType;
+use Bazookas\MediaBundle\Entity\Image;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -29,6 +31,15 @@ class FactDetailAdminType extends AbstractType
                 'label' => 'admin.entities.factDetail.fields.fact',
                 'attr' => [
                     'maxLength' => 255,
+                ],
+            ])
+            ->add('image', EntityPickerType::class, [
+                'label' => 'admin.entities.factDetail.fields.image',
+                'class' => Image::class,
+                'display_type' => EntityPickerType::DISPLAY_ASSET,
+                'display_field' => 'thumbnail',
+                'picker_route' => [
+                    'route' => 'bazookas_media_image_admin',
                 ],
             ])
         ;
