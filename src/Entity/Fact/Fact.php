@@ -12,6 +12,8 @@ use Bazookas\CommonBundle\Entity\Traits\DetailParentTrait;
 use Bazookas\CommonBundle\Entity\Traits\EntityTrait;
 use Bazookas\CommonBundle\Entity\Traits\TimestampableTrait;
 use DateTime;
+use DateTimeImmutable;
+use DateTimeZone;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
@@ -68,8 +70,8 @@ class Fact implements
     {
         $this->id = (string)Uuid::uuid4();
         $this->details = new ArrayCollection();
-        $this->created = new DateTime();
-        $this->modified = new DateTime();
+        $this->created = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $this->modified = new DateTime('now', new DateTimeZone('UTC'));
     }
 
     /**

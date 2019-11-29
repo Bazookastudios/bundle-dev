@@ -37,7 +37,7 @@ class FactDetailAdminType extends AbstractType
                 'label' => 'admin.entities.factDetail.fields.image',
                 'class' => Image::class,
                 'display_type' => EntityPickerType::DISPLAY_ASSET,
-                'display_field' => 'thumbnail',
+                'display_field' => 'relativeUrl',
                 'picker_route' => [
                     'route' => 'bazookas_media_image_admin',
                 ],

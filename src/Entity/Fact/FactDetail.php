@@ -12,6 +12,8 @@ use Bazookas\CommonBundle\Entity\Traits\EntityTrait;
 use Bazookas\CommonBundle\Entity\Traits\TimestampableTrait;
 use Bazookas\MediaBundle\Entity\Image;
 use DateTime;
+use DateTimeImmutable;
+use DateTimeZone;
 use Doctrine\ORM\Mapping as ORM;
 use Exception;
 use Ramsey\Uuid\Uuid;
@@ -66,7 +68,6 @@ class FactDetail implements
      * @ORM\ManyToOne(targetEntity="Bazookas\MediaBundle\Entity\Image")
      * @var Image|null
      * @Assert\NotBlank
-     * @Assert\Valid
      */
     private $image;
 
@@ -78,8 +79,8 @@ class FactDetail implements
     public function __construct()
     {
         $this->id = (string)Uuid::uuid4();
-        $this->created = new DateTime();
-        $this->modified = new DateTime();
+        $this->created = new DateTimeImmutable('now', new DateTimeZone('UTC'));
+        $this->modified = new DateTime('now', new DateTimeZone('UTC'));
     }
 
     /**
