@@ -1,4 +1,24 @@
-FROM 255331728746.dkr.ecr.eu-west-1.amazonaws.com/php7-nginx:master
+FROM 255331728746.dkr.ecr.eu-west-1.amazonaws.com/php7-nginx:experimental
+
+#Enable the blackfire php probe
+ENV current_os=linux
+ARG BUILD_ENV=prod
+RUN if [ "${BUILD_ENV}" = "dev" ]; then \
+        version=$(php -r "echo PHP_MAJOR_VERSION.PHP_MINOR_VERSION;") \
+        && curl -A "Docker" -o /tmp/blackfire-probe.tar.gz -D - -L -s https://blackfire.io/api/v1/releases/probe/php/$current_os/amd64/$version \
+        && mkdir -p /tmp/blackfire \
+        && tar zxpf /tmp/blackfire-probe.tar.gz -C /tmp/blackfire \
+        && mv /tmp/blackfire/blackfire-*.so $(php -r "echo ini_get('extension_dir');")/blackfire.so \
+        && printf "extension=blackfire.so\nblackfire.agent_socket=tcp://blackfire:8707\n" > $PHP_INI_DIR/conf.d/blackfire.ini \
+        && rm -rf /tmp/blackfire /tmp/blackfire-probe.tar.gz; \
+    fi
+
+#Override php.ini settings
+RUN if [ "${BUILD_ENV}" != "dev" ]; then \
+        #Add php.ini override to disable timestamp based opcache checks
+        echo "opcache.validate_timestamps = 0\n" \
+         > /usr/local/etc/php/conf.d/project-override.ini; \
+    fi
 
 ADD . /var/www
 
