@@ -38,3 +38,7 @@
 	path = bundles/Nitro/TranslationBundle
 	url = https://github.com/Bazookastudios/NitroTranslationBundle.git
 	branch = master
+[submodule "ExportBundle"]
+	path = bundles/Bazookas/ExportBundle
+	url = https://github.com/Bazookastudios/BazookasExportBundle.git
+	branch = master
